@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Target, ArrowLeft, ExternalLink, Zap, Users, Trophy } from 'lucide-react';
+import SmoothScrollLink from '../../components/SmoothScrollLink';
 
 export default function Grappling() {
   return (
@@ -397,13 +398,13 @@ export default function Grappling() {
               JOIN GRAPPLING CLASSES
               <ExternalLink size={20} />
             </a>
-            <Link 
+            <SmoothScrollLink 
               to="/#train-like-fighter" 
               className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg flex items-center justify-center gap-2 tracking-wide uppercase"
             >
               <ArrowLeft size={20} />
               BACK TO TRAIN LIKE A FIGHTER
-            </Link>
+            </SmoothScrollLink>
           </div>
         </div>
       </section>
