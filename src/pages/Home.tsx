@@ -27,8 +27,11 @@ export default function Home() {
             <br />
             <span className="bg-gradient-gold bg-clip-text text-transparent">{t('home.hero.title').split(' ')[1]}</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed text-shadow font-light italic tracking-wide">
+          <p className="text-lg md:text-xl text-gray-300 mb-4 max-w-2xl mx-auto leading-relaxed text-shadow font-light italic tracking-wide">
             {t('home.hero.subtitle')}
+          </p>
+          <p className="text-xl md:text-2xl text-yellow-400 mb-8 font-bold tracking-wide text-shadow uppercase">
+            Forging Fighters Since 2017
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
