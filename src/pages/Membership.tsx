@@ -108,14 +108,14 @@ export default function Membership() {
                 <div className="flex justify-between items-center py-4 border-b border-yellow-500/30">
                   <span className="text-white font-medium text-lg tracking-wide uppercase">Adults</span>
                   <div className="text-right">
-                    <span className="text-3xl font-bold text-yellow-400 tracking-wide">€240</span>
+                    <span className="text-3xl font-bold text-yellow-400 tracking-wide">€210</span>
                     <p className="text-sm text-gray-400 tracking-wide">€80/month</p>
                   </div>
                 </div>
                 <div className="flex justify-between items-center py-4">
                   <span className="text-white font-medium text-lg tracking-wide uppercase">Students</span>
                   <div className="text-right">
-                    <span className="text-3xl font-bold text-yellow-400 tracking-wide">€180</span>
+                    <span className="text-3xl font-bold text-yellow-400 tracking-wide">€150</span>
                     <p className="text-sm text-gray-400 tracking-wide">€60/month</p>
                   </div>
                 </div>
