@@ -11,10 +11,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              {/* Text-based logo as fallback */}
-              <div className="text-2xl font-black text-black tracking-wider">
-                SPORT ACADEMY
-              </div>
+              <img src="/sport academy.jpg" alt="Sport Academy" className="h-10 w-auto" />
             </div>
             
             <div className="hidden md:block">
@@ -370,9 +367,7 @@ function App() {
       <footer className="bg-gray-200 border-t border-gray-300 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="text-2xl font-black text-black tracking-wider mb-6">
-              SPORT ACADEMY
-            </div>
+            <img src="/sport academy.jpg" alt="Sport Academy" className="h-12 w-auto mx-auto mb-6" />
             <p className="text-gray-700 mb-2 font-medium tracking-wide">
               Elite MMA, BJJ & Grappling Training in South Tyrol
             </p>
