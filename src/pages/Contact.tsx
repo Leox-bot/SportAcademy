@@ -35,7 +35,7 @@ export default function Contact() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Phone Contact */}
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
               <Phone className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
@@ -87,130 +87,11 @@ export default function Contact() {
               <p className="text-gray-400 text-sm mt-2 tracking-wide">During training hours</p>
             </div>
           </div>
-
-          {/* Contact Preferences */}
-          <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8">
-            <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase text-center">
-              Best Contact Method For Your Needs
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <Phone className="w-8 h-8 text-yellow-400 mx-auto mb-3" />
-                <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Phone Call</h4>
-                <ul className="text-gray-300 text-sm space-y-1 tracking-wide">
-                  <li>• Trial class booking</li>
-                  <li>• Urgent questions</li>
-                  <li>• Schedule changes</li>
-                  <li>• Membership inquiries</li>
-                </ul>
-              </div>
-              <div className="text-center">
-                <Instagram className="w-8 h-8 text-yellow-400 mx-auto mb-3" />
-                <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Instagram DM</h4>
-                <ul className="text-gray-300 text-sm space-y-1 tracking-wide">
-                  <li>• General questions</li>
-                  <li>• Class information</li>
-                  <li>• Community updates</li>
-                  <li>• Training tips</li>
-                </ul>
-              </div>
-              <div className="text-center">
-                <Users className="w-8 h-8 text-yellow-400 mx-auto mb-3" />
-                <h4 className="font-bold text-white mb-2 tracking-wide uppercase">In-Person Visit</h4>
-                <ul className="text-gray-300 text-sm space-y-1 tracking-wide">
-                  <li>• Facility tours</li>
-                  <li>• Meet the coaches</li>
-                  <li>• Free trial classes</li>
-                  <li>• Equipment fitting</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Business Hours & Operations */}
-      <section className="py-20 bg-gradient-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              HOURS & OPERATIONS
-            </h2>
-            <p className="text-xl text-gray-300 tracking-wide">
-              When we're open and available to help you
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Campo Tures Hours */}
-            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <Clock className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">Campo Tures</h3>
-              </div>
-              
-              <div className="space-y-4 mb-6">
-                <div className="flex justify-between items-center py-2 border-b border-yellow-500/30">
-                  <span className="text-white font-medium tracking-wide uppercase">Tuesday</span>
-                  <span className="text-gray-300 tracking-wide">15:00 - 20:30</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-yellow-500/30">
-                  <span className="text-white font-medium tracking-wide uppercase">Thursday</span>
-                  <span className="text-gray-300 tracking-wide">06:30 - 20:30</span>
-                </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-white font-medium tracking-wide uppercase">Other Days</span>
-                  <span className="text-gray-300 tracking-wide">By Appointment</span>
-                </div>
-              </div>
-
-              <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-4">
-                <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Walk-in Policy</h4>
-                <p className="text-gray-300 text-sm tracking-wide">
-                  Drop-ins welcome during training hours. Arrive 15 minutes early for check-in and orientation.
-                </p>
-              </div>
-            </div>
-            
-            {/* Brunico Hours */}
-            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <Clock className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">Brunico</h3>
-              </div>
-              
-              <div className="space-y-4 mb-6">
-                <div className="flex justify-between items-center py-2 border-b border-yellow-500/30">
-                  <span className="text-white font-medium tracking-wide uppercase">Monday</span>
-                  <span className="text-gray-300 tracking-wide">17:30 - 20:30</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-yellow-500/30">
-                  <span className="text-white font-medium tracking-wide uppercase">Wednesday</span>
-                  <span className="text-gray-300 tracking-wide">17:30 - 20:30</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-yellow-500/30">
-                  <span className="text-white font-medium tracking-wide uppercase">Friday</span>
-                  <span className="text-gray-300 tracking-wide">18:30 - 20:30</span>
-                </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-white font-medium tracking-wide uppercase">Other Days</span>
-                  <span className="text-gray-300 tracking-wide">By Appointment</span>
-                </div>
-              </div>
-
-              <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-4">
-                <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Response Times</h4>
-                <p className="text-gray-300 text-sm tracking-wide">
-                  Phone calls: Within 2 hours • Instagram DMs: Within 4 hours • During training hours: Immediate
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Locations & Directions */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
@@ -223,7 +104,7 @@ export default function Contact() {
           
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Campo Tures Location */}
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
+            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <MapPin className="w-8 h-8 text-yellow-400 mr-4" />
                 <h3 className="text-2xl font-bold text-white tracking-wide uppercase">Campo Tures</h3>
@@ -237,6 +118,20 @@ export default function Contact() {
                     Campo Tures, South Tyrol<br />
                     Italy
                   </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Training Schedule</h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <Clock className="w-4 h-4 text-yellow-400 mr-2" />
+                      <span className="text-gray-300 tracking-wide">Tuesday: 15:00 - 20:30</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Clock className="w-4 h-4 text-yellow-400 mr-2" />
+                      <span className="text-gray-300 tracking-wide">Thursday: 06:30 - 20:30</span>
+                    </div>
+                  </div>
                 </div>
                 
                 <div>
@@ -272,7 +167,7 @@ export default function Contact() {
             </div>
             
             {/* Brunico Location */}
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
+            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <MapPin className="w-8 h-8 text-yellow-400 mr-4" />
                 <h3 className="text-2xl font-bold text-white tracking-wide uppercase">Brunico</h3>
@@ -286,6 +181,24 @@ export default function Contact() {
                     39031 Brunico BZ<br />
                     South Tyrol, Italy
                   </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Training Schedule</h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <Clock className="w-4 h-4 text-yellow-400 mr-2" />
+                      <span className="text-gray-300 tracking-wide">Monday: 17:30 - 20:30</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Clock className="w-4 h-4 text-yellow-400 mr-2" />
+                      <span className="text-gray-300 tracking-wide">Wednesday: 17:30 - 20:30</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Clock className="w-4 h-4 text-yellow-400 mr-2" />
+                      <span className="text-gray-300 tracking-wide">Friday: 18:30 - 20:30</span>
+                    </div>
+                  </div>
                 </div>
                 
                 <div>
@@ -324,7 +237,7 @@ export default function Contact() {
       </section>
 
       {/* Parking & Accessibility */}
-      <section className="py-20 bg-gradient-dark">
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
@@ -336,7 +249,7 @@ export default function Contact() {
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
+            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <Car className="w-8 h-8 text-yellow-400 mr-4" />
                 <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">Campo Tures</h3>
@@ -365,7 +278,7 @@ export default function Contact() {
               </div>
             </div>
             
-            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
+            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <Car className="w-8 h-8 text-yellow-400 mr-4" />
                 <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">Brunico</h3>
@@ -398,7 +311,7 @@ export default function Contact() {
       </section>
 
       {/* Visit Requirements & Policies */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
@@ -410,7 +323,7 @@ export default function Contact() {
           </div>
           
           <div className="space-y-8">
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
+            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">First-Time Visitors</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -443,7 +356,7 @@ export default function Contact() {
                     </li>
                     <li className="flex items-start tracking-wide">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                      Basic protective equipment
+                      Basic gloves for MMA classes (free)
                     </li>
                     <li className="flex items-start tracking-wide">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
@@ -454,32 +367,6 @@ export default function Contact() {
                       Personal consultation with coaches
                     </li>
                   </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">Appointment & Reservation Policy</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-bold text-white mb-3 tracking-wide uppercase">Trial Classes</h4>
-                  <p className="text-gray-300 tracking-wide mb-3">
-                    <strong className="text-yellow-400">Recommended:</strong> Call or message to reserve your spot
-                  </p>
-                  <p className="text-gray-300 tracking-wide">
-                    While walk-ins are welcome, booking ensures we can provide proper attention 
-                    and have equipment ready for your trial.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-white mb-3 tracking-wide uppercase">Regular Classes</h4>
-                  <p className="text-gray-300 tracking-wide mb-3">
-                    <strong className="text-yellow-400">No reservation needed</strong> for members
-                  </p>
-                  <p className="text-gray-300 tracking-wide">
-                    Members can attend any scheduled class. Arrive 10-15 minutes early 
-                    for warm-up and preparation.
-                  </p>
                 </div>
               </div>
             </div>
@@ -499,12 +386,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Equipment:</strong> Gi rental available for BJJ classes (€5/session)
+                    <strong className="text-white">Equipment:</strong> Basic gloves provided for MMA classes (free)
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Payment:</strong> Cash, card, or bank transfer accepted
+                    <strong className="text-white">Payment:</strong> Cash and card accepted
                   </p>
                 </div>
               </div>
@@ -514,7 +401,7 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-dark">
+      <section className="py-20 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
             READY TO BEGIN?
