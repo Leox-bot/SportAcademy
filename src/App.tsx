@@ -108,7 +108,7 @@ function App() {
                 title: "MMA Classes",
                 description: "Complete mixed martial arts training combining striking, grappling, and ground fighting techniques.",
                 icon: <Trophy className="w-8 h-8" />,
-                image: "/mma-training.jpeg"
+                image: "/mma-training-cropped.jpeg"
               },
               {
                 title: "Brazilian Jiu-Jitsu",
@@ -120,13 +120,13 @@ function App() {
                 title: "Grappling",
                 description: "Develop your wrestling and submission skills in our intensive grappling sessions.",
                 icon: <Star className="w-8 h-8" />,
-                image: "/instdown.jpeg"
+                image: "/grappling-training-cropped.jpeg"
               },
               {
                 title: "BJJ for Kids",
                 description: "Safe and fun Brazilian Jiu-Jitsu classes designed specifically for young athletes.",
                 icon: <Users className="w-8 h-8" />,
-                image: "/instdown (2).jpeg"
+                image: "/bjj-kids-training-cropped.jpeg"
               },
               {
                 title: "Grappling for Kids",
@@ -143,11 +143,11 @@ function App() {
             ].map((classItem, index) => (
               <div key={index} className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group">
                 {classItem.image && (
-                  <div className="h-48 overflow-hidden">
+                  <div className="h-56 overflow-hidden">
                     <img 
                       src={classItem.image} 
                       alt={classItem.title}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
                     />
                   </div>
                 )}
