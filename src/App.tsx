@@ -5,23 +5,23 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-white text-black font-oswald">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src="/sport academy.jpg" alt="Sport Academy" className="h-10 w-auto" />
+              <img src="/sport-academy-logo.png" alt="Sport Academy" className="h-10 w-auto" />
             </div>
             
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                <a href="#home" className="text-black hover:text-gray-600 transition-colors font-medium">Home</a>
-                <a href="#classes" className="text-gray-700 hover:text-black transition-colors font-medium">Classes</a>
-                <a href="#schedule" className="text-gray-700 hover:text-black transition-colors font-medium">Schedule</a>
-                <a href="#coaches" className="text-gray-700 hover:text-black transition-colors font-medium">Coaches</a>
-                <a href="#membership" className="text-gray-700 hover:text-black transition-colors font-medium">Membership</a>
-                <a href="#contact" className="text-gray-700 hover:text-black transition-colors font-medium">Contact</a>
+                <a href="#home" className="text-black hover:text-gray-600 transition-colors font-medium tracking-wide">Home</a>
+                <a href="#classes" className="text-gray-700 hover:text-black transition-colors font-medium tracking-wide">Classes</a>
+                <a href="#schedule" className="text-gray-700 hover:text-black transition-colors font-medium tracking-wide">Schedule</a>
+                <a href="#coaches" className="text-gray-700 hover:text-black transition-colors font-medium tracking-wide">Coaches</a>
+                <a href="#membership" className="text-gray-700 hover:text-black transition-colors font-medium tracking-wide">Membership</a>
+                <a href="#contact" className="text-gray-700 hover:text-black transition-colors font-medium tracking-wide">Contact</a>
               </div>
             </div>
             
@@ -40,12 +40,12 @@ function App() {
         {isMenuOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="#home" className="block px-3 py-2 text-black hover:text-gray-600 hover:bg-gray-50 rounded transition-colors font-medium">Home</a>
-              <a href="#classes" className="block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-50 rounded transition-colors font-medium">Classes</a>
-              <a href="#schedule" className="block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-50 rounded transition-colors font-medium">Schedule</a>
-              <a href="#coaches" className="block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-50 rounded transition-colors font-medium">Coaches</a>
-              <a href="#membership" className="block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-50 rounded transition-colors font-medium">Membership</a>
-              <a href="#contact" className="block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-50 rounded transition-colors font-medium">Contact</a>
+              <a href="#home" className="block px-3 py-2 text-black hover:text-gray-600 hover:bg-gray-50 rounded transition-colors font-medium tracking-wide">Home</a>
+              <a href="#classes" className="block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-50 rounded transition-colors font-medium tracking-wide">Classes</a>
+              <a href="#schedule" className="block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-50 rounded transition-colors font-medium tracking-wide">Schedule</a>
+              <a href="#coaches" className="block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-50 rounded transition-colors font-medium tracking-wide">Coaches</a>
+              <a href="#membership" className="block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-50 rounded transition-colors font-medium tracking-wide">Membership</a>
+              <a href="#contact" className="block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-50 rounded transition-colors font-medium tracking-wide">Contact</a>
             </div>
           </div>
         )}
@@ -65,12 +65,12 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-800/70 to-gray-900/85 z-10"></div>
         
         <div className="relative z-20 text-center max-w-4xl mx-auto px-4">
-          <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight text-white drop-shadow-2xl">
+          <h1 className="text-6xl md:text-8xl font-anton font-black mb-6 tracking-wider text-white drop-shadow-2xl">
             <span className="text-white">SPORT</span>
             <br />
             <span className="text-white">ACADEMY</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-light italic">
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-light italic tracking-wide">
             Forging fighters since 2017
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -78,12 +78,12 @@ function App() {
               href="https://maat-app.link/7BGCKjdtuUb" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+              className="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2 tracking-wide"
             >
               JOIN NOW
               <ExternalLink size={20} />
             </a>
-            <a href="#classes" className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg">
+            <a href="#classes" className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg tracking-wide">
               VIEW CLASSES
             </a>
           </div>
@@ -94,10 +94,10 @@ function App() {
       <section id="classes" className="py-20 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 text-white tracking-wide">
               OUR CLASSES
             </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto tracking-wide">
               Professional training programs for all skill levels
             </p>
           </div>
@@ -139,8 +139,8 @@ function App() {
                 <div className="text-white group-hover:text-black mb-4 group-hover:scale-110 transition-transform duration-300">
                   {classItem.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black">{classItem.title}</h3>
-                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed">{classItem.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide">{classItem.title}</h3>
+                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">{classItem.description}</p>
               </div>
             ))}
           </div>
@@ -151,10 +151,10 @@ function App() {
       <section id="schedule" className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-black">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 text-black tracking-wide">
               WEEKLY SCHEDULE
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 tracking-wide">
               Summer 2025 Training Schedule
             </p>
           </div>
@@ -173,10 +173,10 @@ function App() {
       <section id="coaches" className="py-20 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 text-white tracking-wide">
               OUR COACHES
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-gray-300 tracking-wide">
               Learn from experienced professionals
             </p>
           </div>
@@ -185,11 +185,11 @@ function App() {
             <div className="text-center group">
               <div className="bg-gray-700 border-2 border-gray-600 rounded-lg p-8 hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300">
                 <div className="w-24 h-24 bg-gray-300 group-hover:bg-gray-700 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-2xl font-black text-gray-700 group-hover:text-white">MP</span>
+                  <span className="text-2xl font-black text-gray-700 group-hover:text-white tracking-wide">MP</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-black">Matteo Parolin</h3>
-                <p className="text-gray-300 group-hover:text-gray-600 font-semibold mb-4">Head Coach</p>
-                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed">
+                <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-black tracking-wide">Matteo Parolin</h3>
+                <p className="text-gray-300 group-hover:text-gray-600 font-semibold mb-4 tracking-wide">Head Coach</p>
+                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">
                   Leading our academy with years of professional experience in MMA and Brazilian Jiu-Jitsu.
                 </p>
               </div>
@@ -198,11 +198,11 @@ function App() {
             <div className="text-center group">
               <div className="bg-gray-700 border-2 border-gray-600 rounded-lg p-8 hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300">
                 <div className="w-24 h-24 bg-gray-300 group-hover:bg-gray-700 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-2xl font-black text-gray-700 group-hover:text-white">CZ</span>
+                  <span className="text-2xl font-black text-gray-700 group-hover:text-white tracking-wide">CZ</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-black">Christian Zecchetto</h3>
-                <p className="text-gray-300 group-hover:text-gray-600 font-semibold mb-4">Coach</p>
-                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed">
+                <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-black tracking-wide">Christian Zecchetto</h3>
+                <p className="text-gray-300 group-hover:text-gray-600 font-semibold mb-4 tracking-wide">Coach</p>
+                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">
                   Specialized in grappling and wrestling techniques, bringing technical expertise to every session.
                 </p>
               </div>
@@ -215,10 +215,10 @@ function App() {
       <section id="membership" className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-black">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 text-black tracking-wide">
               MEMBERSHIP PLANS
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 tracking-wide">
               Choose the plan that fits your training goals
             </p>
           </div>
@@ -227,18 +227,18 @@ function App() {
             {/* Main Season */}
             <div className="bg-white border-2 border-gray-300 rounded-lg p-8 hover:bg-gray-800 hover:text-white hover:border-gray-600 transition-all duration-300 group shadow-lg">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2 text-black group-hover:text-white">Main Season</h3>
-                <p className="text-gray-600 group-hover:text-gray-300">September - June</p>
+                <h3 className="text-2xl font-bold mb-2 text-black group-hover:text-white tracking-wide">Main Season</h3>
+                <p className="text-gray-600 group-hover:text-gray-300 tracking-wide">September - June</p>
               </div>
               
               <div className="space-y-4 mb-8">
                 <div className="flex justify-between items-center py-3 border-b border-gray-200 group-hover:border-gray-600">
-                  <span className="text-black group-hover:text-white font-medium">Adults</span>
-                  <span className="text-2xl font-bold text-black group-hover:text-white">€600</span>
+                  <span className="text-black group-hover:text-white font-medium tracking-wide">Adults</span>
+                  <span className="text-2xl font-bold text-black group-hover:text-white tracking-wide">€600</span>
                 </div>
                 <div className="flex justify-between items-center py-3">
-                  <span className="text-black group-hover:text-white font-medium">Students</span>
-                  <span className="text-2xl font-bold text-black group-hover:text-white">€450</span>
+                  <span className="text-black group-hover:text-white font-medium tracking-wide">Students</span>
+                  <span className="text-2xl font-bold text-black group-hover:text-white tracking-wide">€450</span>
                 </div>
               </div>
               
@@ -246,7 +246,7 @@ function App() {
                 href="https://maat-app.link/7BGCKjdtuUb" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full bg-gray-800 hover:bg-white text-white hover:text-gray-800 border-2 border-gray-800 py-3 rounded-lg font-bold transition-colors duration-300 flex items-center justify-center gap-2"
+                className="w-full bg-gray-800 hover:bg-white text-white hover:text-gray-800 border-2 border-gray-800 py-3 rounded-lg font-bold transition-colors duration-300 flex items-center justify-center gap-2 tracking-wide"
               >
                 SELECT PLAN
                 <ExternalLink size={18} />
@@ -256,18 +256,18 @@ function App() {
             {/* Summer Season */}
             <div className="bg-white border-2 border-gray-300 rounded-lg p-8 hover:bg-gray-800 hover:text-white hover:border-gray-600 transition-all duration-300 group shadow-lg">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2 text-black group-hover:text-white">Summer Season</h3>
-                <p className="text-gray-600 group-hover:text-gray-300">June - September</p>
+                <h3 className="text-2xl font-bold mb-2 text-black group-hover:text-white tracking-wide">Summer Season</h3>
+                <p className="text-gray-600 group-hover:text-gray-300 tracking-wide">June - September</p>
               </div>
               
               <div className="space-y-4 mb-8">
                 <div className="flex justify-between items-center py-3 border-b border-gray-200 group-hover:border-gray-600">
-                  <span className="text-black group-hover:text-white font-medium">Adults</span>
-                  <span className="text-2xl font-bold text-black group-hover:text-white">€210</span>
+                  <span className="text-black group-hover:text-white font-medium tracking-wide">Adults</span>
+                  <span className="text-2xl font-bold text-black group-hover:text-white tracking-wide">€210</span>
                 </div>
                 <div className="flex justify-between items-center py-3">
-                  <span className="text-black group-hover:text-white font-medium">Students</span>
-                  <span className="text-2xl font-bold text-black group-hover:text-white">€150</span>
+                  <span className="text-black group-hover:text-white font-medium tracking-wide">Students</span>
+                  <span className="text-2xl font-bold text-black group-hover:text-white tracking-wide">€150</span>
                 </div>
               </div>
               
@@ -275,7 +275,7 @@ function App() {
                 href="https://maat-app.link/7BGCKjdtuUb" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full bg-gray-800 hover:bg-white text-white hover:text-gray-800 border-2 border-gray-800 py-3 rounded-lg font-bold transition-colors duration-300 flex items-center justify-center gap-2"
+                className="w-full bg-gray-800 hover:bg-white text-white hover:text-gray-800 border-2 border-gray-800 py-3 rounded-lg font-bold transition-colors duration-300 flex items-center justify-center gap-2 tracking-wide"
               >
                 SELECT PLAN
                 <ExternalLink size={18} />
@@ -284,12 +284,12 @@ function App() {
           </div>
           
           <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">Ready to start your martial arts journey?</p>
+            <p className="text-gray-600 mb-6 tracking-wide">Ready to start your martial arts journey?</p>
             <a 
               href="https://maat-app.link/7BGCKjdtuUb" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 shadow-lg"
+              className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 shadow-lg tracking-wide"
             >
               JOIN SPORT ACADEMY TODAY
               <ExternalLink size={20} />
@@ -302,10 +302,10 @@ function App() {
       <section id="contact" className="py-20 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 text-white tracking-wide">
               GET IN TOUCH
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-gray-300 tracking-wide">
               Visit us at our two convenient locations
             </p>
           </div>
@@ -315,16 +315,16 @@ function App() {
             <div className="bg-gray-700 border-2 border-gray-600 rounded-lg p-8 hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group">
               <div className="flex items-center mb-4">
                 <MapPin className="w-6 h-6 text-white group-hover:text-black mr-3" />
-                <h3 className="text-xl font-bold text-white group-hover:text-black">Campo Tures</h3>
+                <h3 className="text-xl font-bold text-white group-hover:text-black tracking-wide">Campo Tures</h3>
               </div>
-              <p className="text-gray-300 group-hover:text-gray-600 mb-6">
+              <p className="text-gray-300 group-hover:text-gray-600 mb-6 tracking-wide">
                 Via Hugo von Taufers 8<br />
                 Campo Tures
               </p>
               <div className="space-y-3">
                 <div className="flex items-center">
                   <Clock className="w-5 h-5 text-white group-hover:text-black mr-3" />
-                  <span className="text-gray-300 group-hover:text-gray-600">See schedule for class times</span>
+                  <span className="text-gray-300 group-hover:text-gray-600 tracking-wide">See schedule for class times</span>
                 </div>
               </div>
             </div>
@@ -333,28 +333,28 @@ function App() {
             <div className="bg-gray-700 border-2 border-gray-600 rounded-lg p-8 hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group">
               <div className="flex items-center mb-4">
                 <MapPin className="w-6 h-6 text-white group-hover:text-black mr-3" />
-                <h3 className="text-xl font-bold text-white group-hover:text-black">Brunico</h3>
+                <h3 className="text-xl font-bold text-white group-hover:text-black tracking-wide">Brunico</h3>
               </div>
-              <p className="text-gray-300 group-hover:text-gray-600 mb-6">
+              <p className="text-gray-300 group-hover:text-gray-600 mb-6 tracking-wide">
                 Via Teresa Riedl 3<br />
                 39031 Brunico BZ
               </p>
               <div className="space-y-3">
                 <div className="flex items-center">
                   <Clock className="w-5 h-5 text-white group-hover:text-black mr-3" />
-                  <span className="text-gray-300 group-hover:text-gray-600">See schedule for class times</span>
+                  <span className="text-gray-300 group-hover:text-gray-600 tracking-wide">See schedule for class times</span>
                 </div>
               </div>
             </div>
           </div>
           
           <div className="text-center mt-12">
-            <p className="text-gray-300 mb-6">Ready to start your martial arts journey?</p>
+            <p className="text-gray-300 mb-6 tracking-wide">Ready to start your martial arts journey?</p>
             <a 
               href="https://maat-app.link/7BGCKjdtuUb" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 shadow-lg"
+              className="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 shadow-lg tracking-wide"
             >
               JOIN SPORT ACADEMY TODAY
               <ExternalLink size={20} />
@@ -367,21 +367,21 @@ function App() {
       <footer className="bg-gray-200 border-t border-gray-300 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <img src="/sport academy.jpg" alt="Sport Academy" className="h-12 w-auto mx-auto mb-6" />
-            <p className="text-gray-700 mb-2 font-medium">
+            <img src="/sport-academy-logo.png" alt="Sport Academy" className="h-12 w-auto mx-auto mb-6" />
+            <p className="text-gray-700 mb-2 font-medium tracking-wide">
               Elite MMA, BJJ & Grappling Training in South Tyrol
             </p>
-            <p className="text-gray-600 mb-6 italic">
+            <p className="text-gray-600 mb-6 italic tracking-wide">
               Forging fighters since 2017
             </p>
             <div className="flex justify-center space-x-8 mb-6">
-              <a href="#home" className="text-gray-600 hover:text-black transition-colors">Home</a>
-              <a href="#classes" className="text-gray-600 hover:text-black transition-colors">Classes</a>
-              <a href="#schedule" className="text-gray-600 hover:text-black transition-colors">Schedule</a>
-              <a href="#coaches" className="text-gray-600 hover:text-black transition-colors">Coaches</a>
-              <a href="#membership" className="text-gray-600 hover:text-black transition-colors">Membership</a>
+              <a href="#home" className="text-gray-600 hover:text-black transition-colors tracking-wide">Home</a>
+              <a href="#classes" className="text-gray-600 hover:text-black transition-colors tracking-wide">Classes</a>
+              <a href="#schedule" className="text-gray-600 hover:text-black transition-colors tracking-wide">Schedule</a>
+              <a href="#coaches" className="text-gray-600 hover:text-black transition-colors tracking-wide">Coaches</a>
+              <a href="#membership" className="text-gray-600 hover:text-black transition-colors tracking-wide">Membership</a>
             </div>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 text-sm tracking-wide">
               © 2025 Sport Academy. All rights reserved.
             </p>
           </div>
