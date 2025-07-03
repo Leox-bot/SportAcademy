@@ -137,9 +137,10 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.address')}</h4>
                   <p className="text-gray-300 tracking-wide whitespace-pre-line">
-                    Palestra Comunale
-                    Via Scolastica, 39032
-                    Campo Tures BZ, Italy
+                    Palestra Comunale{'\n'}
+                    Via Hugo von Taufers 8{'\n'}
+                    39032 Campo Tures BZ{'\n'}
+                    Italy
                   </p>
                 </div>
                 
@@ -189,9 +190,10 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.address')}</h4>
                   <p className="text-gray-300 tracking-wide whitespace-pre-line">
-                    Palestra Comunale
-                    Via Bastioni, 39031
-                    Brunico BZ, Italy
+                    Palestra Comunale{'\n'}
+                    Via Maria Teresa Riedl, 3{'\n'}
+                    39031 Brunico BZ{'\n'}
+                    Italy
                   </p>
                 </div>
                 
@@ -259,7 +261,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.parking')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Free parking available directly in front of the municipal gymnasium. Additional street parking on Via Scolastica.
+                    Free parking available directly in front of the municipal gymnasium. Additional street parking on Via Hugo von Taufers.
                   </p>
                 </div>
                 <div>
@@ -286,7 +288,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.parking')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Free parking available at the municipal gymnasium. Additional parking on Via Bastioni and nearby streets.
+                    Free parking available at the municipal gymnasium. Additional parking on Via Maria Teresa Riedl and nearby streets.
                   </p>
                 </div>
                 <div>
