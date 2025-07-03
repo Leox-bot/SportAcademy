@@ -194,10 +194,10 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              {t('contact.parkingAndAccessibility.title')}
+              Parking and Accessibility
             </h2>
             <p className="text-xl text-gray-300 tracking-wide">
-              {t('contact.parkingAndAccessibility.subtitle')}
+              Accessibility of the gym
             </p>
           </div>
           
