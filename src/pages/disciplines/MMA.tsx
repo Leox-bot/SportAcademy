@@ -7,12 +7,6 @@ import SmoothScrollLink from '../../components/SmoothScrollLink';
 export default function MMA() {
   const { t } = useLanguage();
 
-  // Helper function to safely get array translations
-  const getArrayTranslation = (key: string): any[] => {
-    const value = t(key);
-    return Array.isArray(value) ? value : [];
-  };
-
   return (
     <div>
       {/* Navigation Breadcrumb */}
@@ -59,7 +53,7 @@ export default function MMA() {
             <div>
               <h2 className="text-4xl font-black mb-6 text-white tracking-wide uppercase">{t('disciplines.mma.overview.title')}</h2>
               <div className="space-y-4 text-gray-300 text-lg leading-relaxed tracking-wide">
-                {getArrayTranslation('disciplines.mma.overview.paragraphs').map((paragraph, index) => (
+                {t('disciplines.mma.overview.paragraphs').map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -95,7 +89,7 @@ export default function MMA() {
                 <h3 className="text-xl font-bold text-yellow-400 tracking-wide uppercase">{t('disciplines.mma.techniques.striking.title')}</h3>
               </div>
               <ul className="space-y-2 text-gray-300">
-                {getArrayTranslation('disciplines.mma.techniques.striking.items').map((item, index) => (
+                {t('disciplines.mma.techniques.striking.items').map((item, index) => (
                   <li key={index} className="flex items-center tracking-wide">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                     {item}
@@ -110,7 +104,7 @@ export default function MMA() {
                 <h3 className="text-xl font-bold text-yellow-400 tracking-wide uppercase">{t('disciplines.mma.techniques.wrestling.title')}</h3>
               </div>
               <ul className="space-y-2 text-gray-300">
-                {getArrayTranslation('disciplines.mma.techniques.wrestling.items').map((item, index) => (
+                {t('disciplines.mma.techniques.wrestling.items').map((item, index) => (
                   <li key={index} className="flex items-center tracking-wide">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                     {item}
@@ -125,7 +119,7 @@ export default function MMA() {
                 <h3 className="text-xl font-bold text-yellow-400 tracking-wide uppercase">{t('disciplines.mma.techniques.groundGame.title')}</h3>
               </div>
               <ul className="space-y-2 text-gray-300">
-                {getArrayTranslation('disciplines.mma.techniques.groundGame.items').map((item, index) => (
+                {t('disciplines.mma.techniques.groundGame.items').map((item, index) => (
                   <li key={index} className="flex items-center tracking-wide">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                     {item}
@@ -144,7 +138,7 @@ export default function MMA() {
             <div>
               <h2 className="text-4xl font-black mb-6 text-white tracking-wide uppercase">{t('disciplines.mma.history.title')}</h2>
               <div className="space-y-4 text-gray-300 text-lg leading-relaxed tracking-wide">
-                {getArrayTranslation('disciplines.mma.history.paragraphs').map((paragraph, index) => (
+                {t('disciplines.mma.history.paragraphs').map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -153,11 +147,11 @@ export default function MMA() {
               <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6">
                 <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('disciplines.mma.history.milestones.title')}</h3>
                 <ul className="space-y-3 text-gray-300">
-                  {getArrayTranslation('disciplines.mma.history.milestones.events').map((event, index) => (
+                  {t('disciplines.mma.history.milestones.events').map((event, index) => (
                     <li key={index} className="flex items-start tracking-wide">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
                       <div>
-                        <strong className="text-white">{typeof event === 'object' ? event.year : event}:</strong> {typeof event === 'object' ? event.description : ''}
+                        <strong className="text-white">{event.year}:</strong> {event.description}
                       </div>
                     </li>
                   ))}
@@ -181,13 +175,13 @@ export default function MMA() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {getArrayTranslation('disciplines.mma.benefits.items').map((benefit, index) => (
+            {t('disciplines.mma.benefits.items').map((benefit, index) => (
               <div key={index} className="text-center bg-black/70 p-6 rounded-lg border border-yellow-500/30 hover:border-yellow-400/50 transition-all duration-300">
                 <div className="bg-gradient-gold text-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                  {typeof benefit === 'object' ? benefit.icon : '🥊'}
+                  {benefit.icon}
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-yellow-400 tracking-wide uppercase">{typeof benefit === 'object' ? benefit.title : benefit}</h3>
-                <p className="text-gray-300 text-sm tracking-wide">{typeof benefit === 'object' ? benefit.description : ''}</p>
+                <h3 className="text-lg font-bold mb-2 text-yellow-400 tracking-wide uppercase">{benefit.title}</h3>
+                <p className="text-gray-300 text-sm tracking-wide">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -243,11 +237,11 @@ export default function MMA() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {getArrayTranslation('disciplines.mma.legends.fighters').map((fighter, index) => (
+            {t('disciplines.mma.legends.fighters').map((fighter, index) => (
               <div key={index} className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
-                <h3 className="text-xl font-bold mb-2 text-yellow-400 tracking-wide uppercase">{typeof fighter === 'object' ? fighter.name : fighter}</h3>
-                <p className="text-gray-300 text-sm mb-3 tracking-wide">{typeof fighter === 'object' ? fighter.title : ''}</p>
-                <p className="text-gray-400 text-sm tracking-wide">{typeof fighter === 'object' ? fighter.description : ''}</p>
+                <h3 className="text-xl font-bold mb-2 text-yellow-400 tracking-wide uppercase">{fighter.name}</h3>
+                <p className="text-gray-300 text-sm mb-3 tracking-wide">{fighter.title}</p>
+                <p className="text-gray-400 text-sm tracking-wide">{fighter.description}</p>
               </div>
             ))}
           </div>

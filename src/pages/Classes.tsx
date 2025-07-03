@@ -7,12 +7,6 @@ export default function Classes() {
   const location = useLocation();
   const { t } = useLanguage();
 
-  // Helper function to safely get array translations
-  const getArrayTranslation = (key: string): string[] => {
-    const value = t(key);
-    return Array.isArray(value) ? value : [];
-  };
-
   useEffect(() => {
     // Handle anchor links
     if (location.hash) {
@@ -32,7 +26,7 @@ export default function Classes() {
       description: t('classes.mma.description'),
       icon: <Flame className="w-12 h-12 text-yellow-400" />,
       image: "/ea4196af-93c9-4c00-942d-6f3ca5e06e8f.jpg",
-      features: getArrayTranslation('classes.mma.features'),
+      features: t('classes.mma.features'),
       level: t('common.allLevels')
     },
     {
@@ -41,7 +35,7 @@ export default function Classes() {
       description: t('classes.bjj.description'),
       icon: <Shield className="w-12 h-12 text-yellow-400" />,
       image: "/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg",
-      features: getArrayTranslation('classes.bjj.features'),
+      features: t('classes.bjj.features'),
       level: t('common.allLevels')
     },
     {
@@ -50,7 +44,7 @@ export default function Classes() {
       description: t('classes.grappling.description'),
       icon: <Target className="w-12 h-12 text-yellow-400" />,
       image: "/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg",
-      features: getArrayTranslation('classes.grappling.features'),
+      features: t('classes.grappling.features'),
       level: t('common.allLevels')
     },
     {
@@ -59,7 +53,7 @@ export default function Classes() {
       description: t('classes.kidsBjj.description'),
       icon: <Heart className="w-12 h-12 text-yellow-400" />,
       image: "/c864b6fe-d0e2-4443-af35-a04b21d97739.jpg",
-      features: getArrayTranslation('classes.kidsBjj.features'),
+      features: t('classes.kidsBjj.features'),
       level: `${t('common.ages')} 6-14`
     },
     {
@@ -68,7 +62,7 @@ export default function Classes() {
       description: t('classes.kidsGrappling.description'),
       icon: <Star className="w-12 h-12 text-yellow-400" />,
       image: "/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg",
-      features: getArrayTranslation('classes.kidsGrappling.features'),
+      features: t('classes.kidsGrappling.features'),
       level: `${t('common.ages')} 8-16`
     },
     {
@@ -77,7 +71,7 @@ export default function Classes() {
       description: t('classes.wrestling.description'),
       icon: <Zap className="w-12 h-12 text-yellow-400" />,
       image: "/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg",
-      features: getArrayTranslation('classes.wrestling.features'),
+      features: t('classes.wrestling.features'),
       level: t('common.allLevels')
     }
   ];

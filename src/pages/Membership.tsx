@@ -6,12 +6,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 export default function Membership() {
   const { t } = useLanguage();
 
-  // Helper function to safely get array translations
-  const getArrayTranslation = (key: string): string[] => {
-    const value = t(key);
-    return Array.isArray(value) ? value : [];
-  };
-
   return (
     <div>
       {/* Hero Section */}
@@ -70,7 +64,7 @@ export default function Membership() {
               <div className="mb-8">
                 <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
                 <ul className="space-y-3">
-                  {getArrayTranslation('membership.mainIncludes').map((item, index) => (
+                  {t('membership.mainIncludes').map((item, index) => (
                     <li key={index} className="flex items-center text-gray-300 tracking-wide">
                       <Check className="w-5 h-5 text-yellow-400 mr-3" />
                       {item}
@@ -118,7 +112,7 @@ export default function Membership() {
               <div className="mb-8">
                 <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
                 <ul className="space-y-3">
-                  {getArrayTranslation('membership.summerIncludes').map((item, index) => (
+                  {t('membership.summerIncludes').map((item, index) => (
                     <li key={index} className="flex items-center text-gray-300 tracking-wide">
                       <Check className="w-5 h-5 text-yellow-400 mr-3" />
                       {item}
@@ -177,7 +171,7 @@ export default function Membership() {
               <div className="mb-8">
                 <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
                 <ul className="space-y-3">
-                  {getArrayTranslation('membership.bjjIncludes').map((item, index) => (
+                  {t('membership.bjjIncludes').map((item, index) => (
                     <li key={index} className="flex items-center text-gray-300 tracking-wide">
                       <Check className="w-5 h-5 text-yellow-400 mr-3" />
                       {item}
