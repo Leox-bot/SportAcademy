@@ -107,11 +107,11 @@ function App() {
             <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
               <div className="h-64 overflow-hidden relative">
                 <img 
-                  src="https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  src="https://bolt.new/api/upload/files%2F4761552-1751544592556-instdown%20(1).jpeg" 
                   alt="MMA Classes"
                   className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://images.pexels.com/photos/4761552/pexels-photo-4761552.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                    e.currentTarget.src = 'https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
@@ -131,11 +131,11 @@ function App() {
             <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
               <div className="h-64 overflow-hidden relative">
                 <img 
-                  src="https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  src="/instdown.jpeg" 
                   alt="Brazilian Jiu-Jitsu"
                   className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                    e.currentTarget.src = 'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
@@ -155,11 +155,11 @@ function App() {
             <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
               <div className="h-64 overflow-hidden relative">
                 <img 
-                  src="https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  src="/instdown.jpeg" 
                   alt="Grappling"
                   className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                    e.currentTarget.src = 'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
@@ -179,11 +179,11 @@ function App() {
             <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
               <div className="h-64 overflow-hidden relative">
                 <img 
-                  src="https://images.pexels.com/photos/8611063/pexels-photo-8611063.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  src="/instdown (2).jpeg" 
                   alt="BJJ for Kids"
                   className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                    e.currentTarget.src = 'https://images.pexels.com/photos/8611063/pexels-photo-8611063.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
@@ -203,11 +203,11 @@ function App() {
             <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
               <div className="h-64 overflow-hidden relative">
                 <img 
-                  src="https://images.pexels.com/photos/8611063/pexels-photo-8611063.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  src="/instdown (2).jpeg" 
                   alt="Grappling for Kids"
                   className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                    e.currentTarget.src = 'https://images.pexels.com/photos/8611063/pexels-photo-8611063.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
@@ -227,11 +227,11 @@ function App() {
             <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
               <div className="h-64 overflow-hidden relative">
                 <img 
-                  src="https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  src="/instdown.jpeg" 
                   alt="Wrestling"
                   className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                    e.currentTarget.src = 'https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
