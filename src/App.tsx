@@ -11,7 +11,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src="/sport academy.jpg" alt="Sport Academy" className="h-10 w-auto" />
+              <img src="https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSW4xVUFFPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6771d95f0fa33e4415778c20c97f1b26ca423ca4//sport academy.jpg" alt="Sport Academy" className="h-10 w-auto" />
             </div>
             
             <div className="hidden md:block">
@@ -108,7 +108,7 @@ function App() {
                 title: "MMA Classes",
                 description: "Complete mixed martial arts training combining striking, grappling, and ground fighting techniques.",
                 icon: <Trophy className="w-8 h-8" />,
-                image: "/mma-training.jpeg"
+                image: "https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg"
               },
               {
                 title: "Brazilian Jiu-Jitsu",
@@ -120,13 +120,13 @@ function App() {
                 title: "Grappling",
                 description: "Develop your wrestling and submission skills in our intensive grappling sessions.",
                 icon: <Star className="w-8 h-8" />,
-                image: "/grappling-training.jpeg"
+                image: "https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg"
               },
               {
                 title: "BJJ for Kids",
                 description: "Safe and fun Brazilian Jiu-Jitsu classes designed specifically for young athletes.",
                 icon: <Users className="w-8 h-8" />,
-                image: "/bjj-kids-training.jpeg"
+                image: "https://images.pexels.com/photos/8611063/pexels-photo-8611063.jpeg"
               },
               {
                 title: "Grappling for Kids",
@@ -384,7 +384,7 @@ function App() {
       <footer className="bg-gray-200 border-t border-gray-300 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <img src="/sport academy.jpg" alt="Sport Academy" className="h-12 w-auto mx-auto mb-6" />
+            <img src="https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSW4xVUFFPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6771d95f0fa33e4415778c20c97f1b26ca423ca4//sport academy.jpg" alt="Sport Academy" className="h-12 w-auto mx-auto mb-6" />
             <p className="text-gray-700 mb-2 font-medium tracking-wide">
               Elite MMA, BJJ & Grappling Training in South Tyrol
             </p>
