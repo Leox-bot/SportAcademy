@@ -101,22 +101,22 @@ export default function Membership() {
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold mb-2 text-white tracking-wide uppercase">Summer Season</h3>
                 <p className="text-yellow-400 text-lg tracking-wide uppercase">June - September</p>
-                <p className="text-sm text-gray-400 mt-2 tracking-wide">4 months of summer training</p>
+                <p className="text-sm text-gray-400 mt-2 tracking-wide">3 months of summer training</p>
               </div>
               
               <div className="space-y-6 mb-8">
                 <div className="flex justify-between items-center py-4 border-b border-yellow-500/30">
                   <span className="text-white font-medium text-lg tracking-wide uppercase">Adults</span>
                   <div className="text-right">
-                    <span className="text-3xl font-bold text-yellow-400 tracking-wide">€210</span>
-                    <p className="text-sm text-gray-400 tracking-wide">€52.50/month</p>
+                    <span className="text-3xl font-bold text-yellow-400 tracking-wide">€240</span>
+                    <p className="text-sm text-gray-400 tracking-wide">€80/month</p>
                   </div>
                 </div>
                 <div className="flex justify-between items-center py-4">
                   <span className="text-white font-medium text-lg tracking-wide uppercase">Students</span>
                   <div className="text-right">
-                    <span className="text-3xl font-bold text-yellow-400 tracking-wide">€150</span>
-                    <p className="text-sm text-gray-400 tracking-wide">€37.50/month</p>
+                    <span className="text-3xl font-bold text-yellow-400 tracking-wide">€180</span>
+                    <p className="text-sm text-gray-400 tracking-wide">€60/month</p>
                   </div>
                 </div>
               </div>
