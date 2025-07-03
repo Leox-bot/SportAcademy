@@ -11,16 +11,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img 
-                src="/sport-academy-logo.png" 
-                alt="Sport Academy" 
-                className="h-10 w-auto bg-white p-1 rounded"
-                onError={(e) => {
-                  console.log('Logo failed to load');
-                  e.currentTarget.style.display = 'none';
-                }}
-                onLoad={() => console.log('Logo loaded successfully')}
-              />
+              {/* Text-based logo as fallback */}
+              <div className="text-2xl font-black text-black tracking-wider">
+                SPORT ACADEMY
+              </div>
             </div>
             
             <div className="hidden md:block">
@@ -66,7 +60,7 @@ function App() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/sport academy.jpg')",
+            backgroundImage: "url('https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSW4xVUFFPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6771d95f0fa33e4415778c20c97f1b26ca423ca4//sport academy.jpg')",
           }}
         ></div>
         
@@ -376,15 +370,9 @@ function App() {
       <footer className="bg-gray-200 border-t border-gray-300 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <img 
-              src="/sport-academy-logo.png" 
-              alt="Sport Academy" 
-              className="h-12 w-auto mx-auto mb-6 bg-white p-1 rounded"
-              onError={(e) => {
-                console.log('Footer logo failed to load');
-                e.currentTarget.style.display = 'none';
-              }}
-            />
+            <div className="text-2xl font-black text-black tracking-wider mb-6">
+              SPORT ACADEMY
+            </div>
             <p className="text-gray-700 mb-2 font-medium tracking-wide">
               Elite MMA, BJJ & Grappling Training in South Tyrol
             </p>
