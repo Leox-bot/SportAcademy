@@ -130,7 +130,7 @@ export default function Contact() {
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <MapPin className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">{t('contact.campoTures')}</h3>
+                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">Campo Tures</h3>
               </div>
               
               <div className="space-y-6">
@@ -180,7 +180,7 @@ export default function Contact() {
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <MapPin className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">{t('contact.brunico')}</h3>
+                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">Brunico</h3>
               </div>
               
               <div className="space-y-6">
@@ -249,7 +249,7 @@ export default function Contact() {
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <Car className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">{t('contact.campoTures')}</h3>
+                <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">Campo Tures</h3>
               </div>
               <div className="space-y-4">
                 <div>
@@ -276,7 +276,7 @@ export default function Contact() {
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <Car className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">{t('contact.brunico')}</h3>
+                <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">Brunico</h3>
               </div>
               <div className="space-y-4">
                 <div>
