@@ -5,6 +5,27 @@ import { useLanguage } from '../contexts/LanguageContext';
 export default function Contact() {
   const { t } = useLanguage();
 
+  // Safely get array values with fallback
+  const getBringItems = () => {
+    const items = t('contact.bring');
+    return Array.isArray(items) ? items : [];
+  };
+
+  const getProvideItems = () => {
+    const items = t('contact.provide');
+    return Array.isArray(items) ? items : [];
+  };
+
+  const getCampoTuresClasses = () => {
+    const classes = t('contact.campoTures.classes');
+    return Array.isArray(classes) ? classes : [];
+  };
+
+  const getBrunicoClasses = () => {
+    const classes = t('contact.brunico.classes');
+    return Array.isArray(classes) ? classes : [];
+  };
+
   return (
     <div>
       {/* Hero Section */}
@@ -144,7 +165,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.availableClasses')}</h4>
                   <ul className="space-y-1">
-                    {t('contact.campoTures.classes').map((classItem, index) => (
+                    {getCampoTuresClasses().map((classItem, index) => (
                       <li key={index} className="flex items-center text-gray-300 tracking-wide">
                         <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                         {classItem}
@@ -198,7 +219,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.availableClasses')}</h4>
                   <ul className="space-y-1">
-                    {t('contact.brunico.classes').map((classItem, index) => (
+                    {getBrunicoClasses().map((classItem, index) => (
                       <li key={index} className="flex items-center text-gray-300 tracking-wide">
                         <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                         {classItem}
@@ -301,7 +322,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-white mb-3 tracking-wide uppercase">{t('contact.whatToBring')}</h4>
                   <ul className="space-y-2 text-gray-300">
-                    {t('contact.bring').map((item, index) => (
+                    {getBringItems().map((item, index) => (
                       <li key={index} className="flex items-start tracking-wide">
                         <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
                         {item}
@@ -312,7 +333,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-white mb-3 tracking-wide uppercase">{t('contact.whatWeProvide')}</h4>
                   <ul className="space-y-2 text-gray-300">
-                    {t('contact.provide').map((item, index) => (
+                    {getProvideItems().map((item, index) => (
                       <li key={index} className="flex items-start tracking-wide">
                         <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
                         {item}
