@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Clock, ExternalLink } from 'lucide-react';
+import { MapPin, Clock, ExternalLink, Instagram, Phone } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -160,7 +160,7 @@ export default function Contact() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">Get Started</h3>
               <div className="space-y-4">
@@ -181,15 +181,89 @@ export default function Contact() {
             </div>
             
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">Visit Us</h3>
+              <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">Call Us</h3>
               <div className="space-y-4">
                 <p className="text-gray-300 tracking-wide">
-                  Feel free to visit either of our locations during training hours. Our coaches and staff 
-                  are always happy to answer questions and show you around our facilities.
+                  Have questions about our programs or want to schedule a trial class? 
+                  Give us a call and speak directly with our team.
+                </p>
+                <a 
+                  href="tel:+393485741798" 
+                  className="inline-flex items-center gap-2 bg-gradient-gold hover:bg-yellow-500 text-black px-6 py-3 rounded-lg font-bold transition-all duration-300 tracking-wide uppercase"
+                >
+                  <Phone size={18} />
+                  +39 348 574 1798
+                </a>
+              </div>
+            </div>
+            
+            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
+              <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">Follow Us</h3>
+              <div className="space-y-4">
+                <p className="text-gray-300 tracking-wide">
+                  Stay updated with our latest training sessions, events, and community highlights. 
+                  Follow us on Instagram for daily content.
+                </p>
+                <a 
+                  href="https://www.instagram.com/__sport_academy__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-gradient-gold hover:bg-yellow-500 text-black px-6 py-3 rounded-lg font-bold transition-all duration-300 tracking-wide uppercase"
+                >
+                  <Instagram size={18} />
+                  @__sport_academy__
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visit Us Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
+              VISIT OUR FACILITIES
+            </h2>
+            <p className="text-xl text-gray-300 tracking-wide">
+              Experience our world-class training environment firsthand
+            </p>
+          </div>
+          
+          <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">Drop-In Visits Welcome</h3>
+              <p className="text-gray-300 tracking-wide mb-6">
+                Feel free to visit either of our locations during training hours. Our coaches and staff 
+                are always happy to answer questions, show you around our facilities, and help you get started.
+              </p>
+              <div className="bg-black/50 border border-yellow-500/30 rounded-lg p-6 mb-6">
+                <p className="text-yellow-400 font-bold text-lg tracking-wide uppercase mb-2">
+                  🎯 Free Trial Class Available!
                 </p>
                 <p className="text-gray-300 tracking-wide">
-                  <strong className="text-yellow-400">Free trial class available for new students!</strong>
+                  New students can try their first class completely free. No commitment required - 
+                  just come ready to train and discover what Sport Academy is all about.
                 </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="tel:+393485741798" 
+                  className="inline-flex items-center gap-2 bg-gradient-gold hover:bg-yellow-500 text-black px-6 py-3 rounded-lg font-bold transition-all duration-300 tracking-wide uppercase"
+                >
+                  <Phone size={18} />
+                  CALL TO SCHEDULE
+                </a>
+                <a 
+                  href="https://www.instagram.com/__sport_academy__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-6 py-3 rounded-lg font-bold transition-all duration-300 tracking-wide uppercase"
+                >
+                  <Instagram size={18} />
+                  MESSAGE US
+                </a>
               </div>
             </div>
           </div>
@@ -197,7 +271,7 @@ export default function Contact() {
       </section>
 
       {/* Directions */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
@@ -206,7 +280,7 @@ export default function Contact() {
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
+            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">Campo Tures</h3>
               <div className="space-y-4">
                 <div>
@@ -226,7 +300,7 @@ export default function Contact() {
               </div>
             </div>
             
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
+            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">Brunico</h3>
               <div className="space-y-4">
                 <div>
@@ -250,7 +324,7 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-dark">
+      <section className="py-20 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
             READY TO BEGIN?
@@ -267,6 +341,13 @@ export default function Contact() {
             >
               JOIN SPORT ACADEMY
               <ExternalLink size={20} />
+            </a>
+            <a 
+              href="tel:+393485741798" 
+              className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg flex items-center justify-center gap-2 tracking-wide uppercase"
+            >
+              <Phone size={20} />
+              CALL NOW
             </a>
           </div>
         </div>
