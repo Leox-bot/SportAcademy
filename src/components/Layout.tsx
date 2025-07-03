@@ -20,7 +20,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <Link to="/">
-                <img src="/sport academy.jpg" alt="Sport Academy" className="h-10 w-auto" />
+                <img src="/sport-academy-logo.png" alt="Sport Academy" className="h-10 w-auto" />
               </Link>
             </div>
             
@@ -161,7 +161,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Link to="/">
-              <img src="/sport academy.jpg" alt="Sport Academy" className="h-12 w-auto mx-auto mb-6" />
+              <img src="/sport-academy-logo.png" alt="Sport Academy" className="h-12 w-auto mx-auto mb-6" />
             </Link>
             <p className="text-gray-700 mb-2 font-medium tracking-wide">
               Elite MMA, BJJ & Grappling Training in South Tyrol
