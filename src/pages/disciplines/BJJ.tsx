@@ -144,13 +144,40 @@ export default function BJJ() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {t('disciplines.bjj.beltSystem.belts').map((belt, index) => (
-              <div key={index} className={`bg-gradient-dark border border-${belt.color}-400 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300`}>
-                <div className={`w-16 h-4 bg-${belt.color === 'gray' ? 'white border border-gray-300' : belt.color + '-500'} mx-auto mb-4 rounded`}></div>
-                <h3 className={`text-lg font-bold mb-2 text-${belt.color === 'gray' ? 'white' : belt.color + '-400'} tracking-wide uppercase`}>{belt.name}</h3>
-                <p className="text-gray-300 text-sm tracking-wide">{belt.description}</p>
-              </div>
-            ))}
+            {/* White Belt */}
+            <div className="bg-gradient-dark border border-gray-400 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
+              <div className="w-16 h-4 bg-white border border-gray-300 mx-auto mb-4 rounded"></div>
+              <h3 className="text-lg font-bold mb-2 text-white tracking-wide uppercase">White Belt</h3>
+              <p className="text-gray-300 text-sm tracking-wide">Beginning level</p>
+            </div>
+
+            {/* Blue Belt */}
+            <div className="bg-gradient-dark border border-blue-400 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
+              <div className="w-16 h-4 bg-blue-500 mx-auto mb-4 rounded"></div>
+              <h3 className="text-lg font-bold mb-2 text-blue-400 tracking-wide uppercase">Blue Belt</h3>
+              <p className="text-gray-300 text-sm tracking-wide">Intermediate level</p>
+            </div>
+
+            {/* Purple Belt */}
+            <div className="bg-gradient-dark border border-purple-400 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
+              <div className="w-16 h-4 bg-purple-500 mx-auto mb-4 rounded"></div>
+              <h3 className="text-lg font-bold mb-2 text-purple-400 tracking-wide uppercase">Purple Belt</h3>
+              <p className="text-gray-300 text-sm tracking-wide">Advanced level</p>
+            </div>
+
+            {/* Brown Belt */}
+            <div className="bg-gradient-dark border border-amber-600 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
+              <div className="w-16 h-4 bg-amber-700 mx-auto mb-4 rounded"></div>
+              <h3 className="text-lg font-bold mb-2 text-amber-600 tracking-wide uppercase">Brown Belt</h3>
+              <p className="text-gray-300 text-sm tracking-wide">Expert level</p>
+            </div>
+
+            {/* Black Belt */}
+            <div className="bg-gradient-dark border border-gray-400 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
+              <div className="w-16 h-4 bg-black border border-gray-300 mx-auto mb-4 rounded"></div>
+              <h3 className="text-lg font-bold mb-2 text-white tracking-wide uppercase">Black Belt</h3>
+              <p className="text-gray-300 text-sm tracking-wide">Master level</p>
+            </div>
           </div>
           
           <div className="mt-12 bg-gradient-dark border border-yellow-500/30 rounded-lg p-8">
@@ -265,7 +292,7 @@ export default function BJJ() {
               className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg flex items-center justify-center gap-2 tracking-wide uppercase"
             >
               <ArrowLeft size={20} />
-              {t('disciplines.bjj.cta.backButton')}
+              Back to Train Like a Fighter
             </SmoothScrollLink>
           </div>
         </div>

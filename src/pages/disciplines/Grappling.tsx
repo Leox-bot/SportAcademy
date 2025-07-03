@@ -295,7 +295,7 @@ export default function Grappling() {
               className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg flex items-center justify-center gap-2 tracking-wide uppercase"
             >
               <ArrowLeft size={20} />
-              {t('disciplines.grappling.cta.backButton')}
+              Back to Train Like a Fighter
             </SmoothScrollLink>
           </div>
         </div>
