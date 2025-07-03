@@ -189,78 +189,8 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Parking & Accessibility */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              {t('contact.parkingAccessibility.title')}
-            </h2>
-            <p className="text-xl text-gray-300 tracking-wide">
-              {t('contact.parkingAccessibility.subtitle')}
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <Car className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">Campo Tures</h3>
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.parking')}</h4>
-                  <p className="text-gray-300 tracking-wide">
-                    {t('contact.campoTures.parking')}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.publicTransport')}</h4>
-                  <p className="text-gray-300 tracking-wide">
-                    {t('contact.campoTures.transport')}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.accessibility')}</h4>
-                  <p className="text-gray-300 tracking-wide">
-                    {t('contact.campoTures.accessibility')}
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <Car className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">Brunico</h3>
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.parking')}</h4>
-                  <p className="text-gray-300 tracking-wide">
-                    {t('contact.brunico.parking')}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.publicTransport')}</h4>
-                  <p className="text-gray-300 tracking-wide">
-                    {t('contact.brunico.transport')}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.accessibility')}</h4>
-                  <p className="text-gray-300 tracking-wide">
-                    {t('contact.brunico.accessibility')}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Visit Requirements & Policies */}
-      <section className="py-20 bg-gradient-dark">
+      <section className="py-20 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
@@ -272,7 +202,7 @@ export default function Contact() {
           </div>
           
           <div className="space-y-8">
-            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
+            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">{t('contact.firstTimeVisitors')}</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -330,7 +260,7 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
             {t('contact.cta.title')}
