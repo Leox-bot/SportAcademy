@@ -17,73 +17,56 @@ export default function Schedule() {
               <Clock className="w-12 h-12 text-yellow-400" />
             </div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed tracking-wide">
-              Summer 2025 Training Schedule - Find the perfect class time that fits your lifestyle. 
+              Current Training Schedule - Find the perfect class time that fits your lifestyle. 
               All classes are designed to accommodate different skill levels and age groups.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Schedule Image */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative overflow-hidden rounded-lg border border-yellow-500/30">
-              <img 
-                src="/d6309e04-e42c-4a1f-ac84-09a85f5e1207.jpg" 
-                alt="Weekly Schedule" 
-                className="w-full shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/20"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Schedule Information */}
-      <section className="py-20 bg-gradient-dark">
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Campo Tures Schedule */}
-            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
+            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">Campo Tures Location</h3>
               <div className="space-y-4">
                 <div className="border-b border-yellow-500/30 pb-4">
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Monday & Wednesday</h4>
-                  <p className="text-gray-300 tracking-wide">MMA Classes: 19:00 - 20:30</p>
-                  <p className="text-gray-300 tracking-wide">BJJ Adults: 20:30 - 22:00</p>
-                </div>
-                <div className="border-b border-yellow-500/30 pb-4">
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Tuesday & Thursday</h4>
-                  <p className="text-gray-300 tracking-wide">Kids BJJ: 17:30 - 18:30</p>
-                  <p className="text-gray-300 tracking-wide">Grappling: 19:00 - 20:30</p>
+                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Tuesday</h4>
+                  <p className="text-gray-300 tracking-wide">Grappling: 15:00 - 16:00</p>
+                  <p className="text-gray-300 tracking-wide">MMA: 18:30 - 19:30</p>
+                  <p className="text-gray-300 tracking-wide">BJJ: 19:30 - 20:30</p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Saturday</h4>
-                  <p className="text-gray-300 tracking-wide">Open Mat: 10:00 - 12:00</p>
-                  <p className="text-gray-300 tracking-wide">Competition Prep: 14:00 - 16:00</p>
+                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Thursday</h4>
+                  <p className="text-gray-300 tracking-wide">BJJ: 06:30 - 07:30</p>
+                  <p className="text-gray-300 tracking-wide">Grappling: 18:30 - 19:30</p>
+                  <p className="text-gray-300 tracking-wide">BJJ: 19:30 - 20:30</p>
                 </div>
               </div>
             </div>
 
             {/* Brunico Schedule */}
-            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
+            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">Brunico Location</h3>
               <div className="space-y-4">
                 <div className="border-b border-yellow-500/30 pb-4">
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Tuesday & Thursday</h4>
-                  <p className="text-gray-300 tracking-wide">BJJ Fundamentals: 18:00 - 19:30</p>
-                  <p className="text-gray-300 tracking-wide">Advanced BJJ: 19:30 - 21:00</p>
+                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Monday</h4>
+                  <p className="text-gray-300 tracking-wide">Wrestling: 17:30 - 18:30</p>
+                  <p className="text-gray-300 tracking-wide">BJJ: 18:30 - 19:30</p>
+                  <p className="text-gray-300 tracking-wide">Grappling: 19:30 - 20:30</p>
                 </div>
                 <div className="border-b border-yellow-500/30 pb-4">
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Friday</h4>
-                  <p className="text-gray-300 tracking-wide">Kids Grappling: 17:00 - 18:00</p>
-                  <p className="text-gray-300 tracking-wide">Wrestling: 18:30 - 20:00</p>
+                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Wednesday</h4>
+                  <p className="text-gray-300 tracking-wide">MMA: 17:30 - 18:30</p>
+                  <p className="text-gray-300 tracking-wide">Grappling: 18:30 - 19:30</p>
+                  <p className="text-gray-300 tracking-wide">BJJ: 19:30 - 20:30</p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Sunday</h4>
-                  <p className="text-gray-300 tracking-wide">Open Training: 10:00 - 12:00</p>
-                  <p className="text-gray-300 tracking-wide">Sparring Sessions: 14:00 - 16:00</p>
+                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Friday</h4>
+                  <p className="text-gray-300 tracking-wide">Striking: 18:30 - 19:30</p>
+                  <p className="text-gray-300 tracking-wide">Open Mat: 19:30 - 20:30</p>
                 </div>
               </div>
             </div>
@@ -92,9 +75,9 @@ export default function Schedule() {
       </section>
 
       {/* Important Notes */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8">
+          <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8">
             <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">Important Information</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
@@ -114,7 +97,7 @@ export default function Schedule() {
                   </li>
                   <li className="flex items-start tracking-wide">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                    No-gi attire for MMA and Grappling
+                    No-gi attire for MMA, Grappling, and Striking
                   </li>
                 </ul>
               </div>
@@ -145,7 +128,7 @@ export default function Schedule() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-dark">
+      <section className="py-20 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
             RESERVE YOUR SPOT
