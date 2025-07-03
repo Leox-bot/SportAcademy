@@ -18,7 +18,7 @@ export default function Classes() {
       icon: <Shield className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />,
       image: "/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg",
       features: ["Guard techniques", "Submissions", "Escapes", "Positional control", "Competition preparation"],
-      level: "Beginner to Advanced"
+      level: "All Levels"
     },
     {
       title: "Grappling",
@@ -26,7 +26,7 @@ export default function Classes() {
       icon: <Target className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />,
       image: "/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg",
       features: ["Takedown techniques", "Wrestling fundamentals", "Submission grappling", "No-gi training", "Competition prep"],
-      level: "Intermediate to Advanced"
+      level: "All Levels"
     },
     {
       title: "BJJ for Kids",
