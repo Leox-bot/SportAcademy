@@ -137,7 +137,9 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.address')}</h4>
                   <p className="text-gray-300 tracking-wide whitespace-pre-line">
-                    {t('contact.campoTures.address')}
+                    Palestra Comunale
+                    Via Scolastica, 39032
+                    Campo Tures BZ, Italy
                   </p>
                 </div>
                 
@@ -187,7 +189,9 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.address')}</h4>
                   <p className="text-gray-300 tracking-wide whitespace-pre-line">
-                    {t('contact.brunico.address')}
+                    Palestra Comunale
+                    Via Bastioni, 39031
+                    Brunico BZ, Italy
                   </p>
                 </div>
                 
@@ -255,19 +259,19 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.parking')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    {t('contact.campoTures.parking')}
+                    Free parking available directly in front of the municipal gymnasium. Additional street parking on Via Scolastica.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.publicTransport')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    {t('contact.campoTures.transport')}
+                    Bus stop "Campo Tures Centro" is 200m from the gym. Regular connections from Brunico and surrounding areas.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.accessibility')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    {t('contact.campoTures.accessibility')}
+                    Wheelchair accessible entrance and facilities. Ground floor location with wide doorways.
                   </p>
                 </div>
               </div>
@@ -282,19 +286,19 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.parking')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    {t('contact.brunico.parking')}
+                    Free parking available at the municipal gymnasium. Additional parking on Via Bastioni and nearby streets.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.publicTransport')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    {t('contact.brunico.transport')}
+                    Central location with multiple bus connections. Train station is 10 minutes walk from the gymnasium.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.accessibility')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    {t('contact.brunico.accessibility')}
+                    Fully accessible facility with elevator access and adapted changing rooms available.
                   </p>
                 </div>
               </div>
