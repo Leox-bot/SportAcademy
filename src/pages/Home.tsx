@@ -27,7 +27,7 @@ export default function Home() {
             <br />
             <span className="bg-gradient-gold bg-clip-text text-transparent">{t('home.hero.title').split(' ')[1]}</span>
           </h1>
-          <p className="text-yellow-400 mb-8 italic tracking-wide font-light">
+          <p className="text-xl md:text-2xl text-yellow-400 mb-8 italic tracking-wide font-light">
             Forging Fighters Since 2017
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
