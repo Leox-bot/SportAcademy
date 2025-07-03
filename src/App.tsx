@@ -3,41 +3,9 @@ import { Menu, X, MapPin, Clock, Users, Trophy, Star, Phone, Mail, ExternalLink 
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const openImageModal = (imageSrc: string) => {
-    setSelectedImage(imageSrc);
-  };
-
-  const closeImageModal = () => {
-    setSelectedImage(null);
-  };
 
   return (
     <div className="min-h-screen bg-white text-black font-oswald">
-      {/* Image Modal */}
-      {selectedImage && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-90 z-[100] flex items-center justify-center p-4"
-          onClick={closeImageModal}
-        >
-          <div className="relative max-w-7xl max-h-full">
-            <button
-              onClick={closeImageModal}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
-            >
-              <X size={32} />
-            </button>
-            <img 
-              src={selectedImage} 
-              alt="Full size training image"
-              className="max-w-full max-h-full object-contain"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
-        </div>
-      )}
-
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -175,17 +143,12 @@ function App() {
             ].map((classItem, index) => (
               <div key={index} className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group">
                 {classItem.image && (
-                  <div className="h-64 overflow-hidden relative cursor-pointer" onClick={() => openImageModal(classItem.image!)}>
+                  <div className="h-80 overflow-hidden">
                     <img 
                       src={classItem.image} 
                       alt={classItem.title}
                       className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                      <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium bg-black bg-opacity-50 px-3 py-1 rounded">
-                        Click to view full image
-                      </div>
-                    </div>
                   </div>
                 )}
                 <div className="p-6">
@@ -219,8 +182,7 @@ function App() {
             <img 
               src="/d6309e04-e42c-4a1f-ac84-09a85f5e1207.jpg" 
               alt="Weekly Schedule" 
-              className="w-full rounded-lg shadow-2xl border border-gray-300 cursor-pointer hover:shadow-3xl transition-shadow duration-300"
-              onClick={() => openImageModal("/d6309e04-e42c-4a1f-ac84-09a85f5e1207.jpg")}
+              className="w-full rounded-lg shadow-2xl border border-gray-300"
             />
           </div>
         </div>
