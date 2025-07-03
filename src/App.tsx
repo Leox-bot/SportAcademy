@@ -11,7 +11,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src="/sport-academy-logo.jpeg" alt="Sport Academy" className="h-10 w-auto" />
+              <img src="https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSW4xVUFFPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6771d95f0fa33e4415778c20c97f1b26ca423ca4//sport academy.jpg" alt="Sport Academy" className="h-10 w-auto" />
             </div>
             
             <div className="hidden md:block">
@@ -57,7 +57,7 @@ function App() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/sport-academy-logo.jpeg')",
+            backgroundImage: "url('https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSW4xVUFFPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6771d95f0fa33e4415778c20c97f1b26ca423ca4//sport academy.jpg')",
           }}
         ></div>
         
@@ -108,7 +108,7 @@ function App() {
                 title: "MMA Classes",
                 description: "Complete mixed martial arts training combining striking, grappling, and ground fighting techniques.",
                 icon: <Trophy className="w-8 h-8" />,
-                image: "/instdown (1).jpeg"
+                image: "https://bolt.new/api/upload/files%2F4761552-1751544592556-instdown%20(1).jpeg"
               },
               {
                 title: "Brazilian Jiu-Jitsu",
@@ -143,7 +143,7 @@ function App() {
             ].map((classItem, index) => (
               <div key={index} className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group">
                 {classItem.image && (
-                  <div className="h-96 overflow-hidden">
+                  <div className="h-80 overflow-hidden">
                     <img 
                       src={classItem.image} 
                       alt={classItem.title}
@@ -386,7 +386,7 @@ function App() {
       <footer className="bg-gray-200 border-t border-gray-300 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <img src="/sport-academy-logo.jpeg" alt="Sport Academy" className="h-12 w-auto mx-auto mb-6" />
+            <img src="https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSW4xVUFFPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6771d95f0fa33e4415778c20c97f1b26ca423ca4//sport academy.jpg" alt="Sport Academy" className="h-12 w-auto mx-auto mb-6" />
             <p className="text-gray-700 mb-2 font-medium tracking-wide">
               Elite MMA, BJJ & Grappling Training in South Tyrol
             </p>
