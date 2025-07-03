@@ -9,6 +9,11 @@ import Coaches from './pages/Coaches';
 import Membership from './pages/Membership';
 import Contact from './pages/Contact';
 
+// Discipline pages
+import MMA from './pages/disciplines/MMA';
+import BJJ from './pages/disciplines/BJJ';
+import Grappling from './pages/disciplines/Grappling';
+
 function App() {
   return (
     <Router>
@@ -21,6 +26,11 @@ function App() {
           <Route path="/coaches" element={<Coaches />} />
           <Route path="/membership" element={<Membership />} />
           <Route path="/contact" element={<Contact />} />
+          
+          {/* Discipline pages */}
+          <Route path="/disciplines/mma" element={<MMA />} />
+          <Route path="/disciplines/bjj" element={<BJJ />} />
+          <Route path="/disciplines/grappling" element={<Grappling />} />
         </Routes>
       </Layout>
     </Router>

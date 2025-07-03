@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Shield, Target, Flame } from 'lucide-react';
+import { ExternalLink, Shield, Target, Flame, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -110,56 +110,86 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Link 
-              to="/classes#mma"
-              className="relative group overflow-hidden rounded-lg cursor-pointer transform transition-all duration-300 hover:scale-105"
-            >
-              <img 
-                src="/ea4196af-93c9-4c00-942d-6f3ca5e06e8f.jpg" 
-                alt="MMA Training"
-                className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/95 transition-all duration-300"></div>
-              <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                <Flame className="w-8 h-8 text-yellow-400" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">MMA</h3>
+            <div className="relative group overflow-hidden rounded-lg bg-gradient-dark border border-yellow-500/30 hover:border-yellow-400/50 transition-all duration-300">
+              <div className="relative h-80 overflow-hidden">
+                <img 
+                  src="/ea4196af-93c9-4c00-942d-6f3ca5e06e8f.jpg" 
+                  alt="MMA Training"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/95 transition-all duration-300"></div>
+                <div className="absolute bottom-6 left-6 flex items-center gap-3">
+                  <Flame className="w-8 h-8 text-yellow-400" />
+                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">MMA</h3>
+                </div>
               </div>
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-yellow-400/50 rounded-lg transition-all duration-300"></div>
-            </Link>
+              <div className="p-6">
+                <p className="text-gray-300 mb-4 tracking-wide">
+                  Complete mixed martial arts training combining striking, grappling, and ground fighting techniques.
+                </p>
+                <Link 
+                  to="/disciplines/mma"
+                  className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-bold tracking-wide uppercase transition-colors"
+                >
+                  Learn More
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
             
-            <Link 
-              to="/classes#bjj"
-              className="relative group overflow-hidden rounded-lg cursor-pointer transform transition-all duration-300 hover:scale-105"
-            >
-              <img 
-                src="/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg" 
-                alt="BJJ Training"
-                className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/95 transition-all duration-300"></div>
-              <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                <Shield className="w-8 h-8 text-yellow-400" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">BJJ</h3>
+            <div className="relative group overflow-hidden rounded-lg bg-gradient-dark border border-yellow-500/30 hover:border-yellow-400/50 transition-all duration-300">
+              <div className="relative h-80 overflow-hidden">
+                <img 
+                  src="/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg" 
+                  alt="BJJ Training"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/95 transition-all duration-300"></div>
+                <div className="absolute bottom-6 left-6 flex items-center gap-3">
+                  <Shield className="w-8 h-8 text-yellow-400" />
+                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">BJJ</h3>
+                </div>
               </div>
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-yellow-400/50 rounded-lg transition-all duration-300"></div>
-            </Link>
+              <div className="p-6">
+                <p className="text-gray-300 mb-4 tracking-wide">
+                  Master the gentle art of Brazilian Jiu-Jitsu with comprehensive ground fighting techniques.
+                </p>
+                <Link 
+                  to="/disciplines/bjj"
+                  className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-bold tracking-wide uppercase transition-colors"
+                >
+                  Learn More
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
             
-            <Link 
-              to="/classes#grappling"
-              className="relative group overflow-hidden rounded-lg cursor-pointer transform transition-all duration-300 hover:scale-105"
-            >
-              <img 
-                src="/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg" 
-                alt="Grappling Training"
-                className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/95 transition-all duration-300"></div>
-              <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                <Target className="w-8 h-8 text-yellow-400" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">GRAPPLING</h3>
+            <div className="relative group overflow-hidden rounded-lg bg-gradient-dark border border-yellow-500/30 hover:border-yellow-400/50 transition-all duration-300">
+              <div className="relative h-80 overflow-hidden">
+                <img 
+                  src="/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg" 
+                  alt="Grappling Training"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-black/95 transition-all duration-300"></div>
+                <div className="absolute bottom-6 left-6 flex items-center gap-3">
+                  <Target className="w-8 h-8 text-yellow-400" />
+                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">GRAPPLING</h3>
+                </div>
               </div>
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-yellow-400/50 rounded-lg transition-all duration-300"></div>
-            </Link>
+              <div className="p-6">
+                <p className="text-gray-300 mb-4 tracking-wide">
+                  Develop wrestling and submission skills through intensive no-gi grappling training.
+                </p>
+                <Link 
+                  to="/disciplines/grappling"
+                  className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-bold tracking-wide uppercase transition-colors"
+                >
+                  Learn More
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
