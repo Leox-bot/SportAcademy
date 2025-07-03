@@ -8,6 +8,9 @@ import Schedule from './pages/Schedule';
 import Coaches from './pages/Coaches';
 import Membership from './pages/Membership';
 import Contact from './pages/Contact';
+import MMA from './pages/MMA';
+import Grappling from './pages/Grappling';
+import BJJ from './pages/BJJ';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Route path="/coaches" element={<Coaches />} />
           <Route path="/membership" element={<Membership />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/mma" element={<MMA />} />
+          <Route path="/grappling" element={<Grappling />} />
+          <Route path="/bjj" element={<BJJ />} />
         </Routes>
       </Layout>
     </Router>

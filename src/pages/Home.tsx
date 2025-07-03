@@ -97,57 +97,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Training Disciplines Preview */}
+      {/* Training Disciplines Navigation */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white tracking-wide uppercase">
-              TRAIN LIKE A FIGHTER
+              CHOOSE YOUR DISCIPLINE
             </h2>
             <p className="text-xl text-gray-300 tracking-wide">
-              Master the arts of combat with professional instruction
+              Explore our specialized martial arts programs
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative group overflow-hidden rounded-lg">
+            <Link 
+              to="/mma" 
+              className="relative group overflow-hidden rounded-lg border-2 border-yellow-500/30 hover:border-yellow-400 transition-all duration-300"
+            >
               <img 
                 src="/ea4196af-93c9-4c00-942d-6f3ca5e06e8f.jpg" 
                 alt="MMA Training"
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                <Flame className="w-8 h-8 text-yellow-400" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">MMA</h3>
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                <Flame className="w-12 h-12 text-yellow-400 mb-4" />
+                <h3 className="text-3xl font-bold text-white tracking-wide uppercase mb-2">MMA</h3>
+                <p className="text-gray-300 tracking-wide mb-4">Mixed Martial Arts - Complete combat training</p>
+                <span className="bg-gradient-gold text-black px-6 py-2 rounded-lg font-bold tracking-wide uppercase transform group-hover:scale-105 transition-transform duration-300">
+                  LEARN MORE
+                </span>
               </div>
-            </div>
+            </Link>
             
-            <div className="relative group overflow-hidden rounded-lg">
+            <Link 
+              to="/bjj" 
+              className="relative group overflow-hidden rounded-lg border-2 border-yellow-500/30 hover:border-yellow-400 transition-all duration-300"
+            >
               <img 
                 src="/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg" 
                 alt="BJJ Training"
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                <Shield className="w-8 h-8 text-yellow-400" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">BJJ</h3>
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                <Shield className="w-12 h-12 text-yellow-400 mb-4" />
+                <h3 className="text-3xl font-bold text-white tracking-wide uppercase mb-2">BJJ</h3>
+                <p className="text-gray-300 tracking-wide mb-4">Brazilian Jiu-Jitsu - The gentle art</p>
+                <span className="bg-gradient-gold text-black px-6 py-2 rounded-lg font-bold tracking-wide uppercase transform group-hover:scale-105 transition-transform duration-300">
+                  LEARN MORE
+                </span>
               </div>
-            </div>
+            </Link>
             
-            <div className="relative group overflow-hidden rounded-lg">
+            <Link 
+              to="/grappling" 
+              className="relative group overflow-hidden rounded-lg border-2 border-yellow-500/30 hover:border-yellow-400 transition-all duration-300"
+            >
               <img 
                 src="/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg" 
                 alt="Grappling Training"
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                <Target className="w-8 h-8 text-yellow-400" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">GRAPPLING</h3>
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                <Target className="w-12 h-12 text-yellow-400 mb-4" />
+                <h3 className="text-3xl font-bold text-white tracking-wide uppercase mb-2">GRAPPLING</h3>
+                <p className="text-gray-300 tracking-wide mb-4">Wrestling & submission grappling</p>
+                <span className="bg-gradient-gold text-black px-6 py-2 rounded-lg font-bold tracking-wide uppercase transform group-hover:scale-105 transition-transform duration-300">
+                  LEARN MORE
+                </span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
