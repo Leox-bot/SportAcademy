@@ -19,7 +19,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <Link to="/">
+              <Link to="/" className="block">
                 <img src="/sport academy.jpg" alt="Sport Academy" className="h-10 w-auto brightness-110" />
               </Link>
             </div>
@@ -160,7 +160,7 @@ export default function Layout({ children }: LayoutProps) {
       <footer className="bg-gradient-dark border-t border-yellow-500/30 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Link to="/">
+            <Link to="/" className="block">
               <img src="/sport academy.jpg" alt="Sport Academy" className="h-12 w-auto mx-auto mb-6 brightness-110" />
             </Link>
             <p className="text-gray-300 mb-2 font-medium tracking-wide">
