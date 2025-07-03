@@ -33,8 +33,12 @@ export default function Coaches() {
             {/* Matteo Parolin */}
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
               <div className="text-center mb-8">
-                <div className="w-32 h-32 bg-gradient-gold rounded-full mx-auto mb-6 flex items-center justify-center border-4 border-yellow-400/50">
-                  <span className="text-4xl font-black text-black tracking-wide">MP</span>
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-yellow-400/50">
+                  <img 
+                    src="/716a8840-fb6f-4b74-a782-42d55de68c6b.jpg" 
+                    alt="Matteo Parolin"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-3xl font-bold mb-2 text-white tracking-wide uppercase">{t('coaches.matteo.name')}</h3>
                 <p className="text-yellow-400 font-semibold text-lg mb-4 tracking-wide uppercase">{t('coaches.matteo.title')}</p>
@@ -77,8 +81,12 @@ export default function Coaches() {
             {/* Christian Zecchetto */}
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
               <div className="text-center mb-8">
-                <div className="w-32 h-32 bg-gradient-gold rounded-full mx-auto mb-6 flex items-center justify-center border-4 border-yellow-400/50">
-                  <span className="text-4xl font-black text-black tracking-wide">CZ</span>
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-yellow-400/50">
+                  <img 
+                    src="/ba5f6212-00f1-4b36-867d-ed0a300f1ab6.jpg" 
+                    alt="Christian Zecchetto"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-3xl font-bold mb-2 text-white tracking-wide uppercase">{t('coaches.christian.name')}</h3>
                 <p className="text-yellow-400 font-semibold text-lg mb-4 tracking-wide uppercase">{t('coaches.christian.title')}</p>
