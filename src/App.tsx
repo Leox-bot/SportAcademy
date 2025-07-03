@@ -107,57 +107,40 @@ function App() {
               {
                 title: "MMA Classes",
                 description: "Complete mixed martial arts training combining striking, grappling, and ground fighting techniques.",
-                icon: <Trophy className="w-8 h-8" />,
-                image: "/mma-training.jpeg"
+                icon: <Trophy className="w-8 h-8" />
               },
               {
                 title: "Brazilian Jiu-Jitsu",
                 description: "Master the gentle art of BJJ with our comprehensive ground fighting program.",
-                icon: <Users className="w-8 h-8" />,
-                image: null
+                icon: <Users className="w-8 h-8" />
               },
               {
                 title: "Grappling",
                 description: "Develop your wrestling and submission skills in our intensive grappling sessions.",
-                icon: <Star className="w-8 h-8" />,
-                image: "/grappling-training.jpeg"
+                icon: <Star className="w-8 h-8" />
               },
               {
                 title: "BJJ for Kids",
                 description: "Safe and fun Brazilian Jiu-Jitsu classes designed specifically for young athletes.",
-                icon: <Users className="w-8 h-8" />,
-                image: "/bjj-kids-training.jpeg"
+                icon: <Users className="w-8 h-8" />
               },
               {
                 title: "Grappling for Kids",
                 description: "Build confidence, discipline, and physical fitness through youth grappling programs.",
-                icon: <Trophy className="w-8 h-8" />,
-                image: null
+                icon: <Trophy className="w-8 h-8" />
               },
               {
                 title: "Wrestling",
                 description: "Traditional wrestling techniques and conditioning for competitive athletes.",
-                icon: <Star className="w-8 h-8" />,
-                image: null
+                icon: <Star className="w-8 h-8" />
               }
             ].map((classItem, index) => (
-              <div key={index} className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group">
-                {classItem.image && (
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={classItem.image} 
-                      alt={classItem.title}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                    />
-                  </div>
-                )}
-                <div className="p-6">
-                  <div className="text-white group-hover:text-black mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {classItem.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide">{classItem.title}</h3>
-                  <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">{classItem.description}</p>
+              <div key={index} className="bg-gray-700 border-2 border-gray-600 rounded-lg p-6 hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group">
+                <div className="text-white group-hover:text-black mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {classItem.icon}
                 </div>
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide">{classItem.title}</h3>
+                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">{classItem.description}</p>
               </div>
             ))}
           </div>
