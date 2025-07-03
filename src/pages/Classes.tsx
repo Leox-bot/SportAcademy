@@ -8,6 +8,7 @@ export default function Classes() {
       title: "MMA Classes",
       description: "Complete mixed martial arts training combining striking, grappling, and ground fighting techniques. Perfect for those looking to develop well-rounded combat skills.",
       icon: <Flame className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />,
+      image: "/d6309e04-e42c-4a1f-ac84-09a85f5e1207.jpg",
       features: ["Striking techniques", "Grappling fundamentals", "Ground fighting", "Conditioning", "Sparring sessions"],
       level: "All Levels"
     },
@@ -15,6 +16,7 @@ export default function Classes() {
       title: "Brazilian Jiu-Jitsu",
       description: "Master the gentle art of BJJ with our comprehensive ground fighting program. Learn leverage, technique, and strategy over brute strength.",
       icon: <Shield className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />,
+      image: "/1bbb3fa2-9687-490a-9fb6-bb49e05175c8.jpg",
       features: ["Guard techniques", "Submissions", "Escapes", "Positional control", "Competition preparation"],
       level: "Beginner to Advanced"
     },
@@ -22,6 +24,7 @@ export default function Classes() {
       title: "Grappling",
       description: "Develop your wrestling and submission skills in our intensive grappling sessions. Focus on takedowns, control, and submissions.",
       icon: <Target className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />,
+      image: "/1bbb3fa2-9687-490a-9fb6-bb49e05175c8.jpg",
       features: ["Takedown techniques", "Wrestling fundamentals", "Submission grappling", "No-gi training", "Competition prep"],
       level: "Intermediate to Advanced"
     },
@@ -29,6 +32,7 @@ export default function Classes() {
       title: "BJJ for Kids",
       description: "Safe and fun Brazilian Jiu-Jitsu classes designed specifically for young athletes. Building confidence, discipline, and respect.",
       icon: <Heart className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />,
+      image: "/1bbb3fa2-9687-490a-9fb6-bb49e05175c8.jpg",
       features: ["Age-appropriate techniques", "Character development", "Anti-bullying skills", "Physical fitness", "Fun games and drills"],
       level: "Ages 6-14"
     },
@@ -36,6 +40,7 @@ export default function Classes() {
       title: "Grappling for Kids",
       description: "Build confidence, discipline, and physical fitness through youth grappling programs. Emphasis on safety and skill development.",
       icon: <Star className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />,
+      image: "/1bbb3fa2-9687-490a-9fb6-bb49e05175c8.jpg",
       features: ["Basic wrestling moves", "Coordination drills", "Strength building", "Teamwork skills", "Safe training environment"],
       level: "Ages 8-16"
     },
@@ -43,6 +48,7 @@ export default function Classes() {
       title: "Wrestling",
       description: "Traditional wrestling techniques and conditioning for competitive athletes. Build strength, endurance, and technical proficiency.",
       icon: <Zap className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />,
+      image: "/1bbb3fa2-9687-490a-9fb6-bb49e05175c8.jpg",
       features: ["Olympic wrestling", "Freestyle techniques", "Greco-Roman style", "Conditioning programs", "Competition training"],
       level: "All Levels"
     }
@@ -70,32 +76,41 @@ export default function Classes() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {classes.map((classItem, index) => (
-              <div key={index} className="bg-white border-2 border-gray-300 rounded-lg p-8 hover:shadow-xl transition-all duration-300">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
+              <div key={index} className="bg-white border-2 border-gray-300 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                {/* Class Image */}
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={classItem.image} 
+                    alt={classItem.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 flex items-center gap-3">
                     {classItem.icon}
+                    <h3 className="text-2xl font-bold text-white tracking-wide drop-shadow-lg">{classItem.title}</h3>
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-2xl font-bold text-black tracking-wide">{classItem.title}</h3>
-                      <span className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-medium tracking-wide">
-                        {classItem.level}
-                      </span>
-                    </div>
-                    <p className="text-gray-600 mb-6 leading-relaxed tracking-wide">
-                      {classItem.description}
-                    </p>
-                    <div className="mb-6">
-                      <h4 className="font-bold text-black mb-3 tracking-wide">What You'll Learn:</h4>
-                      <ul className="space-y-2">
-                        {classItem.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-gray-600 tracking-wide">
-                            <div className="w-2 h-2 bg-gray-800 rounded-full mr-3"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-white/90 text-black px-3 py-1 rounded-full text-sm font-medium tracking-wide">
+                      {classItem.level}
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Class Content */}
+                <div className="p-8">
+                  <p className="text-gray-600 mb-6 leading-relaxed tracking-wide">
+                    {classItem.description}
+                  </p>
+                  <div className="mb-6">
+                    <h4 className="font-bold text-black mb-3 tracking-wide">What You'll Learn:</h4>
+                    <ul className="space-y-2">
+                      {classItem.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-gray-600 tracking-wide">
+                          <div className="w-2 h-2 bg-gray-800 rounded-full mr-3"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
