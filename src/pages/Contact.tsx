@@ -137,7 +137,6 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.address')}</h4>
                   <p className="text-gray-300 tracking-wide whitespace-pre-line">
-                    Palestra Comunale{'\n'}
                     Via Hugo von Taufers 8{'\n'}
                     39032 Campo Tures BZ{'\n'}
                     Italy
@@ -190,7 +189,6 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.address')}</h4>
                   <p className="text-gray-300 tracking-wide whitespace-pre-line">
-                    Palestra Comunale{'\n'}
                     Via Maria Teresa Riedl, 3{'\n'}
                     39031 Brunico BZ{'\n'}
                     Italy
@@ -261,19 +259,19 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.parking')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Free parking available directly in front of the municipal gymnasium. Additional street parking on Via Hugo von Taufers.
+                    {t('contact.campoTures.parking')}
                   </p>
                 </div>
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.publicTransport')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Bus stop "Campo Tures Centro" is 200m from the gym. Regular connections from Brunico and surrounding areas.
+                    {t('contact.campoTures.transport')}
                   </p>
                 </div>
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.accessibility')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Wheelchair accessible entrance and facilities. Ground floor location with wide doorways.
+                    {t('contact.campoTures.accessibility')}
                   </p>
                 </div>
               </div>
@@ -288,19 +286,19 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.parking')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Free parking available at the municipal gymnasium. Additional parking on Via Maria Teresa Riedl and nearby streets.
+                    {t('contact.brunico.parking')}
                   </p>
                 </div>
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.publicTransport')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Central location with multiple bus connections. Train station is 10 minutes walk from the gymnasium.
+                    {t('contact.brunico.transport')}
                   </p>
                 </div>
                 <div>
                   <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.accessibility')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Fully accessible facility with elevator access and adapted changing rooms available.
+                    {t('contact.brunico.accessibility')}
                   </p>
                 </div>
               </div>
