@@ -27,7 +27,7 @@ export default function Membership() {
       {/* Membership Plans */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16">
             {/* Main Season */}
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300 relative">
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -154,6 +154,79 @@ export default function Membership() {
                 className="w-full bg-gradient-gold hover:bg-yellow-500 text-black py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 tracking-wide shadow-lg uppercase"
               >
                 SELECT SUMMER SEASON
+                <ExternalLink size={18} />
+              </a>
+            </div>
+          </div>
+
+          {/* Jiu Jitsu Only Membership */}
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-black mb-4 text-white tracking-wide uppercase">
+                JIU JITSU ONLY MEMBERSHIP
+              </h2>
+              <p className="text-lg text-gray-300 tracking-wide">
+                Dedicated Brazilian Jiu-Jitsu training for summer season
+              </p>
+            </div>
+
+            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold mb-2 text-white tracking-wide uppercase">BJJ Summer Program</h3>
+                <p className="text-yellow-400 text-lg tracking-wide uppercase">June - September</p>
+                <p className="text-sm text-gray-400 mt-2 tracking-wide">3 months of focused BJJ training</p>
+              </div>
+              
+              <div className="space-y-6 mb-8">
+                <div className="flex justify-between items-center py-4 border-b border-yellow-500/30">
+                  <span className="text-white font-medium text-lg tracking-wide uppercase">Adults</span>
+                  <div className="text-right">
+                    <span className="text-3xl font-bold text-yellow-400 tracking-wide">€180</span>
+                    <p className="text-sm text-gray-400 tracking-wide">€70/month</p>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center py-4">
+                  <span className="text-white font-medium text-lg tracking-wide uppercase">Students</span>
+                  <div className="text-right">
+                    <span className="text-3xl font-bold text-yellow-400 tracking-wide">€130</span>
+                    <p className="text-sm text-gray-400 tracking-wide">€50/month</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-8">
+                <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">What's Included:</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Access to all BJJ classes only
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Both Campo Tures & Brunico locations
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Gi and No-Gi training
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Technique refinement focus
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    BJJ-specific open mat sessions
+                  </li>
+                </ul>
+              </div>
+              
+              <a 
+                href="https://maat-app.link/7BGCKjdtuUb" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full bg-gradient-gold hover:bg-yellow-500 text-black py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 tracking-wide shadow-lg uppercase"
+              >
+                SELECT BJJ ONLY
                 <ExternalLink size={18} />
               </a>
             </div>
