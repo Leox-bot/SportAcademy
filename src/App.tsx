@@ -108,7 +108,7 @@ function App() {
                 title: "MMA Classes",
                 description: "Complete mixed martial arts training combining striking, grappling, and ground fighting techniques.",
                 icon: <Trophy className="w-8 h-8" />,
-                image: "https://bolt.new/api/upload/files%2F4761552-1751544592556-instdown%20(1).jpeg"
+                image: "/mma-cropped.jpg"
               },
               {
                 title: "Brazilian Jiu-Jitsu",
@@ -120,13 +120,13 @@ function App() {
                 title: "Grappling",
                 description: "Develop your wrestling and submission skills in our intensive grappling sessions.",
                 icon: <Star className="w-8 h-8" />,
-                image: "/instdown.jpeg"
+                image: "/grappling-cropped.jpg"
               },
               {
                 title: "BJJ for Kids",
                 description: "Safe and fun Brazilian Jiu-Jitsu classes designed specifically for young athletes.",
                 icon: <Users className="w-8 h-8" />,
-                image: "/instdown (2).jpeg"
+                image: "/bjj-kids-cropped.jpg"
               },
               {
                 title: "Grappling for Kids",
