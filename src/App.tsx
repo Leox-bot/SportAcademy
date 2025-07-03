@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, MapPin, Clock, Users, Trophy, Star, Phone, Mail, ExternalLink } from 'lucide-react';
+import { Menu, X, MapPin, Clock, Users, Trophy, Star, Phone, Mail, ExternalLink, Shield, Target, Zap, Heart, Award, Flame } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -107,36 +107,36 @@ function App() {
               {
                 title: "MMA Classes",
                 description: "Complete mixed martial arts training combining striking, grappling, and ground fighting techniques.",
-                icon: <Trophy className="w-8 h-8" />
+                icon: <Flame className="w-8 h-8" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
               },
               {
                 title: "Brazilian Jiu-Jitsu",
                 description: "Master the gentle art of BJJ with our comprehensive ground fighting program.",
-                icon: <Users className="w-8 h-8" />
+                icon: <Shield className="w-8 h-8" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
               },
               {
                 title: "Grappling",
                 description: "Develop your wrestling and submission skills in our intensive grappling sessions.",
-                icon: <Star className="w-8 h-8" />
+                icon: <Target className="w-8 h-8" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
               },
               {
                 title: "BJJ for Kids",
                 description: "Safe and fun Brazilian Jiu-Jitsu classes designed specifically for young athletes.",
-                icon: <Users className="w-8 h-8" />
+                icon: <Heart className="w-8 h-8" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
               },
               {
                 title: "Grappling for Kids",
                 description: "Build confidence, discipline, and physical fitness through youth grappling programs.",
-                icon: <Trophy className="w-8 h-8" />
+                icon: <Star className="w-8 h-8" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
               },
               {
                 title: "Wrestling",
                 description: "Traditional wrestling techniques and conditioning for competitive athletes.",
-                icon: <Star className="w-8 h-8" />
+                icon: <Zap className="w-8 h-8" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
               }
             ].map((classItem, index) => (
               <div key={index} className="bg-gray-700 border-2 border-gray-600 rounded-lg p-6 hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group">
-                <div className="text-white group-hover:text-black mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                   {classItem.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide">{classItem.title}</h3>
@@ -151,9 +151,13 @@ function App() {
       <section id="schedule" className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-black tracking-wide">
-              WEEKLY SCHEDULE
-            </h2>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Clock className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
+              <h2 className="text-4xl md:text-5xl font-black text-black tracking-wide">
+                WEEKLY SCHEDULE
+              </h2>
+              <Clock className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
+            </div>
             <p className="text-xl text-gray-600 tracking-wide">
               Summer 2025 Training Schedule
             </p>
@@ -173,9 +177,13 @@ function App() {
       <section id="coaches" className="py-20 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-white tracking-wide">
-              OUR COACHES
-            </h2>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Award className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-wide">
+                OUR COACHES
+              </h2>
+              <Award className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
+            </div>
             <p className="text-xl text-gray-300 tracking-wide">
               Learn from experienced professionals
             </p>
@@ -215,9 +223,13 @@ function App() {
       <section id="membership" className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-black tracking-wide">
-              MEMBERSHIP PLANS
-            </h2>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Trophy className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
+              <h2 className="text-4xl md:text-5xl font-black text-black tracking-wide">
+                MEMBERSHIP PLANS
+              </h2>
+              <Trophy className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
+            </div>
             <p className="text-xl text-gray-600 tracking-wide">
               Choose the plan that fits your training goals
             </p>
@@ -302,9 +314,13 @@ function App() {
       <section id="contact" className="py-20 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-white tracking-wide">
-              GET IN TOUCH
-            </h2>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <MapPin className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-wide">
+                GET IN TOUCH
+              </h2>
+              <MapPin className="w-12 h-12" style={{ color: '#FFD700', filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2))' }} />
+            </div>
             <p className="text-xl text-gray-300 tracking-wide">
               Visit us at our two convenient locations
             </p>
