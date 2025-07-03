@@ -356,7 +356,7 @@ export default function Contact() {
                     </li>
                     <li className="flex items-start tracking-wide">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                      Basic gloves for MMA classes (free)
+                      Basic gloves & shin guards for MMA classes (temporary)
                     </li>
                     <li className="flex items-start tracking-wide">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
@@ -386,7 +386,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Equipment:</strong> Basic gloves provided for MMA classes (free)
+                    <strong className="text-white">Equipment:</strong> Basic gloves & shin guards provided temporarily - students should purchase their own
                   </p>
                 </div>
                 <div>
