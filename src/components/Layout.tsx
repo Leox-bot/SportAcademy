@@ -27,8 +27,8 @@ export default function Layout({ children }: LayoutProps) {
               </Link>
             </div>
             
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
+            <div className="hidden md:flex items-center space-x-8">
+              <div className="flex items-baseline space-x-8">
                 <Link 
                   to="/" 
                   className={`transition-colors font-medium tracking-wide uppercase text-sm ${
@@ -77,15 +77,15 @@ export default function Layout({ children }: LayoutProps) {
                 >
                   {t('nav.contact')}
                 </Link>
-                <LanguageSelector />
               </div>
+              <LanguageSelector />
             </div>
             
-            <div className="md:hidden flex items-center gap-4">
+            <div className="md:hidden flex items-center gap-3">
               <LanguageSelector />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white hover:text-yellow-400 transition-colors"
+                className="text-white hover:text-yellow-400 transition-colors p-1"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
