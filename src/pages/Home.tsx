@@ -11,7 +11,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/training-1.jpg')",
+            backgroundImage: "url('https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSW4xVUFFPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6771d95f0fa33e4415778c20c97f1b26ca423ca4//sport academy.jpg')",
           }}
         ></div>
         
@@ -93,64 +93,6 @@ export default function Home() {
             >
               EXPLORE OUR CLASSES
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Training Gallery Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-black tracking-wide">
-              TRAINING IN ACTION
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto tracking-wide">
-              Experience the intensity and dedication of our training environment
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
-              <img 
-                src="/training-2.jpg" 
-                alt="MMA Training Session" 
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                <div className="p-6">
-                  <h3 className="text-white font-bold text-lg tracking-wide">MMA Training</h3>
-                  <p className="text-gray-300 text-sm tracking-wide">Intensive mixed martial arts sessions</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative overflow-hidden rounded-lg shadow-lg group">
-              <img 
-                src="/training-3.jpg" 
-                alt="BJJ Ground Work" 
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                <div className="p-6">
-                  <h3 className="text-white font-bold text-lg tracking-wide">BJJ Techniques</h3>
-                  <p className="text-gray-300 text-sm tracking-wide">Brazilian Jiu-Jitsu ground work</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative overflow-hidden rounded-lg shadow-lg group md:col-span-2 lg:col-span-1">
-              <img 
-                src="/training-1.jpg" 
-                alt="Grappling Practice" 
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                <div className="p-6">
-                  <h3 className="text-white font-bold text-lg tracking-wide">Grappling</h3>
-                  <p className="text-gray-300 text-sm tracking-wide">Advanced grappling techniques</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
