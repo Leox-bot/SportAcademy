@@ -1,10 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Shield, Target, Zap, Heart, Star, Flame, ExternalLink } from 'lucide-react';
 
 export default function Classes() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Handle anchor links
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const classes = [
     {
+      id: "mma",
       title: "MMA Classes",
       description: "Complete mixed martial arts training combining striking, grappling, and ground fighting techniques. Perfect for those looking to develop well-rounded combat skills.",
       icon: <Flame className="w-12 h-12 text-yellow-400" />,
@@ -13,6 +28,7 @@ export default function Classes() {
       level: "All Levels"
     },
     {
+      id: "bjj",
       title: "Brazilian Jiu-Jitsu",
       description: "Master the gentle art of BJJ with our comprehensive ground fighting program. Learn leverage, technique, and strategy over brute strength.",
       icon: <Shield className="w-12 h-12 text-yellow-400" />,
@@ -21,6 +37,7 @@ export default function Classes() {
       level: "All Levels"
     },
     {
+      id: "grappling",
       title: "Grappling",
       description: "Develop your wrestling and submission skills in our intensive grappling sessions. Focus on takedowns, control, and submissions.",
       icon: <Target className="w-12 h-12 text-yellow-400" />,
@@ -29,6 +46,7 @@ export default function Classes() {
       level: "All Levels"
     },
     {
+      id: "kids-bjj",
       title: "BJJ for Kids",
       description: "Safe and fun Brazilian Jiu-Jitsu classes designed specifically for young athletes. Building confidence, discipline, and respect.",
       icon: <Heart className="w-12 h-12 text-yellow-400" />,
@@ -37,6 +55,7 @@ export default function Classes() {
       level: "Ages 6-14"
     },
     {
+      id: "kids-grappling",
       title: "Grappling for Kids",
       description: "Build confidence, discipline, and physical fitness through youth grappling programs. Emphasis on safety and skill development.",
       icon: <Star className="w-12 h-12 text-yellow-400" />,
@@ -45,6 +64,7 @@ export default function Classes() {
       level: "Ages 8-16"
     },
     {
+      id: "wrestling",
       title: "Wrestling",
       description: "Traditional wrestling techniques and conditioning for competitive athletes. Build strength, endurance, and technical proficiency.",
       icon: <Zap className="w-12 h-12 text-yellow-400" />,
@@ -76,7 +96,11 @@ export default function Classes() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {classes.map((classItem, index) => (
-              <div key={index} className="bg-gradient-dark border border-yellow-500/30 rounded-lg overflow-hidden hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
+              <div 
+                key={index} 
+                id={classItem.id}
+                className="bg-gradient-dark border border-yellow-500/30 rounded-lg overflow-hidden hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300 scroll-mt-20"
+              >
                 {/* Full-width Class Image */}
                 <div className="relative h-96 md:h-[500px] overflow-hidden">
                   <img 
