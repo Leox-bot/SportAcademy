@@ -7,6 +7,12 @@ import SmoothScrollLink from '../../components/SmoothScrollLink';
 export default function Grappling() {
   const { t } = useLanguage();
 
+  // Helper function to safely get array translations
+  const getArrayTranslation = (key: string): any[] => {
+    const value = t(key);
+    return Array.isArray(value) ? value : [];
+  };
+
   return (
     <div>
       {/* Navigation Breadcrumb */}
@@ -53,7 +59,7 @@ export default function Grappling() {
             <div>
               <h2 className="text-4xl font-black mb-6 text-white tracking-wide uppercase">{t('disciplines.grappling.overview.title')}</h2>
               <div className="space-y-4 text-gray-300 text-lg leading-relaxed tracking-wide">
-                {t('disciplines.grappling.overview.paragraphs').map((paragraph, index) => (
+                {getArrayTranslation('disciplines.grappling.overview.paragraphs').map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -89,7 +95,7 @@ export default function Grappling() {
                 <h3 className="text-xl font-bold text-yellow-400 tracking-wide uppercase">{t('disciplines.grappling.techniques.takedowns.title')}</h3>
               </div>
               <ul className="space-y-2 text-gray-300">
-                {t('disciplines.grappling.techniques.takedowns.items').map((item, index) => (
+                {getArrayTranslation('disciplines.grappling.techniques.takedowns.items').map((item, index) => (
                   <li key={index} className="flex items-center tracking-wide">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                     {item}
@@ -104,7 +110,7 @@ export default function Grappling() {
                 <h3 className="text-xl font-bold text-yellow-400 tracking-wide uppercase">{t('disciplines.grappling.techniques.control.title')}</h3>
               </div>
               <ul className="space-y-2 text-gray-300">
-                {t('disciplines.grappling.techniques.control.items').map((item, index) => (
+                {getArrayTranslation('disciplines.grappling.techniques.control.items').map((item, index) => (
                   <li key={index} className="flex items-center tracking-wide">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                     {item}
@@ -119,7 +125,7 @@ export default function Grappling() {
                 <h3 className="text-xl font-bold text-yellow-400 tracking-wide uppercase">{t('disciplines.grappling.techniques.submissions.title')}</h3>
               </div>
               <ul className="space-y-2 text-gray-300">
-                {t('disciplines.grappling.techniques.submissions.items').map((item, index) => (
+                {getArrayTranslation('disciplines.grappling.techniques.submissions.items').map((item, index) => (
                   <li key={index} className="flex items-center tracking-wide">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                     {item}
@@ -147,12 +153,12 @@ export default function Grappling() {
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8">
               <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">{t('disciplines.grappling.methodology.technical.title')}</h3>
               <div className="space-y-4 text-gray-300">
-                {t('disciplines.grappling.methodology.technical.methods').map((method, index) => (
+                {getArrayTranslation('disciplines.grappling.methodology.technical.methods').map((method, index) => (
                   <div key={index} className="flex items-start">
                     <div className="w-3 h-3 bg-yellow-400 rounded-full mr-4 mt-2"></div>
                     <div>
-                      <h4 className="font-bold text-white mb-1 tracking-wide uppercase">{method.title}</h4>
-                      <p className="tracking-wide">{method.description}</p>
+                      <h4 className="font-bold text-white mb-1 tracking-wide uppercase">{typeof method === 'object' ? method.title : method}</h4>
+                      <p className="tracking-wide">{typeof method === 'object' ? method.description : ''}</p>
                     </div>
                   </div>
                 ))}
@@ -162,12 +168,12 @@ export default function Grappling() {
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8">
               <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">{t('disciplines.grappling.methodology.conditioning.title')}</h3>
               <div className="space-y-4 text-gray-300">
-                {t('disciplines.grappling.methodology.conditioning.methods').map((method, index) => (
+                {getArrayTranslation('disciplines.grappling.methodology.conditioning.methods').map((method, index) => (
                   <div key={index} className="flex items-start">
                     <div className="w-3 h-3 bg-yellow-400 rounded-full mr-4 mt-2"></div>
                     <div>
-                      <h4 className="font-bold text-white mb-1 tracking-wide uppercase">{method.title}</h4>
-                      <p className="tracking-wide">{method.description}</p>
+                      <h4 className="font-bold text-white mb-1 tracking-wide uppercase">{typeof method === 'object' ? method.title : method}</h4>
+                      <p className="tracking-wide">{typeof method === 'object' ? method.description : ''}</p>
                     </div>
                   </div>
                 ))}
@@ -190,13 +196,13 @@ export default function Grappling() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {t('disciplines.grappling.benefits.items').map((benefit, index) => (
+            {getArrayTranslation('disciplines.grappling.benefits.items').map((benefit, index) => (
               <div key={index} className="text-center bg-black/70 p-6 rounded-lg border border-yellow-500/30 hover:border-yellow-400/50 transition-all duration-300">
                 <div className="bg-gradient-gold text-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                  {benefit.icon}
+                  {typeof benefit === 'object' ? benefit.icon : '💪'}
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-yellow-400 tracking-wide uppercase">{benefit.title}</h3>
-                <p className="text-gray-300 text-sm tracking-wide">{benefit.description}</p>
+                <h3 className="text-lg font-bold mb-2 text-yellow-400 tracking-wide uppercase">{typeof benefit === 'object' ? benefit.title : benefit}</h3>
+                <p className="text-gray-300 text-sm tracking-wide">{typeof benefit === 'object' ? benefit.description : ''}</p>
               </div>
             ))}
           </div>
@@ -260,11 +266,11 @@ export default function Grappling() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {t('disciplines.grappling.legends.grapplers').map((grappler, index) => (
+            {getArrayTranslation('disciplines.grappling.legends.grapplers').map((grappler, index) => (
               <div key={index} className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
-                <h3 className="text-xl font-bold mb-2 text-yellow-400 tracking-wide uppercase">{grappler.name}</h3>
-                <p className="text-gray-300 text-sm mb-3 tracking-wide">{grappler.title}</p>
-                <p className="text-gray-400 text-sm tracking-wide">{grappler.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-yellow-400 tracking-wide uppercase">{typeof grappler === 'object' ? grappler.name : grappler}</h3>
+                <p className="text-gray-300 text-sm mb-3 tracking-wide">{typeof grappler === 'object' ? grappler.title : ''}</p>
+                <p className="text-gray-400 text-sm tracking-wide">{typeof grappler === 'object' ? grappler.description : ''}</p>
               </div>
             ))}
           </div>

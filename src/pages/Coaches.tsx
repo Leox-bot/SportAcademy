@@ -6,6 +6,12 @@ import { useLanguage } from '../contexts/LanguageContext';
 export default function Coaches() {
   const { t } = useLanguage();
 
+  // Helper function to safely get array translations
+  const getArrayTranslation = (key: string): string[] => {
+    const value = t(key);
+    return Array.isArray(value) ? value : [];
+  };
+
   return (
     <div>
       {/* Hero Section */}
@@ -55,7 +61,7 @@ export default function Coaches() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-3 tracking-wide uppercase">{t('coaches.specializations')}</h4>
                   <ul className="space-y-2">
-                    {t('coaches.matteo.specializations').map((spec, index) => (
+                    {getArrayTranslation('coaches.matteo.specializations').map((spec, index) => (
                       <li key={index} className="flex items-center text-gray-300 tracking-wide">
                         <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                         {spec}
@@ -67,7 +73,7 @@ export default function Coaches() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-3 tracking-wide uppercase">{t('coaches.achievements')}</h4>
                   <ul className="space-y-2">
-                    {t('coaches.matteo.achievements').map((achievement, index) => (
+                    {getArrayTranslation('coaches.matteo.achievements').map((achievement, index) => (
                       <li key={index} className="flex items-center text-gray-300 tracking-wide">
                         <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                         {achievement}
@@ -103,7 +109,7 @@ export default function Coaches() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-3 tracking-wide uppercase">{t('coaches.specializations')}</h4>
                   <ul className="space-y-2">
-                    {t('coaches.christian.specializations').map((spec, index) => (
+                    {getArrayTranslation('coaches.christian.specializations').map((spec, index) => (
                       <li key={index} className="flex items-center text-gray-300 tracking-wide">
                         <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                         {spec}
@@ -115,7 +121,7 @@ export default function Coaches() {
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-3 tracking-wide uppercase">{t('coaches.achievements')}</h4>
                   <ul className="space-y-2">
-                    {t('coaches.christian.achievements').map((achievement, index) => (
+                    {getArrayTranslation('coaches.christian.achievements').map((achievement, index) => (
                       <li key={index} className="flex items-center text-gray-300 tracking-wide">
                         <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                         {achievement}

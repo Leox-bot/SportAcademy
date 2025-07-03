@@ -7,6 +7,12 @@ import SmoothScrollLink from '../../components/SmoothScrollLink';
 export default function BJJ() {
   const { t } = useLanguage();
 
+  // Helper function to safely get array translations
+  const getArrayTranslation = (key: string): string[] => {
+    const value = t(key);
+    return Array.isArray(value) ? value : [];
+  };
+
   return (
     <div>
       {/* Navigation Breadcrumb */}
@@ -53,7 +59,7 @@ export default function BJJ() {
             <div>
               <h2 className="text-4xl font-black mb-6 text-white tracking-wide uppercase">{t('disciplines.bjj.overview.title')}</h2>
               <div className="space-y-4 text-gray-300 text-lg leading-relaxed tracking-wide">
-                {t('disciplines.bjj.overview.paragraphs').map((paragraph, index) => (
+                {getArrayTranslation('disciplines.bjj.overview.paragraphs').map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -89,7 +95,7 @@ export default function BJJ() {
                 <h3 className="text-xl font-bold text-yellow-400 tracking-wide uppercase">{t('disciplines.bjj.techniques.guardWork.title')}</h3>
               </div>
               <ul className="space-y-2 text-gray-300">
-                {t('disciplines.bjj.techniques.guardWork.items').map((item, index) => (
+                {getArrayTranslation('disciplines.bjj.techniques.guardWork.items').map((item, index) => (
                   <li key={index} className="flex items-center tracking-wide">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                     {item}
@@ -104,7 +110,7 @@ export default function BJJ() {
                 <h3 className="text-xl font-bold text-yellow-400 tracking-wide uppercase">{t('disciplines.bjj.techniques.submissions.title')}</h3>
               </div>
               <ul className="space-y-2 text-gray-300">
-                {t('disciplines.bjj.techniques.submissions.items').map((item, index) => (
+                {getArrayTranslation('disciplines.bjj.techniques.submissions.items').map((item, index) => (
                   <li key={index} className="flex items-center tracking-wide">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                     {item}
@@ -119,7 +125,7 @@ export default function BJJ() {
                 <h3 className="text-xl font-bold text-yellow-400 tracking-wide uppercase">{t('disciplines.bjj.techniques.positions.title')}</h3>
               </div>
               <ul className="space-y-2 text-gray-300">
-                {t('disciplines.bjj.techniques.positions.items').map((item, index) => (
+                {getArrayTranslation('disciplines.bjj.techniques.positions.items').map((item, index) => (
                   <li key={index} className="flex items-center tracking-wide">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                     {item}
@@ -196,7 +202,7 @@ export default function BJJ() {
             <div>
               <h2 className="text-4xl font-black mb-6 text-white tracking-wide uppercase">{t('disciplines.bjj.history.title')}</h2>
               <div className="space-y-4 text-gray-300 text-lg leading-relaxed tracking-wide">
-                {t('disciplines.bjj.history.paragraphs').map((paragraph, index) => (
+                {getArrayTranslation('disciplines.bjj.history.paragraphs').map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -205,11 +211,11 @@ export default function BJJ() {
               <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6">
                 <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('disciplines.bjj.history.keyFigures.title')}</h3>
                 <ul className="space-y-3 text-gray-300">
-                  {t('disciplines.bjj.history.keyFigures.people').map((person, index) => (
+                  {getArrayTranslation('disciplines.bjj.history.keyFigures.people').map((person, index) => (
                     <li key={index} className="flex items-start tracking-wide">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
                       <div>
-                        <strong className="text-white">{person.name}:</strong> {person.description}
+                        <strong className="text-white">{typeof person === 'object' ? person.name : person}:</strong> {typeof person === 'object' ? person.description : ''}
                       </div>
                     </li>
                   ))}
