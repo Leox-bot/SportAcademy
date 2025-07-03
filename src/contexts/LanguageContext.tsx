@@ -10,6 +10,14 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+};
+
 const translations = {
   en: {
     nav: {
@@ -20,6 +28,26 @@ const translations = {
       membership: 'Membership',
       contact: 'Contact'
     },
+    common: {
+      joinNow: 'Join Now',
+      viewClasses: 'View Classes',
+      viewSchedule: 'View Schedule',
+      viewMembership: 'View Membership',
+      contactUs: 'Contact Us',
+      learnMore: 'Learn More',
+      allLevels: 'All Levels',
+      ages: 'Ages',
+      joinSportAcademy: 'Join Sport Academy',
+      callNow: 'Call Now',
+      registerOnline: 'Register Online',
+      bookClasses: 'Book Classes',
+      instantConfirmation: 'Instant Confirmation',
+      visitUs: 'Visit Us',
+      dropInWelcome: 'Drop-in Welcome',
+      duringTrainingHours: 'During Training Hours',
+      responseWithin2Hours: 'Response within 2 hours',
+      dailyUpdatesAndDMs: 'Daily updates & DMs'
+    },
     home: {
       hero: {
         title: 'SPORT ACADEMY',
@@ -27,7 +55,7 @@ const translations = {
       },
       welcome: {
         title: 'Welcome to Sport Academy',
-        description: 'Train with elite coaches Matteo Parolin and Christian Zecchetto in our state-of-the-art facilities across Campo Tures and Brunico. Whether you\'re a beginner or seasoned fighter, we offer comprehensive training in MMA, Brazilian Jiu-Jitsu, Grappling, and Wrestling.'
+        description: 'Elite training in Mixed Martial Arts, Brazilian Jiu-Jitsu, and Grappling. Located in Campo Tures and Brunico, we offer world-class instruction for all skill levels.'
       },
       stats: {
         yearsOfExcellence: 'Years of Excellence',
@@ -36,24 +64,24 @@ const translations = {
         locationsDescription: 'Campo Tures & Brunico',
         trainingPrograms: 'Training Programs',
         programsDescription: 'MMA, BJJ, Grappling & More',
-        exploreClasses: 'Explore Our Classes'
+        exploreClasses: 'Explore Classes'
       },
       trainLikeFighter: {
         title: 'Train Like a Fighter',
-        subtitle: 'Master the art of combat sports with our comprehensive training programs'
+        subtitle: 'Choose your discipline and start your journey'
       },
       mma: {
-        description: 'Complete mixed martial arts training combining striking, grappling, and ground game techniques for the ultimate fighting experience.'
+        description: 'Complete mixed martial arts training combining striking, grappling, and ground fighting techniques.'
       },
       bjj: {
-        description: 'Master the gentle art of Brazilian Jiu-Jitsu, focusing on leverage, technique, and ground control to overcome any opponent.'
+        description: 'Master the gentle art of Brazilian Jiu-Jitsu with focus on leverage, technique, and mental strategy.'
       },
       grappling: {
-        description: 'Develop superior wrestling and submission skills through intensive grappling training and positional control.'
+        description: 'Develop superior ground control and submission skills through intensive grappling training.'
       },
       getStarted: {
         title: 'Get Started Today',
-        subtitle: 'Choose your path to martial arts excellence'
+        subtitle: 'Everything you need to begin your martial arts journey'
       },
       quickLinks: {
         viewClasses: 'View Classes',
@@ -68,147 +96,91 @@ const translations = {
     },
     classes: {
       hero: {
-        title: 'Training Classes',
-        description: 'Discover our comprehensive range of martial arts classes designed for all skill levels, from beginners to advanced fighters.'
+        title: 'Our Classes',
+        description: 'Professional training programs designed for all skill levels, from beginners to advanced competitors.'
       },
+      whatYouLearn: 'What You\'ll Learn',
       mma: {
         title: 'Mixed Martial Arts',
-        description: 'Complete MMA training combining striking, wrestling, and Brazilian Jiu-Jitsu. Learn to fight standing up, in the clinch, and on the ground.',
+        description: 'Complete combat training combining striking, wrestling, and ground fighting. Perfect for those who want to experience the full spectrum of martial arts.',
         features: [
           'Striking techniques (boxing, kickboxing, Muay Thai)',
           'Wrestling and takedown defense',
           'Ground fighting and submissions',
-          'Cage work and fight strategy',
-          'Conditioning and fight preparation'
+          'Cage work and clinch fighting',
+          'Cardio and strength conditioning',
+          'Competition preparation'
         ]
       },
       bjj: {
         title: 'Brazilian Jiu-Jitsu',
-        description: 'Master the gentle art of BJJ, focusing on leverage, technique, and ground control. Perfect for self-defense and competition.',
+        description: 'The gentle art that teaches you to overcome larger opponents through technique, leverage, and strategy. Build confidence while learning self-defense.',
         features: [
+          'Fundamental positions and escapes',
           'Guard work and sweeps',
           'Submission techniques',
-          'Positional control',
-          'Escape techniques',
-          'Competition preparation'
+          'Self-defense applications',
+          'Mental strategy and problem-solving',
+          'Belt progression system'
         ]
       },
       grappling: {
         title: 'Grappling',
-        description: 'Intensive wrestling and submission grappling training. Develop superior takedown skills and ground control.',
+        description: 'Focus on ground control, takedowns, and submission wrestling. Develop superior grappling skills for MMA or pure grappling competition.',
         features: [
-          'Wrestling fundamentals',
           'Takedown techniques',
           'Ground control positions',
-          'Submission grappling',
-          'No-gi training'
+          'Submission holds and escapes',
+          'Wrestling fundamentals',
+          'Competition grappling rules',
+          'Strength and conditioning'
         ]
       },
       kidsBjj: {
         title: 'Kids BJJ',
-        description: 'Fun and safe Brazilian Jiu-Jitsu classes for children, building confidence, discipline, and physical fitness.',
+        description: 'Fun and safe Brazilian Jiu-Jitsu classes designed specifically for children. Build confidence, discipline, and physical fitness.',
         features: [
           'Age-appropriate techniques',
           'Character development',
           'Anti-bullying skills',
-          'Physical fitness',
-          'Fun and engaging activities'
+          'Physical fitness and coordination',
+          'Respect and discipline',
+          'Fun games and activities'
         ]
       },
       kidsGrappling: {
         title: 'Kids Grappling',
-        description: 'Wrestling and grappling fundamentals for young athletes, emphasizing technique, respect, and sportsmanship.',
+        description: 'Introduction to wrestling and grappling for young athletes. Develop strength, agility, and competitive spirit.',
         features: [
-          'Basic wrestling moves',
+          'Basic wrestling techniques',
           'Coordination and balance',
-          'Teamwork and respect',
-          'Safe training environment',
-          'Competition opportunities'
+          'Competitive spirit',
+          'Teamwork and sportsmanship',
+          'Physical conditioning',
+          'Goal setting and achievement'
         ]
       },
       wrestling: {
         title: 'Wrestling',
-        description: 'Traditional wrestling training focusing on takedowns, control, and conditioning. Essential for MMA and grappling.',
+        description: 'Traditional wrestling training focusing on takedowns, control, and conditioning. Essential for MMA and competitive grappling.',
         features: [
           'Single and double leg takedowns',
           'Sprawl and defensive techniques',
           'Top control and pins',
-          'Conditioning and strength',
-          'Competition preparation'
+          'Conditioning and strength training',
+          'Competition preparation',
+          'Mental toughness development'
         ]
       },
-      whatYouLearn: 'What You\'ll Learn',
       cta: {
         title: 'Ready to Start Training?',
-        description: 'Join our community of fighters and begin your martial arts journey today.'
-      }
-    },
-    coaches: {
-      hero: {
-        title: 'Our Coaches',
-        description: 'Train with world-class instructors who bring years of competition experience and proven teaching methods to every class.'
-      },
-      matteo: {
-        name: 'Matteo Parolin',
-        title: 'Head Coach & Founder',
-        background: 'With over 15 years of martial arts experience, Matteo is a certified Brazilian Jiu-Jitsu black belt and accomplished MMA fighter. He founded Sport Academy in 2017 with the vision of bringing elite-level training to South Tyrol.',
-        specializations: [
-          'Brazilian Jiu-Jitsu (Black Belt)',
-          'Mixed Martial Arts',
-          'Competition Coaching',
-          'Self-Defense Systems'
-        ],
-        achievements: [
-          'BJJ Black Belt under renowned lineage',
-          'Multiple regional MMA victories',
-          'Certified instructor in multiple disciplines',
-          '8+ years coaching experience'
-        ]
-      },
-      christian: {
-        name: 'Christian Zecchetto',
-        title: 'Senior Instructor',
-        background: 'Christian brings a wealth of grappling and wrestling expertise to Sport Academy. His technical approach and attention to detail make him an exceptional instructor for students of all levels.',
-        specializations: [
-          'Wrestling & Grappling',
-          'No-Gi Brazilian Jiu-Jitsu',
-          'Takedown Techniques',
-          'Youth Programs'
-        ],
-        achievements: [
-          'Competitive wrestling background',
-          'Advanced grappling certifications',
-          'Youth development specialist',
-          'Tournament preparation expert'
-        ]
-      },
-      background: 'Background',
-      specializations: 'Specializations',
-      achievements: 'Achievements',
-      philosophy: {
-        title: 'Our Coaching Philosophy',
-        technical: {
-          title: 'Technical Excellence',
-          description: 'We focus on proper technique and fundamentals, ensuring every student builds a solid foundation for long-term success.'
-        },
-        individual: {
-          title: 'Individual Growth',
-          description: 'Every student receives personalized attention and training plans tailored to their goals and skill level.'
-        },
-        respect: {
-          title: 'Respect & Discipline',
-          description: 'We instill values of respect, discipline, and sportsmanship that extend far beyond the training mats.'
-        }
-      },
-      cta: {
-        title: 'Train with the Best',
-        description: 'Experience world-class instruction and take your martial arts skills to the next level.'
+        description: 'Join our community of dedicated martial artists and begin your journey today.'
       }
     },
     schedule: {
       hero: {
         title: 'Training Schedule',
-        description: 'Find the perfect training times that fit your schedule. We offer classes throughout the week at both our Campo Tures and Brunico locations.'
+        description: 'Find the perfect training times that fit your schedule. Classes available throughout the week at both locations.'
       },
       campoTures: 'Campo Tures',
       brunico: 'Brunico',
@@ -226,10 +198,10 @@ const translations = {
       importantInfo: 'Important Information',
       classGuidelines: 'Class Guidelines',
       guidelines: {
-        arrive: 'Arrive 10-15 minutes early to warm up',
+        arrive: 'Arrive 10 minutes early to warm up',
         water: 'Bring water bottle and towel',
         gi: 'BJJ classes require a gi (uniform)',
-        noGi: 'Grappling and MMA classes are no-gi'
+        noGi: 'Grappling classes are no-gi (shorts & rash guard)'
       },
       membershipBenefits: 'Membership Benefits',
       benefits: {
@@ -239,77 +211,143 @@ const translations = {
         personalTraining: 'Discounted personal training'
       },
       cta: {
-        title: 'Ready to Join a Class?',
-        description: 'Book your spot in our next training session and start your martial arts journey.'
+        title: 'Ready to Join?',
+        description: 'Book your first class today and start your martial arts journey.'
+      }
+    },
+    coaches: {
+      hero: {
+        title: 'Our Coaches',
+        description: 'Learn from experienced instructors dedicated to helping you achieve your martial arts goals.'
+      },
+      background: 'Background',
+      specializations: 'Specializations',
+      achievements: 'Achievements',
+      matteo: {
+        name: 'Matteo Parolin',
+        title: 'Head Coach & Founder',
+        background: 'With over 8 years of experience in martial arts, Matteo founded Sport Academy to bring high-quality MMA and BJJ training to South Tyrol. His passion for teaching and technical expertise make him an exceptional instructor.',
+        specializations: [
+          'Brazilian Jiu-Jitsu',
+          'Mixed Martial Arts',
+          'Grappling',
+          'Competition Coaching'
+        ],
+        achievements: [
+          'Founder of Sport Academy (2017)',
+          'Multiple BJJ competition medals',
+          'Certified BJJ instructor',
+          'MMA coaching certification'
+        ]
+      },
+      christian: {
+        name: 'Christian Zecchetto',
+        title: 'BJJ & Grappling Instructor',
+        background: 'Christian brings years of competitive experience and technical knowledge to Sport Academy. His methodical approach to teaching helps students develop solid fundamentals and advanced techniques.',
+        specializations: [
+          'Brazilian Jiu-Jitsu',
+          'No-Gi Grappling',
+          'Wrestling',
+          'Self-Defense'
+        ],
+        achievements: [
+          'BJJ competition champion',
+          'Certified grappling instructor',
+          'Wrestling background',
+          'Self-defense specialist'
+        ]
+      },
+      philosophy: {
+        title: 'Our Coaching Philosophy',
+        technical: {
+          title: 'Technical Excellence',
+          description: 'We focus on proper technique and fundamentals to build a strong foundation for all students.'
+        },
+        individual: {
+          title: 'Individual Attention',
+          description: 'Every student receives personalized instruction tailored to their goals and skill level.'
+        },
+        respect: {
+          title: 'Respect & Discipline',
+          description: 'We cultivate a respectful training environment that promotes growth and mutual support.'
+        }
+      },
+      cta: {
+        title: 'Train with the Best',
+        description: 'Experience world-class instruction from our dedicated coaching team.'
       }
     },
     membership: {
       hero: {
         title: 'Membership Plans',
-        description: 'Choose the perfect training package for your goals. All memberships include access to both locations and all class types.'
+        description: 'Choose the perfect training package for your goals and schedule. All memberships include access to both locations.'
       },
       mainSeason: {
         title: 'Main Season',
         period: 'September - June',
-        duration: '10 months of intensive training',
+        duration: '10 months of training',
         mostPopular: 'Most Popular'
       },
       summerSeason: {
         title: 'Summer Season',
         period: 'July - August',
-        duration: '2.5 months of summer training'
+        duration: '2.5 months of training'
       },
       bjjOnly: {
-        title: 'BJJ Focused Training',
-        subtitle: 'Dedicated Brazilian Jiu-Jitsu program for serious practitioners',
-        program: 'BJJ Only Program',
-        description: 'Intensive BJJ training with additional technique sessions'
+        title: 'BJJ Only Membership',
+        subtitle: 'Perfect for those focused exclusively on Brazilian Jiu-Jitsu',
+        program: 'BJJ Focused Training',
+        description: 'Access to all BJJ classes at both locations'
       },
       adults: 'Adults',
       students: 'Students',
       month: 'month',
       whatsIncluded: 'What\'s Included',
       mainIncludes: [
-        'Unlimited access to all classes',
-        'Training at both locations',
+        'All group classes (MMA, BJJ, Grappling)',
+        'Access to both Campo Tures and Brunico locations',
         'Open mat sessions',
         'Beginner-friendly instruction',
-        'Competition team access'
+        'Competition team training',
+        'Equipment storage'
       ],
       summerIncludes: [
-        'All summer classes included',
-        'Flexible training schedule',
+        'All summer classes',
         'Both locations access',
-        'Perfect for vacation training'
+        'Flexible schedule',
+        'Open mat sessions',
+        'Outdoor training sessions'
       ],
       bjjIncludes: [
-        'All BJJ classes included',
-        'Specialized technique sessions',
+        'All BJJ classes',
+        'Both locations access',
+        'Belt progression system',
         'Competition preparation',
-        'Belt progression tracking'
+        'Open mat sessions',
+        'Gi and No-Gi training'
       ],
       selectMainSeason: 'Select Main Season',
       selectSummerSeason: 'Select Summer Season',
-      selectBjjOnly: 'Select BJJ Program',
+      selectBjjOnly: 'Select BJJ Only',
       additionalServices: {
         title: 'Additional Services',
-        description: 'Enhance your training with our specialized programs and personal coaching options.'
+        description: 'Enhance your training with our specialized programs and personal coaching.'
       },
       personalTraining: {
         title: 'Personal Training',
-        description: 'One-on-one coaching tailored to your specific goals and needs.',
+        description: 'One-on-one coaching tailored to your specific goals',
         price: '€50',
-        duration: 'per session (60 min)'
+        duration: 'per session'
       },
       competitionPrep: {
         title: 'Competition Prep',
-        description: 'Specialized training for upcoming tournaments and competitions.',
+        description: 'Specialized training for upcoming competitions',
         price: '€80',
-        duration: 'per session (90 min)'
+        duration: 'per session'
       },
       seminars: {
         title: 'Seminars',
-        description: 'Special workshops with guest instructors and advanced techniques.',
+        description: 'Special workshops with guest instructors',
         price: '€30',
         duration: 'per seminar'
       },
@@ -317,30 +355,30 @@ const translations = {
         title: 'Frequently Asked Questions',
         seasons: {
           question: 'What\'s the difference between seasons?',
-          answer: 'The main season (September-June) offers our complete program with consistent training. Summer season is perfect for maintaining skills during vacation months with a more flexible schedule.'
+          answer: 'The main season (September-June) offers our complete program with all classes and competitions. Summer season (July-August) has a more relaxed schedule perfect for maintaining fitness during vacation time.'
         },
         locations: {
           question: 'Can I train at both locations?',
-          answer: 'Yes! All memberships include access to both Campo Tures and Brunico locations. You can mix and match classes based on your schedule.'
+          answer: 'Yes! All memberships include access to both Campo Tures and Brunico locations. You can attend any class at either gym.'
         },
         trial: {
           question: 'Do you offer trial classes?',
-          answer: 'Absolutely! We offer a free trial class for new students. Contact us to schedule your first session and experience our training firsthand.'
+          answer: 'Absolutely! We offer a free trial class for new students. Contact us to schedule your first session.'
         },
         equipment: {
           question: 'What equipment do I need?',
-          answer: 'For your first class, just bring comfortable workout clothes and water. We\'ll provide guidance on any specific gear needed for your chosen disciplines.'
+          answer: 'For beginners, just comfortable workout clothes. We provide basic equipment for trial classes. As you progress, you\'ll need a gi for BJJ and appropriate gear for other classes.'
         }
       },
       cta: {
-        title: 'Start Your Journey Today',
-        description: 'Join the Sport Academy family and transform your martial arts skills with expert instruction.'
+        title: 'Start Your Journey',
+        description: 'Choose your membership and begin training with South Tyrol\'s premier martial arts academy.'
       }
     },
     contact: {
       hero: {
         title: 'Contact Us',
-        description: 'Get in touch with our team to start your martial arts journey or learn more about our programs. We\'re here to help you achieve your goals.'
+        description: 'Get in touch with our team and start your martial arts journey today. We\'re here to help you every step of the way.'
       },
       getInTouch: {
         title: 'Get In Touch',
@@ -350,7 +388,7 @@ const translations = {
       instagram: 'Instagram',
       locations: {
         title: 'Our Locations',
-        subtitle: 'Two convenient locations serving South Tyrol'
+        subtitle: 'Two convenient locations in South Tyrol'
       },
       address: 'Address',
       trainingSchedule: 'Training Schedule',
@@ -361,45 +399,45 @@ const translations = {
       parking: 'Parking',
       publicTransport: 'Public Transport',
       accessibility: 'Accessibility',
+      campoTures: {
+        parking: 'Free parking is available right in front of the entrance, with additional spots nearby. EV charging station approximately 200 meters away.',
+        transport: 'The "Campo Tures Centro" stop is just a 2-minute walk away. Several bus lines stop here, including 450, 451, and 452, offering regular connections to Brunico, local villages, and the surrounding valleys.',
+        accessibility: 'The gym is easy to reach on foot, by car or public transport. Located in a wide, flat and well-lit area — perfect for evening training.'
+      },
       brunico: {
         parking: 'Free street parking available along Via Riedl and nearby roads. During peak hours, public garages and paid blue-zone parking are just 5 minutes away on foot.',
         transport: 'Brunico Nord train station is only a 2-minute walk from the gym — perfect if you\'re coming from San Candido, Fortezza or anywhere in the valley. There\'s also a nearby bus stop with urban and regional connections.',
         accessibility: 'The gym is in a quiet, flat area with a short, direct walk from all nearby transport stops. Easy to reach even with gear or training bags.'
       },
-      campoTures: {
-        parking: 'Free parking is available right in front of the entrance, with additional spots nearby. EV charging station ~200 m away.',
-        transport: 'The "Campo Tures Centro" stop is just a 2-minute walk away. Several bus lines stop here, including 450, 451, and 452, offering regular connections to Brunico, local villages, and the surrounding valleys.',
-        accessibility: 'The gym is easy to reach on foot, by car or public transport. Located in a wide, flat and well-lit area — perfect for evening training.'
-      },
       visitRequirements: {
-        title: 'Visit Requirements',
-        subtitle: 'What to know before your first visit'
+        title: 'Visit Requirements & Policies',
+        subtitle: 'Everything you need to know for your first visit'
       },
-      firstTimeVisitors: 'First-Time Visitors',
+      firstTimeVisitors: 'First Time Visitors',
       whatToBring: 'What to Bring',
       bring: [
         'Comfortable workout clothes',
-        'Water bottle and towel',
-        'Athletic shoes (for striking classes)',
+        'Water bottle',
+        'Towel',
         'Positive attitude and willingness to learn'
       ],
       whatWeProvide: 'What We Provide',
       provide: [
-        'All training mats and equipment',
+        'Training gloves and shin guards',
+        'Clean training mats',
         'Changing rooms and showers',
-        'Basic protective gear for beginners',
-        'Expert instruction and guidance'
+        'Professional instruction'
       ],
       specialInstructions: 'Special Instructions',
       instructions: {
-        age: 'Age Requirements: 16+ for adult classes, kids classes available for ages 6-14',
+        age: 'Age Requirements: Minimum age 16 for adult classes, kids classes available for ages 6-14',
         health: 'Health: Please inform instructors of any injuries or health conditions',
-        equipment: 'Equipment: Gi (uniform) rental available for BJJ classes',
-        payment: 'Payment: Cash, card, and bank transfer accepted'
+        equipment: 'Equipment: We provide gloves and shin guards, but students should purchase their own gear',
+        payment: 'Payment: We accept card and cash payments only'
       },
       cta: {
-        title: 'Ready to Start Training?',
-        description: 'Contact us today to schedule your first class and begin your martial arts journey.'
+        title: 'Ready to Begin?',
+        description: 'Contact us today to schedule your first class and start your martial arts journey.'
       }
     },
     disciplines: {
@@ -407,19 +445,18 @@ const translations = {
         breadcrumb: 'Brazilian Jiu-Jitsu',
         title: 'Brazilian Jiu-Jitsu',
         hero: {
-          subtitle: 'Master the gentle art of leverage, technique, and ground control'
+          subtitle: 'Master the gentle art through technique, leverage, and strategy'
         },
         overview: {
           title: 'The Gentle Art',
           paragraphs: [
-            'Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport that focuses on ground fighting and submission holds. It emphasizes the principle that a smaller, weaker person can successfully defend themselves against a bigger, stronger opponent through proper technique, leverage, and timing.',
-            'At Sport Academy, our BJJ program is designed to teach students the fundamental principles of this beautiful art while building physical fitness, mental toughness, and self-confidence. Whether you\'re interested in self-defense, competition, or simply staying in shape, BJJ offers something for everyone.',
-            'Our experienced instructors guide students through a progressive curriculum that covers all aspects of Brazilian Jiu-Jitsu, from basic positions and escapes to advanced submissions and competition strategies.'
+            'Brazilian Jiu-Jitsu (BJJ) is a martial art and combat sport that focuses on ground fighting and submission holds. Often called "the gentle art," BJJ emphasizes technique and leverage over strength and size, making it accessible to practitioners of all ages and physical abilities.',
+            'At Sport Academy, our BJJ program is designed to teach you the fundamental principles of this incredible martial art while building your confidence, fitness, and mental resilience. Whether you\'re interested in self-defense, competition, or simply staying in shape, BJJ offers something for everyone.'
           ]
         },
         techniques: {
-          title: 'Core BJJ Techniques',
-          subtitle: 'Master the fundamental skills that form the foundation of Brazilian Jiu-Jitsu',
+          title: 'Core Techniques',
+          subtitle: 'Master the fundamental skills of Brazilian Jiu-Jitsu',
           guardWork: {
             title: 'Guard Work',
             items: [
@@ -433,8 +470,8 @@ const translations = {
             title: 'Submissions',
             items: [
               'Chokes and strangulations',
-              'Joint locks and armbars',
-              'Leg locks and heel hooks',
+              'Joint locks and arm bars',
+              'Leg locks and foot attacks',
               'Submission chains'
             ]
           },
@@ -450,44 +487,17 @@ const translations = {
         },
         beltSystem: {
           title: 'BJJ Belt System',
-          subtitle: 'Progress through the traditional Brazilian Jiu-Jitsu ranking system',
-          belts: [
-            {
-              name: 'White Belt',
-              color: 'gray',
-              description: 'Beginning fundamentals'
-            },
-            {
-              name: 'Blue Belt',
-              color: 'blue',
-              description: 'Solid foundation'
-            },
-            {
-              name: 'Purple Belt',
-              color: 'purple',
-              description: 'Advanced techniques'
-            },
-            {
-              name: 'Brown Belt',
-              color: 'yellow',
-              description: 'Expert level'
-            },
-            {
-              name: 'Black Belt',
-              color: 'gray',
-              description: 'Master level'
-            }
-          ],
+          subtitle: 'Progress through the ranks with dedication and skill',
           philosophy: {
             title: 'Belt Philosophy',
-            description: 'Each belt represents years of dedicated training, technical knowledge, and personal growth. Our instructors ensure that every promotion is earned through demonstrated skill, understanding, and character development.'
+            description: 'The BJJ belt system represents not just technical skill, but also character development, perseverance, and understanding of the art. Each belt level requires years of dedicated training and represents a significant milestone in your martial arts journey.'
           }
         },
         history: {
-          title: 'History of BJJ',
+          title: 'History & Origins',
           paragraphs: [
-            'Brazilian Jiu-Jitsu evolved from traditional Japanese jujutsu and judo, brought to Brazil by Mitsuyo Maeda in the early 20th century. The Gracie family, particularly Helio Gracie, adapted these techniques to create a more effective martial art for smaller practitioners.',
-            'The art gained worldwide recognition through the early UFC tournaments, where Royce Gracie demonstrated the effectiveness of BJJ against larger opponents from different martial arts backgrounds. This exposure led to BJJ becoming a fundamental component of modern mixed martial arts.'
+            'Brazilian Jiu-Jitsu evolved from traditional Japanese jujutsu and judo, brought to Brazil in the early 20th century by Mitsuyo Maeda. The Gracie family, particularly Helio Gracie, adapted these techniques to create a more effective system for smaller practitioners.',
+            'The art gained worldwide recognition through the early UFC competitions, where Royce Gracie demonstrated the effectiveness of BJJ against larger opponents from different martial arts backgrounds.'
           ],
           keyFigures: {
             title: 'Key Figures',
@@ -502,43 +512,41 @@ const translations = {
               },
               {
                 name: 'Royce Gracie',
-                description: 'UFC champion who showcased BJJ to the world'
+                description: 'UFC champion who proved BJJ\'s effectiveness'
               }
             ]
           }
         },
         schedule: {
           title: 'BJJ Training Schedule',
-          subtitle: 'Regular classes available at both locations throughout the week'
+          subtitle: 'Regular classes available at both locations'
         },
         cta: {
           title: 'Start Your BJJ Journey',
-          description: 'Join our Brazilian Jiu-Jitsu program and discover the gentle art that has transformed martial arts forever.',
-          joinButton: 'Join BJJ Classes',
-          backButton: 'Back to Classes'
+          description: 'Join our BJJ program and discover the gentle art that builds both physical and mental strength.',
+          joinButton: 'Join BJJ Classes'
         }
       },
       mma: {
         title: 'Mixed Martial Arts',
         hero: {
-          subtitle: 'The ultimate combat sport combining striking, wrestling, and ground fighting'
+          subtitle: 'The ultimate combat sport combining all martial arts disciplines'
         },
         overview: {
           title: 'The Complete Fighter',
           paragraphs: [
-            'Mixed Martial Arts (MMA) is the most complete combat sport, combining techniques from boxing, kickboxing, wrestling, and Brazilian Jiu-Jitsu. It represents the evolution of martial arts, where fighters must be proficient in all ranges of combat.',
-            'Our MMA program at Sport Academy provides comprehensive training that develops well-rounded fighters capable of competing at any level. We focus on building a strong foundation in each discipline while teaching students how to seamlessly transition between striking and grappling.',
-            'Whether your goal is professional competition, amateur tournaments, or simply becoming the best martial artist you can be, our MMA program will challenge and transform you both physically and mentally.'
+            'Mixed Martial Arts (MMA) is the most complete combat sport, combining techniques from boxing, kickboxing, wrestling, Brazilian Jiu-Jitsu, and other martial arts. MMA training develops well-rounded fighters who are comfortable in all ranges of combat.',
+            'Our MMA program at Sport Academy provides comprehensive training that covers striking, grappling, and ground fighting. Whether you\'re interested in competition or simply want the most complete martial arts training available, our MMA classes will challenge and develop you as a complete martial artist.'
           ]
         },
         techniques: {
-          title: 'MMA Techniques',
+          title: 'Core Techniques',
           subtitle: 'Master all aspects of mixed martial arts combat',
           striking: {
             title: 'Striking',
             items: [
-              'Boxing fundamentals',
-              'Kickboxing and Muay Thai',
+              'Boxing fundamentals and combinations',
+              'Kickboxing and Muay Thai techniques',
               'Elbow and knee strikes',
               'Footwork and head movement'
             ]
@@ -547,74 +555,74 @@ const translations = {
             title: 'Wrestling',
             items: [
               'Takedown techniques',
-              'Takedown defense',
-              'Cage wrestling',
-              'Ground control'
+              'Takedown defense and sprawls',
+              'Clinch work and dirty boxing',
+              'Cage wrestling tactics'
             ]
           },
           groundGame: {
             title: 'Ground Game',
             items: [
-              'Ground and pound',
+              'Ground and pound techniques',
               'Submission grappling',
-              'Guard work',
-              'Escapes and reversals'
+              'Ground control positions',
+              'Transitions and escapes'
             ]
           }
         },
         history: {
-          title: 'History of MMA',
+          title: 'MMA Evolution',
           paragraphs: [
-            'Mixed Martial Arts has ancient roots in various cultures, but modern MMA began with the Ultimate Fighting Championship (UFC) in 1993. The early tournaments were designed to determine which martial art was most effective in real combat situations.',
-            'Over the years, MMA has evolved from a spectacle of different fighting styles to a sophisticated sport with unified rules, weight classes, and highly trained athletes who are skilled in multiple disciplines.'
+            'Mixed Martial Arts has ancient roots in various cultures, but modern MMA began with the Ultimate Fighting Championship (UFC) in 1993. Early competitions pitted different martial arts styles against each other to determine the most effective fighting system.',
+            'Over time, fighters realized that to be successful, they needed to be well-rounded in all aspects of combat. This led to the evolution of MMA as we know it today - a sport where athletes train in multiple disciplines to become complete fighters.'
           ],
           milestones: {
             title: 'Key Milestones',
             events: [
               {
                 year: '1993',
-                description: 'First UFC event showcases different martial arts'
+                description: 'First UFC event demonstrates effectiveness of different martial arts'
               },
               {
-                year: '2001',
-                description: 'Unified Rules of MMA established'
+                year: '2000s',
+                description: 'Evolution of well-rounded fighters training multiple disciplines'
               },
               {
-                year: '2016',
-                description: 'MMA becomes mainstream with global recognition'
+                year: '2010s',
+                description: 'MMA becomes mainstream with global popularity'
               }
             ]
           }
         },
         benefits: {
-          title: 'Benefits of MMA Training',
-          subtitle: 'Transform your body and mind through mixed martial arts',
+          title: 'Training Benefits',
+          subtitle: 'Develop complete martial arts skills and fitness',
           items: [
             {
               icon: '💪',
-              title: 'Total Body Fitness',
-              description: 'Complete physical conditioning'
+              title: 'Complete Fitness',
+              description: 'Full-body conditioning and strength development'
             },
             {
               icon: '🧠',
               title: 'Mental Toughness',
-              description: 'Develop resilience and confidence'
-            },
-            {
-              icon: '🥊',
-              title: 'Self Defense',
-              description: 'Real-world protection skills'
+              description: 'Build confidence and mental resilience'
             },
             {
               icon: '⚡',
-              title: 'Explosive Power',
-              description: 'Build strength and speed'
+              title: 'Self-Defense',
+              description: 'Learn practical self-defense for any situation'
+            },
+            {
+              icon: '🎯',
+              title: 'Technical Skills',
+              description: 'Master techniques from multiple martial arts'
             }
           ]
         },
         schedule: {
           title: 'MMA Training Schedule',
-          subtitle: 'High-intensity training sessions for all skill levels'
+          subtitle: 'Comprehensive MMA classes for all levels'
         },
         legends: {
           title: 'MMA Legends',
@@ -623,89 +631,87 @@ const translations = {
             {
               name: 'Anderson Silva',
               title: 'The Spider',
-              description: 'Legendary striker with incredible precision'
+              description: 'Legendary striker with incredible precision and creativity'
             },
             {
               name: 'Fedor Emelianenko',
               title: 'The Last Emperor',
-              description: 'Dominant heavyweight with sambo background'
+              description: 'Dominant heavyweight with exceptional ground game'
             },
             {
               name: 'Jon Jones',
               title: 'Bones',
-              description: 'Creative striker with exceptional reach'
+              description: 'Versatile champion with unorthodox striking and wrestling'
             }
           ]
         },
         cta: {
           title: 'Become a Complete Fighter',
           description: 'Join our MMA program and develop skills in all aspects of combat sports.',
-          joinButton: 'Join MMA Training',
-          backButton: 'Back to Classes'
+          joinButton: 'Join MMA Training'
         }
       },
       grappling: {
         breadcrumb: 'Grappling',
         title: 'Grappling',
         hero: {
-          subtitle: 'Master the art of wrestling, takedowns, and submission grappling'
+          subtitle: 'Master ground control, takedowns, and submission techniques'
         },
         overview: {
           title: 'The Art of Control',
           paragraphs: [
-            'Grappling encompasses all forms of wrestling, submission grappling, and ground control techniques. It\'s the foundation of effective ground fighting and an essential component of both self-defense and mixed martial arts.',
-            'Our grappling program focuses on developing superior takedown skills, positional control, and submission techniques. Students learn to dominate opponents through leverage, timing, and technical precision rather than relying solely on strength.',
-            'Whether you\'re preparing for MMA competition, improving your BJJ game, or simply wanting to become a more complete grappler, our program provides the tools and techniques you need to succeed.'
+            'Grappling is the art of controlling your opponent through wrestling, takedowns, and ground fighting techniques. It forms the foundation of many martial arts and is essential for both self-defense and competitive combat sports.',
+            'Our grappling program focuses on developing superior ground control, takedown skills, and submission techniques. Whether you\'re preparing for MMA competition or want to improve your overall grappling game, our classes provide comprehensive training in all aspects of grappling.'
           ]
         },
         techniques: {
-          title: 'Grappling Techniques',
-          subtitle: 'Develop a complete arsenal of wrestling and submission skills',
+          title: 'Core Techniques',
+          subtitle: 'Develop superior grappling skills and ground control',
           takedowns: {
             title: 'Takedowns',
             items: [
               'Single and double leg takedowns',
               'Hip tosses and throws',
               'Foot sweeps and trips',
-              'Cage takedowns'
+              'Takedown combinations'
             ]
           },
           control: {
             title: 'Control',
             items: [
               'Top position control',
-              'Pinning combinations',
-              'Ride and control techniques',
-              'Pressure and weight distribution'
+              'Side control and mount',
+              'Back control techniques',
+              'Transitional control'
             ]
           },
           submissions: {
             title: 'Submissions',
             items: [
-              'No-gi submission techniques',
-              'Wrestling-based submissions',
-              'Leg locks and heel hooks',
-              'Transition submissions'
+              'Joint locks and arm bars',
+              'Chokes and strangulations',
+              'Leg locks and ankle attacks',
+              'Submission setups'
             ]
           }
         },
         methodology: {
           title: 'Training Methodology',
-          subtitle: 'Our systematic approach to grappling excellence',
+          subtitle: 'Systematic approach to grappling development',
           technical: {
             title: 'Technical Development',
             methods: [
               {
                 title: 'Drilling',
-                description: 'Repetitive practice of fundamental movements'
+                description: 'Repetitive practice of fundamental movements and techniques'
               },
               {
                 title: 'Positional Sparring',
-                description: 'Focused training from specific positions'
+                description: 'Live training from specific positions to develop skills'
               },
               {
-                title: 'Live Rolling',
-                description: 'Full-intensity grappling sessions'
+                title: 'Flow Rolling',
+                description: 'Continuous movement practice to develop timing and transitions'
               }
             ]
           },
@@ -713,76 +719,75 @@ const translations = {
             title: 'Physical Conditioning',
             methods: [
               {
-                title: 'Grappling Cardio',
-                description: 'Sport-specific cardiovascular training'
+                title: 'Strength Training',
+                description: 'Building functional strength for grappling movements'
               },
               {
-                title: 'Functional Strength',
-                description: 'Building grappling-specific power'
+                title: 'Cardio Conditioning',
+                description: 'Developing endurance for extended grappling sessions'
               },
               {
                 title: 'Flexibility',
-                description: 'Mobility and injury prevention'
+                description: 'Maintaining mobility and preventing injuries'
               }
             ]
           }
         },
         benefits: {
-          title: 'Benefits of Grappling',
-          subtitle: 'Why grappling training transforms athletes',
+          title: 'Training Benefits',
+          subtitle: 'Develop strength, technique, and mental toughness',
           items: [
             {
-              icon: '🤼',
-              title: 'Wrestling Skills',
-              description: 'Superior takedown and control abilities'
-            },
-            {
-              icon: '💪',
+              icon: '🏋️',
               title: 'Functional Strength',
-              description: 'Real-world applicable power'
+              description: 'Build real-world applicable strength and power'
             },
             {
               icon: '🧘',
-              title: 'Mental Chess',
-              description: 'Strategic thinking and problem solving'
+              title: 'Mental Focus',
+              description: 'Develop concentration and problem-solving skills'
             },
             {
-              icon: '⚡',
-              title: 'Explosive Power',
-              description: 'Dynamic movement and athleticism'
+              icon: '🛡️',
+              title: 'Self-Defense',
+              description: 'Learn practical techniques for real situations'
+            },
+            {
+              icon: '🏆',
+              title: 'Competition Ready',
+              description: 'Prepare for grappling and MMA competitions'
             }
           ]
         },
         schedule: {
           title: 'Grappling Schedule',
-          subtitle: 'Intensive training sessions focused on wrestling and submissions'
+          subtitle: 'Regular grappling classes at both locations'
         },
         legends: {
           title: 'Grappling Legends',
-          subtitle: 'Study the techniques of wrestling and grappling masters',
+          subtitle: 'Study the techniques of the greatest grapplers',
           grapplers: [
             {
-              name: 'Dan Gable',
-              title: 'Wrestling Legend',
-              description: 'Olympic champion and coaching icon'
+              name: 'Kazushi Sakuraba',
+              title: 'The Gracie Hunter',
+              description: 'Legendary catch wrestler who defeated multiple Gracie family members'
             },
             {
-              name: 'Gordon Ryan',
-              title: 'No-Gi King',
-              description: 'Dominant submission grappler'
+              name: 'Frank Shamrock',
+              title: 'The Legend',
+              description: 'Pioneer of modern MMA with exceptional grappling skills'
             },
             {
-              name: 'John Danaher',
-              title: 'The Professor',
-              description: 'Revolutionary grappling coach'
+              name: 'Marcelo Garcia',
+              title: 'The Magician',
+              description: 'BJJ legend known for his incredible technique and teaching'
             }
           ]
         },
         cta: {
           title: 'Master the Ground Game',
-          description: 'Develop superior grappling skills that will elevate your entire martial arts game.',
-          joinButton: 'Join Grappling Classes',
-          backButton: 'Back to Classes'
+          description: 'Join our grappling program and develop superior ground fighting skills.',
+          joinButton: 'Join Grappling Classes'
         }
       }
     },
@@ -790,26 +795,6 @@ const translations = {
       tagline: 'Elite MMA, BJJ & Grappling Training',
       subtitle: 'Forging fighters since 2017',
       copyright: '© 2024 Sport Academy. All rights reserved.'
-    },
-    common: {
-      joinNow: 'Join Now',
-      viewClasses: 'View Classes',
-      viewSchedule: 'View Schedule',
-      viewMembership: 'View Membership',
-      contactUs: 'Contact Us',
-      callNow: 'Call Now',
-      learnMore: 'Learn More',
-      allLevels: 'All Levels',
-      ages: 'Ages',
-      joinSportAcademy: 'Join Sport Academy',
-      registerOnline: 'Register Online',
-      bookClasses: 'Book Classes',
-      visitUs: 'Visit Us',
-      dropInWelcome: 'Drop-ins Welcome',
-      responseWithin2Hours: 'Response within 2 hours',
-      dailyUpdatesAndDMs: 'Daily updates and DMs',
-      instantConfirmation: 'Instant confirmation',
-      duringTrainingHours: 'During training hours'
     }
   },
   de: {
@@ -821,198 +806,162 @@ const translations = {
       membership: 'Mitgliedschaft',
       contact: 'Kontakt'
     },
+    common: {
+      joinNow: 'Jetzt Beitreten',
+      viewClasses: 'Kurse Ansehen',
+      viewSchedule: 'Stundenplan Ansehen',
+      viewMembership: 'Mitgliedschaft Ansehen',
+      contactUs: 'Kontakt',
+      learnMore: 'Mehr Erfahren',
+      allLevels: 'Alle Stufen',
+      ages: 'Alter',
+      joinSportAcademy: 'Sport Academy Beitreten',
+      callNow: 'Jetzt Anrufen',
+      registerOnline: 'Online Registrieren',
+      bookClasses: 'Kurse Buchen',
+      instantConfirmation: 'Sofortige Bestätigung',
+      visitUs: 'Besuchen Sie Uns',
+      dropInWelcome: 'Spontanbesuche Willkommen',
+      duringTrainingHours: 'Während der Trainingszeiten',
+      responseWithin2Hours: 'Antwort innerhalb von 2 Stunden',
+      dailyUpdatesAndDMs: 'Tägliche Updates & DMs'
+    },
     home: {
       hero: {
         title: 'SPORT ACADEMY',
         subtitle: 'Kämpfer schmieden seit 2017'
       },
       welcome: {
-        title: 'Willkommen bei der Sport Academy',
-        description: 'Trainiere mit Elite-Trainern Matteo Parolin und Christian Zecchetto in unseren hochmodernen Einrichtungen in Campo Tures und Bruneck. Ob Anfänger oder erfahrener Kämpfer, wir bieten umfassendes Training in MMA, Brazilian Jiu-Jitsu, Grappling und Wrestling.'
+        title: 'Willkommen bei Sport Academy',
+        description: 'Elite-Training in Mixed Martial Arts, Brazilian Jiu-Jitsu und Grappling. Mit Standorten in Campo Tures und Brunico bieten wir erstklassigen Unterricht für alle Könnensstufen.'
       },
       stats: {
         yearsOfExcellence: 'Jahre der Exzellenz',
         yearsDescription: 'Kämpfer schmieden seit 2017',
         trainingLocations: 'Trainingsstandorte',
-        locationsDescription: 'Campo Tures & Bruneck',
+        locationsDescription: 'Campo Tures & Brunico',
         trainingPrograms: 'Trainingsprogramme',
-        programsDescription: 'MMA, BJJ, Grappling & mehr',
-        exploreClasses: 'Entdecke unsere Kurse'
+        programsDescription: 'MMA, BJJ, Grappling & Mehr',
+        exploreClasses: 'Kurse Erkunden'
       },
       trainLikeFighter: {
-        title: 'Trainiere wie ein Kämpfer',
-        subtitle: 'Meistere die Kunst der Kampfsportarten mit unseren umfassenden Trainingsprogrammen'
+        title: 'Trainiere Wie Ein Kämpfer',
+        subtitle: 'Wähle deine Disziplin und beginne deine Reise'
       },
       mma: {
-        description: 'Komplettes Mixed Martial Arts Training, das Schlag-, Grappling- und Bodenkampftechniken für das ultimative Kampferlebnis kombiniert.'
+        description: 'Komplettes Mixed Martial Arts Training mit Schlag-, Grappling- und Bodenkampftechniken.'
       },
       bjj: {
-        description: 'Meistere die sanfte Kunst des Brazilian Jiu-Jitsu, mit Fokus auf Hebelwirkung, Technik und Bodenkontrolle, um jeden Gegner zu überwinden.'
+        description: 'Meistere die sanfte Kunst des Brazilian Jiu-Jitsu mit Fokus auf Hebelwirkung, Technik und mentale Strategie.'
       },
       grappling: {
-        description: 'Entwickle überlegene Wrestling- und Submission-Fähigkeiten durch intensives Grappling-Training und Positionskontrolle.'
+        description: 'Entwickle überlegene Bodenkontrolle und Submission-Fähigkeiten durch intensives Grappling-Training.'
       },
       getStarted: {
-        title: 'Starte heute',
-        subtitle: 'Wähle deinen Weg zur Kampfsport-Exzellenz'
+        title: 'Heute Beginnen',
+        subtitle: 'Alles was du brauchst, um deine Kampfkunst-Reise zu beginnen'
       },
       quickLinks: {
-        viewClasses: 'Kurse ansehen',
-        viewClassesDesc: 'Entdecke unsere Trainingsprogramme',
-        checkSchedule: 'Stundenplan prüfen',
+        viewClasses: 'Kurse Ansehen',
+        viewClassesDesc: 'Erkunde unsere Trainingsprogramme',
+        checkSchedule: 'Stundenplan Prüfen',
         checkScheduleDesc: 'Finde deine perfekte Trainingszeit',
         membershipPlans: 'Mitgliedschaftspläne',
         membershipPlansDesc: 'Wähle dein Trainingspaket',
-        contactUs: 'Kontaktiere uns',
+        contactUs: 'Kontakt',
         contactUsDesc: 'Nimm Kontakt mit unserem Team auf'
       }
     },
     classes: {
       hero: {
-        title: 'Trainingskurse',
-        description: 'Entdecke unser umfassendes Angebot an Kampfsportkursen, die für alle Fähigkeitsstufen konzipiert sind, von Anfängern bis zu fortgeschrittenen Kämpfern.'
+        title: 'Unsere Kurse',
+        description: 'Professionelle Trainingsprogramme für alle Könnensstufen, von Anfängern bis zu fortgeschrittenen Wettkämpfern.'
       },
+      whatYouLearn: 'Was Du Lernst',
       mma: {
         title: 'Mixed Martial Arts',
-        description: 'Komplettes MMA-Training, das Schlagen, Wrestling und Brazilian Jiu-Jitsu kombiniert. Lerne im Stehen, im Clinch und am Boden zu kämpfen.',
+        description: 'Komplettes Kampftraining mit Schlag-, Wrestling- und Bodenkampftechniken. Perfekt für alle, die das volle Spektrum der Kampfkünste erleben möchten.',
         features: [
           'Schlagtechniken (Boxen, Kickboxen, Muay Thai)',
           'Wrestling und Takedown-Verteidigung',
           'Bodenkampf und Submissions',
-          'Käfigarbeit und Kampfstrategie',
-          'Konditionierung und Kampfvorbereitung'
+          'Käfigarbeit und Clinch-Kampf',
+          'Cardio- und Krafttraining',
+          'Wettkampfvorbereitung'
         ]
       },
       bjj: {
         title: 'Brazilian Jiu-Jitsu',
-        description: 'Meistere die sanfte Kunst des BJJ, mit Fokus auf Hebelwirkung, Technik und Bodenkontrolle. Perfekt für Selbstverteidigung und Wettkampf.',
+        description: 'Die sanfte Kunst, die lehrt, größere Gegner durch Technik, Hebelwirkung und Strategie zu überwinden. Baue Selbstvertrauen auf und lerne Selbstverteidigung.',
         features: [
+          'Grundpositionen und Befreiungen',
           'Guard-Arbeit und Sweeps',
           'Submission-Techniken',
-          'Positionskontrolle',
-          'Befreiungstechniken',
-          'Wettkampfvorbereitung'
+          'Selbstverteidigungsanwendungen',
+          'Mentale Strategie und Problemlösung',
+          'Gürtel-Fortschrittssystem'
         ]
       },
       grappling: {
         title: 'Grappling',
-        description: 'Intensives Wrestling- und Submission-Grappling-Training. Entwickle überlegene Takedown-Fähigkeiten und Bodenkontrolle.',
+        description: 'Fokus auf Bodenkontrolle, Takedowns und Submission-Wrestling. Entwickle überlegene Grappling-Fähigkeiten für MMA oder reine Grappling-Wettkämpfe.',
         features: [
-          'Wrestling-Grundlagen',
           'Takedown-Techniken',
           'Bodenkontrollpositionen',
-          'Submission-Grappling',
-          'No-Gi-Training'
+          'Submission-Griffe und Befreiungen',
+          'Wrestling-Grundlagen',
+          'Wettkampf-Grappling-Regeln',
+          'Kraft- und Konditionstraining'
         ]
       },
       kidsBjj: {
         title: 'Kinder BJJ',
-        description: 'Spaßige und sichere Brazilian Jiu-Jitsu-Kurse für Kinder, die Selbstvertrauen, Disziplin und körperliche Fitness aufbauen.',
+        description: 'Spaßige und sichere Brazilian Jiu-Jitsu Kurse speziell für Kinder. Baue Selbstvertrauen, Disziplin und körperliche Fitness auf.',
         features: [
           'Altersgerechte Techniken',
           'Charakterentwicklung',
           'Anti-Mobbing-Fähigkeiten',
-          'Körperliche Fitness',
-          'Spaßige und ansprechende Aktivitäten'
+          'Körperliche Fitness und Koordination',
+          'Respekt und Disziplin',
+          'Spaßige Spiele und Aktivitäten'
         ]
       },
       kidsGrappling: {
         title: 'Kinder Grappling',
-        description: 'Wrestling- und Grappling-Grundlagen für junge Athleten, mit Betonung auf Technik, Respekt und Sportlichkeit.',
+        description: 'Einführung in Wrestling und Grappling für junge Athleten. Entwickle Kraft, Beweglichkeit und Wettkampfgeist.',
         features: [
-          'Grundlegende Wrestling-Bewegungen',
+          'Grundlegende Wrestling-Techniken',
           'Koordination und Balance',
-          'Teamwork und Respekt',
-          'Sichere Trainingsumgebung',
-          'Wettkampfmöglichkeiten'
+          'Wettkampfgeist',
+          'Teamwork und Sportlichkeit',
+          'Körperliche Konditionierung',
+          'Zielsetzung und Erfolg'
         ]
       },
       wrestling: {
         title: 'Wrestling',
-        description: 'Traditionelles Wrestling-Training mit Fokus auf Takedowns, Kontrolle und Konditionierung. Essentiell für MMA und Grappling.',
+        description: 'Traditionelles Wrestling-Training mit Fokus auf Takedowns, Kontrolle und Konditionierung. Essentiell für MMA und Wettkampf-Grappling.',
         features: [
           'Single- und Double-Leg-Takedowns',
           'Sprawl- und Verteidigungstechniken',
           'Top-Kontrolle und Pins',
-          'Konditionierung und Kraft',
-          'Wettkampfvorbereitung'
+          'Konditions- und Krafttraining',
+          'Wettkampfvorbereitung',
+          'Mentale Stärke-Entwicklung'
         ]
-      },
-      whatYouLearn: 'Was du lernst',
-      cta: {
-        title: 'Bereit zum Training?',
-        description: 'Tritt unserer Kämpfergemeinschaft bei und beginne heute deine Kampfsport-Reise.'
-      }
-    },
-    coaches: {
-      hero: {
-        title: 'Unsere Trainer',
-        description: 'Trainiere mit Weltklasse-Instruktoren, die jahrelange Wettkampferfahrung und bewährte Lehrmethoden in jeden Kurs einbringen.'
-      },
-      matteo: {
-        name: 'Matteo Parolin',
-        title: 'Cheftrainer & Gründer',
-        background: 'Mit über 15 Jahren Kampfsporterfahrung ist Matteo ein zertifizierter Brazilian Jiu-Jitsu Schwarzgurt und erfolgreicher MMA-Kämpfer. Er gründete die Sport Academy 2017 mit der Vision, Elite-Training nach Südtirol zu bringen.',
-        specializations: [
-          'Brazilian Jiu-Jitsu (Schwarzgurt)',
-          'Mixed Martial Arts',
-          'Wettkampf-Coaching',
-          'Selbstverteidigungssysteme'
-        ],
-        achievements: [
-          'BJJ Schwarzgurt unter renommierter Linie',
-          'Mehrere regionale MMA-Siege',
-          'Zertifizierter Instruktor in mehreren Disziplinen',
-          '8+ Jahre Coaching-Erfahrung'
-        ]
-      },
-      christian: {
-        name: 'Christian Zecchetto',
-        title: 'Senior Instruktor',
-        background: 'Christian bringt eine Fülle von Grappling- und Wrestling-Expertise zur Sport Academy. Sein technischer Ansatz und seine Aufmerksamkeit für Details machen ihn zu einem außergewöhnlichen Instruktor für Schüler aller Stufen.',
-        specializations: [
-          'Wrestling & Grappling',
-          'No-Gi Brazilian Jiu-Jitsu',
-          'Takedown-Techniken',
-          'Jugendprogramme'
-        ],
-        achievements: [
-          'Wettkampf-Wrestling-Hintergrund',
-          'Fortgeschrittene Grappling-Zertifizierungen',
-          'Jugendentwicklungsspezialist',
-          'Turniervorbereitung-Experte'
-        ]
-      },
-      background: 'Hintergrund',
-      specializations: 'Spezialisierungen',
-      achievements: 'Erfolge',
-      philosophy: {
-        title: 'Unsere Trainingsphilosophie',
-        technical: {
-          title: 'Technische Exzellenz',
-          description: 'Wir konzentrieren uns auf richtige Technik und Grundlagen und stellen sicher, dass jeder Schüler eine solide Basis für langfristigen Erfolg aufbaut.'
-        },
-        individual: {
-          title: 'Individuelles Wachstum',
-          description: 'Jeder Schüler erhält persönliche Aufmerksamkeit und Trainingspläne, die auf seine Ziele und sein Fähigkeitsniveau zugeschnitten sind.'
-        },
-        respect: {
-          title: 'Respekt & Disziplin',
-          description: 'Wir vermitteln Werte von Respekt, Disziplin und Sportlichkeit, die weit über die Trainingsmatten hinausgehen.'
-        }
       },
       cta: {
-        title: 'Trainiere mit den Besten',
-        description: 'Erlebe Weltklasse-Unterricht und bringe deine Kampfsportfähigkeiten auf die nächste Stufe.'
+        title: 'Bereit Zu Trainieren?',
+        description: 'Tritt unserer Gemeinschaft engagierter Kampfkünstler bei und beginne heute deine Reise.'
       }
     },
     schedule: {
       hero: {
         title: 'Trainingsplan',
-        description: 'Finde die perfekten Trainingszeiten, die zu deinem Zeitplan passen. Wir bieten Kurse während der ganzen Woche an beiden Standorten Campo Tures und Bruneck an.'
+        description: 'Finde die perfekten Trainingszeiten, die zu deinem Zeitplan passen. Kurse sind die ganze Woche über an beiden Standorten verfügbar.'
       },
       campoTures: 'Campo Tures',
-      brunico: 'Bruneck',
+      brunico: 'Brunico',
       monday: 'Montag',
       tuesday: 'Dienstag',
       wednesday: 'Mittwoch',
@@ -1022,15 +971,15 @@ const translations = {
       bjj: 'BJJ',
       grappling: 'Grappling',
       wrestling: 'Wrestling',
-      striking: 'Schlagen',
+      striking: 'Schlagtechniken',
       openMat: 'Freies Training',
       importantInfo: 'Wichtige Informationen',
       classGuidelines: 'Kursrichtlinien',
       guidelines: {
-        arrive: 'Komme 10-15 Minuten früher zum Aufwärmen',
-        water: 'Bringe Wasserflasche und Handtuch mit',
+        arrive: '10 Minuten früher zum Aufwärmen ankommen',
+        water: 'Wasserflasche und Handtuch mitbringen',
         gi: 'BJJ-Kurse erfordern einen Gi (Uniform)',
-        noGi: 'Grappling- und MMA-Kurse sind No-Gi'
+        noGi: 'Grappling-Kurse sind No-Gi (Shorts & Rash Guard)'
       },
       membershipBenefits: 'Mitgliedschaftsvorteile',
       benefits: {
@@ -1040,114 +989,180 @@ const translations = {
         personalTraining: 'Ermäßigtes Personaltraining'
       },
       cta: {
-        title: 'Bereit für einen Kurs?',
-        description: 'Buche deinen Platz in unserer nächsten Trainingseinheit und starte deine Kampfsport-Reise.'
+        title: 'Bereit Beizutreten?',
+        description: 'Buche heute deinen ersten Kurs und beginne deine Kampfkunst-Reise.'
+      }
+    },
+    coaches: {
+      hero: {
+        title: 'Unsere Trainer',
+        description: 'Lerne von erfahrenen Instruktoren, die sich dafür einsetzen, dir beim Erreichen deiner Kampfkunst-Ziele zu helfen.'
+      },
+      background: 'Hintergrund',
+      specializations: 'Spezialisierungen',
+      achievements: 'Erfolge',
+      matteo: {
+        name: 'Matteo Parolin',
+        title: 'Cheftrainer & Gründer',
+        background: 'Mit über 8 Jahren Erfahrung in Kampfkünsten gründete Matteo die Sport Academy, um hochwertiges MMA- und BJJ-Training nach Südtirol zu bringen. Seine Leidenschaft für das Unterrichten und technische Expertise machen ihn zu einem außergewöhnlichen Instruktor.',
+        specializations: [
+          'Brazilian Jiu-Jitsu',
+          'Mixed Martial Arts',
+          'Grappling',
+          'Wettkampf-Coaching'
+        ],
+        achievements: [
+          'Gründer der Sport Academy (2017)',
+          'Mehrere BJJ-Wettkampfmedaillen',
+          'Zertifizierter BJJ-Instruktor',
+          'MMA-Coaching-Zertifizierung'
+        ]
+      },
+      christian: {
+        name: 'Christian Zecchetto',
+        title: 'BJJ & Grappling Instruktor',
+        background: 'Christian bringt jahrelange Wettkampferfahrung und technisches Wissen zur Sport Academy. Sein methodischer Ansatz beim Unterrichten hilft Schülern, solide Grundlagen und fortgeschrittene Techniken zu entwickeln.',
+        specializations: [
+          'Brazilian Jiu-Jitsu',
+          'No-Gi Grappling',
+          'Wrestling',
+          'Selbstverteidigung'
+        ],
+        achievements: [
+          'BJJ-Wettkampfmeister',
+          'Zertifizierter Grappling-Instruktor',
+          'Wrestling-Hintergrund',
+          'Selbstverteidigungsspezialist'
+        ]
+      },
+      philosophy: {
+        title: 'Unsere Trainingsphilosophie',
+        technical: {
+          title: 'Technische Exzellenz',
+          description: 'Wir konzentrieren uns auf richtige Technik und Grundlagen, um eine starke Basis für alle Schüler zu schaffen.'
+        },
+        individual: {
+          title: 'Individuelle Betreuung',
+          description: 'Jeder Schüler erhält personalisierten Unterricht, der auf seine Ziele und sein Können zugeschnitten ist.'
+        },
+        respect: {
+          title: 'Respekt & Disziplin',
+          description: 'Wir kultivieren eine respektvolle Trainingsumgebung, die Wachstum und gegenseitige Unterstützung fördert.'
+        }
+      },
+      cta: {
+        title: 'Trainiere Mit Den Besten',
+        description: 'Erlebe erstklassigen Unterricht von unserem engagierten Trainerteam.'
       }
     },
     membership: {
       hero: {
         title: 'Mitgliedschaftspläne',
-        description: 'Wähle das perfekte Trainingspaket für deine Ziele. Alle Mitgliedschaften beinhalten Zugang zu beiden Standorten und allen Kursarten.'
+        description: 'Wähle das perfekte Trainingspaket für deine Ziele und deinen Zeitplan. Alle Mitgliedschaften beinhalten Zugang zu beiden Standorten.'
       },
       mainSeason: {
         title: 'Hauptsaison',
         period: 'September - Juni',
-        duration: '10 Monate intensives Training',
-        mostPopular: 'Am beliebtesten'
+        duration: '10 Monate Training',
+        mostPopular: 'Am Beliebtesten'
       },
       summerSeason: {
         title: 'Sommersaison',
         period: 'Juli - August',
-        duration: '2,5 Monate Sommertraining'
+        duration: '2,5 Monate Training'
       },
       bjjOnly: {
-        title: 'BJJ-fokussiertes Training',
-        subtitle: 'Spezielles Brazilian Jiu-Jitsu-Programm für ernsthafte Praktizierende',
-        program: 'Nur BJJ-Programm',
-        description: 'Intensives BJJ-Training mit zusätzlichen Technikeinheiten'
+        title: 'Nur BJJ Mitgliedschaft',
+        subtitle: 'Perfekt für alle, die sich ausschließlich auf Brazilian Jiu-Jitsu konzentrieren',
+        program: 'BJJ-Fokussiertes Training',
+        description: 'Zugang zu allen BJJ-Kursen an beiden Standorten'
       },
       adults: 'Erwachsene',
       students: 'Studenten',
       month: 'Monat',
-      whatsIncluded: 'Was enthalten ist',
+      whatsIncluded: 'Was Enthalten Ist',
       mainIncludes: [
-        'Unbegrenzter Zugang zu allen Kursen',
-        'Training an beiden Standorten',
+        'Alle Gruppenkurse (MMA, BJJ, Grappling)',
+        'Zugang zu beiden Standorten Campo Tures und Brunico',
         'Freie Trainingseinheiten',
         'Anfängerfreundlicher Unterricht',
-        'Zugang zum Wettkampfteam'
+        'Wettkampfteam-Training',
+        'Ausrüstungslagerung'
       ],
       summerIncludes: [
-        'Alle Sommerkurse inklusive',
-        'Flexibler Trainingsplan',
+        'Alle Sommerkurse',
         'Zugang zu beiden Standorten',
-        'Perfekt für Urlaubstraining'
+        'Flexibler Zeitplan',
+        'Freie Trainingseinheiten',
+        'Outdoor-Trainingseinheiten'
       ],
       bjjIncludes: [
-        'Alle BJJ-Kurse inklusive',
-        'Spezialisierte Technikeinheiten',
+        'Alle BJJ-Kurse',
+        'Zugang zu beiden Standorten',
+        'Gürtel-Fortschrittssystem',
         'Wettkampfvorbereitung',
-        'Gürtel-Fortschritt-Tracking'
+        'Freie Trainingseinheiten',
+        'Gi- und No-Gi-Training'
       ],
-      selectMainSeason: 'Hauptsaison wählen',
-      selectSummerSeason: 'Sommersaison wählen',
-      selectBjjOnly: 'BJJ-Programm wählen',
+      selectMainSeason: 'Hauptsaison Wählen',
+      selectSummerSeason: 'Sommersaison Wählen',
+      selectBjjOnly: 'Nur BJJ Wählen',
       additionalServices: {
         title: 'Zusätzliche Dienstleistungen',
-        description: 'Verbessere dein Training mit unseren spezialisierten Programmen und persönlichen Coaching-Optionen.'
+        description: 'Verbessere dein Training mit unseren spezialisierten Programmen und Personal Coaching.'
       },
       personalTraining: {
         title: 'Personaltraining',
-        description: 'Eins-zu-eins-Coaching, das auf deine spezifischen Ziele und Bedürfnisse zugeschnitten ist.',
+        description: 'Eins-zu-eins Coaching auf deine spezifischen Ziele zugeschnitten',
         price: '€50',
-        duration: 'pro Einheit (60 Min.)'
+        duration: 'pro Einheit'
       },
       competitionPrep: {
         title: 'Wettkampfvorbereitung',
-        description: 'Spezialisiertes Training für bevorstehende Turniere und Wettkämpfe.',
+        description: 'Spezialisiertes Training für bevorstehende Wettkämpfe',
         price: '€80',
-        duration: 'pro Einheit (90 Min.)'
+        duration: 'pro Einheit'
       },
       seminars: {
         title: 'Seminare',
-        description: 'Spezielle Workshops mit Gastinstruktoren und fortgeschrittenen Techniken.',
+        description: 'Spezielle Workshops mit Gastinstruktoren',
         price: '€30',
         duration: 'pro Seminar'
       },
       faq: {
-        title: 'Häufig gestellte Fragen',
+        title: 'Häufig Gestellte Fragen',
         seasons: {
           question: 'Was ist der Unterschied zwischen den Saisons?',
-          answer: 'Die Hauptsaison (September-Juni) bietet unser komplettes Programm mit konsistentem Training. Die Sommersaison ist perfekt, um die Fähigkeiten während der Urlaubsmonate mit einem flexibleren Zeitplan zu erhalten.'
+          answer: 'Die Hauptsaison (September-Juni) bietet unser komplettes Programm mit allen Kursen und Wettkämpfen. Die Sommersaison (Juli-August) hat einen entspannteren Zeitplan, perfekt um während der Urlaubszeit fit zu bleiben.'
         },
         locations: {
           question: 'Kann ich an beiden Standorten trainieren?',
-          answer: 'Ja! Alle Mitgliedschaften beinhalten Zugang zu beiden Standorten Campo Tures und Bruneck. Du kannst Kurse je nach deinem Zeitplan mischen und kombinieren.'
+          answer: 'Ja! Alle Mitgliedschaften beinhalten Zugang zu beiden Standorten Campo Tures und Brunico. Du kannst jeden Kurs in beiden Gyms besuchen.'
         },
         trial: {
           question: 'Bietet ihr Probestunden an?',
-          answer: 'Absolut! Wir bieten eine kostenlose Probestunde für neue Schüler an. Kontaktiere uns, um deine erste Einheit zu planen und unser Training aus erster Hand zu erleben.'
+          answer: 'Absolut! Wir bieten eine kostenlose Probestunde für neue Schüler an. Kontaktiere uns, um deine erste Einheit zu planen.'
         },
         equipment: {
           question: 'Welche Ausrüstung brauche ich?',
-          answer: 'Für deine erste Stunde bringe einfach bequeme Trainingskleidung und Wasser mit. Wir geben dir Anleitung zu jeder spezifischen Ausrüstung, die für deine gewählten Disziplinen benötigt wird.'
+          answer: 'Für Anfänger reicht bequeme Sportkleidung. Wir stellen Grundausrüstung für Probestunden zur Verfügung. Mit fortschreitendem Training brauchst du einen Gi für BJJ und entsprechende Ausrüstung für andere Kurse.'
         }
       },
       cta: {
-        title: 'Starte deine Reise heute',
-        description: 'Tritt der Sport Academy Familie bei und transformiere deine Kampfsportfähigkeiten mit Expertenunterricht.'
+        title: 'Beginne Deine Reise',
+        description: 'Wähle deine Mitgliedschaft und beginne das Training bei Südtirols führender Kampfkunst-Akademie.'
       }
     },
     contact: {
       hero: {
-        title: 'Kontaktiere uns',
-        description: 'Nimm Kontakt mit unserem Team auf, um deine Kampfsport-Reise zu beginnen oder mehr über unsere Programme zu erfahren. Wir sind hier, um dir zu helfen, deine Ziele zu erreichen.'
+        title: 'Kontakt',
+        description: 'Nimm Kontakt mit unserem Team auf und beginne heute deine Kampfkunst-Reise. Wir sind hier, um dir bei jedem Schritt zu helfen.'
       },
       getInTouch: {
-        title: 'Kontakt aufnehmen',
-        subtitle: 'Mehrere Wege, um mit der Sport Academy in Verbindung zu treten'
+        title: 'Kontakt Aufnehmen',
+        subtitle: 'Verschiedene Wege, um mit Sport Academy in Kontakt zu treten'
       },
-      callUs: 'Ruf uns an',
+      callUs: 'Anrufen',
       instagram: 'Instagram',
       locations: {
         title: 'Unsere Standorte',
@@ -1156,51 +1171,51 @@ const translations = {
       address: 'Adresse',
       trainingSchedule: 'Trainingsplan',
       parkingAccessibility: {
-        title: 'Parken & Zugänglichkeit',
+        title: 'Parken & Erreichbarkeit',
         subtitle: 'Einfacher Zugang und bequemes Parken an beiden Standorten'
       },
       parking: 'Parken',
       publicTransport: 'Öffentliche Verkehrsmittel',
-      accessibility: 'Zugänglichkeit',
+      accessibility: 'Erreichbarkeit',
+      campoTures: {
+        parking: 'Kostenlose Parkplätze stehen direkt vor dem Eingang zur Verfügung, mit zusätzlichen Plätzen in der Nähe. E-Ladestation etwa 200 Meter entfernt.',
+        transport: 'Die Haltestelle "Campo Tures Centro" ist nur 2 Gehminuten entfernt. Mehrere Buslinien halten hier, einschließlich 450, 451 und 452, die regelmäßige Verbindungen nach Brunico, zu lokalen Dörfern und den umliegenden Tälern bieten.',
+        accessibility: 'Das Gym ist zu Fuß, mit dem Auto oder öffentlichen Verkehrsmitteln leicht zu erreichen. Gelegen in einem breiten, flachen und gut beleuchteten Bereich — perfekt für abendliches Training.'
+      },
       brunico: {
         parking: 'Kostenlose Straßenparkplätze entlang der Via Riedl und nahegelegenen Straßen verfügbar. Während der Stoßzeiten sind öffentliche Garagen und kostenpflichtige Blaue-Zone-Parkplätze nur 5 Gehminuten entfernt.',
-        transport: 'Der Bahnhof Bruneck Nord ist nur 2 Gehminuten vom Fitnessstudio entfernt — perfekt, wenn du aus San Candido, Fortezza oder irgendwo im Tal kommst. Es gibt auch eine nahegelegene Bushaltestelle mit städtischen und regionalen Verbindungen.',
-        accessibility: 'Das Fitnessstudio befindet sich in einer ruhigen, flachen Gegend mit einem kurzen, direkten Weg von allen nahegelegenen Verkehrshaltestellen. Einfach zu erreichen, auch mit Ausrüstung oder Trainingstaschen.'
-      },
-      campoTures: {
-        parking: 'Kostenlose Parkplätze sind direkt vor dem Eingang verfügbar, mit zusätzlichen Plätzen in der Nähe. E-Ladestation ~200 m entfernt.',
-        transport: 'Die Haltestelle "Campo Tures Centro" ist nur 2 Gehminuten entfernt. Mehrere Buslinien halten hier, einschließlich 450, 451 und 452, die regelmäßige Verbindungen nach Bruneck, zu lokalen Dörfern und den umliegenden Tälern bieten.',
-        accessibility: 'Das Fitnessstudio ist zu Fuß, mit dem Auto oder öffentlichen Verkehrsmitteln leicht zu erreichen. Befindet sich in einem breiten, flachen und gut beleuchteten Bereich — perfekt für das Abendtraining.'
+        transport: 'Der Bahnhof Brunico Nord ist nur 2 Gehminuten vom Gym entfernt — perfekt wenn du aus San Candido, Fortezza oder irgendwo im Tal kommst. Es gibt auch eine nahegelegene Bushaltestelle mit städtischen und regionalen Verbindungen.',
+        accessibility: 'Das Gym befindet sich in einer ruhigen, flachen Gegend mit einem kurzen, direkten Weg von allen nahegelegenen Verkehrshaltestellen. Leicht zu erreichen auch mit Ausrüstung oder Trainingstaschen.'
       },
       visitRequirements: {
-        title: 'Besuchsanforderungen',
-        subtitle: 'Was du vor deinem ersten Besuch wissen solltest'
+        title: 'Besuchsanforderungen & Richtlinien',
+        subtitle: 'Alles was du für deinen ersten Besuch wissen musst'
       },
       firstTimeVisitors: 'Erstbesucher',
-      whatToBring: 'Was mitbringen',
+      whatToBring: 'Was Mitbringen',
       bring: [
-        'Bequeme Trainingskleidung',
-        'Wasserflasche und Handtuch',
-        'Sportschuhe (für Schlagkurse)',
+        'Bequeme Sportkleidung',
+        'Wasserflasche',
+        'Handtuch',
         'Positive Einstellung und Lernbereitschaft'
       ],
-      whatWeProvide: 'Was wir bereitstellen',
+      whatWeProvide: 'Was Wir Bereitstellen',
       provide: [
-        'Alle Trainingsmatten und Ausrüstung',
+        'Trainingshandschuhe und Schienbeinschoner',
+        'Saubere Trainingsmatten',
         'Umkleideräume und Duschen',
-        'Grundlegende Schutzausrüstung für Anfänger',
-        'Expertenunterricht und Anleitung'
+        'Professioneller Unterricht'
       ],
-      specialInstructions: 'Spezielle Anweisungen',
+      specialInstructions: 'Besondere Anweisungen',
       instructions: {
-        age: 'Altersanforderungen: 16+ für Erwachsenenkurse, Kinderkurse verfügbar für Alter 6-14',
-        health: 'Gesundheit: Bitte informiere Instruktoren über Verletzungen oder Gesundheitszustände',
-        equipment: 'Ausrüstung: Gi (Uniform) Verleih verfügbar für BJJ-Kurse',
-        payment: 'Zahlung: Bargeld, Karte und Banküberweisung akzeptiert'
+        age: 'Altersanforderungen: Mindestalter 16 für Erwachsenenkurse, Kinderkurse verfügbar für Alter 6-14',
+        health: 'Gesundheit: Bitte informiere die Instruktoren über Verletzungen oder Gesundheitszustände',
+        equipment: 'Ausrüstung: Wir stellen Handschuhe und Schienbeinschoner zur Verfügung, aber Schüler sollten ihre eigene Ausrüstung kaufen',
+        payment: 'Zahlung: Wir akzeptieren nur Karten- und Barzahlungen'
       },
       cta: {
-        title: 'Bereit zum Training?',
-        description: 'Kontaktiere uns heute, um deine erste Stunde zu planen und deine Kampfsport-Reise zu beginnen.'
+        title: 'Bereit Zu Beginnen?',
+        description: 'Kontaktiere uns heute, um deinen ersten Kurs zu planen und deine Kampfkunst-Reise zu beginnen.'
       }
     },
     disciplines: {
@@ -1208,19 +1223,18 @@ const translations = {
         breadcrumb: 'Brazilian Jiu-Jitsu',
         title: 'Brazilian Jiu-Jitsu',
         hero: {
-          subtitle: 'Meistere die sanfte Kunst der Hebelwirkung, Technik und Bodenkontrolle'
+          subtitle: 'Meistere die sanfte Kunst durch Technik, Hebelwirkung und Strategie'
         },
         overview: {
-          title: 'Die sanfte Kunst',
+          title: 'Die Sanfte Kunst',
           paragraphs: [
-            'Brazilian Jiu-Jitsu (BJJ) ist eine Kampfkunst und ein Kampfsport, der sich auf Bodenkampf und Submission-Griffe konzentriert. Es betont das Prinzip, dass eine kleinere, schwächere Person sich erfolgreich gegen einen größeren, stärkeren Gegner durch richtige Technik, Hebelwirkung und Timing verteidigen kann.',
-            'Bei der Sport Academy ist unser BJJ-Programm darauf ausgelegt, Schülern die grundlegenden Prinzipien dieser schönen Kunst zu lehren, während körperliche Fitness, mentale Stärke und Selbstvertrauen aufgebaut werden. Ob du dich für Selbstverteidigung, Wettkampf oder einfach nur für das Fitbleiben interessierst, BJJ bietet für jeden etwas.',
-            'Unsere erfahrenen Instruktoren führen Schüler durch einen progressiven Lehrplan, der alle Aspekte des Brazilian Jiu-Jitsu abdeckt, von grundlegenden Positionen und Befreiungen bis hin zu fortgeschrittenen Submissions und Wettkampfstrategien.'
+            'Brazilian Jiu-Jitsu (BJJ) ist eine Kampfkunst und ein Kampfsport, der sich auf Bodenkampf und Submission-Griffe konzentriert. Oft als "die sanfte Kunst" bezeichnet, betont BJJ Technik und Hebelwirkung über Kraft und Größe, was es für Praktizierende aller Altersgruppen und körperlichen Fähigkeiten zugänglich macht.',
+            'Bei Sport Academy ist unser BJJ-Programm darauf ausgelegt, dir die grundlegenden Prinzipien dieser unglaublichen Kampfkunst beizubringen, während es dein Selbstvertrauen, deine Fitness und mentale Widerstandsfähigkeit aufbaut. Ob du dich für Selbstverteidigung, Wettkampf oder einfach nur für das Fitbleiben interessierst, BJJ bietet für jeden etwas.'
           ]
         },
         techniques: {
-          title: 'Kern-BJJ-Techniken',
-          subtitle: 'Meistere die grundlegenden Fähigkeiten, die das Fundament des Brazilian Jiu-Jitsu bilden',
+          title: 'Kerntechniken',
+          subtitle: 'Meistere die grundlegenden Fähigkeiten des Brazilian Jiu-Jitsu',
           guardWork: {
             title: 'Guard-Arbeit',
             items: [
@@ -1234,8 +1248,8 @@ const translations = {
             title: 'Submissions',
             items: [
               'Würgegriffe und Strangulationen',
-              'Gelenkhebel und Armbars',
-              'Beinhebel und Heel Hooks',
+              'Gelenkhebel und Armhebel',
+              'Beinhebel und Fußangriffe',
               'Submission-Ketten'
             ]
           },
@@ -1250,45 +1264,18 @@ const translations = {
           }
         },
         beltSystem: {
-          title: 'BJJ-Gürtelsystem',
-          subtitle: 'Fortschritt durch das traditionelle Brazilian Jiu-Jitsu-Rangsystem',
-          belts: [
-            {
-              name: 'Weißgurt',
-              color: 'gray',
-              description: 'Anfänger-Grundlagen'
-            },
-            {
-              name: 'Blaugurt',
-              color: 'blue',
-              description: 'Solide Grundlage'
-            },
-            {
-              name: 'Lila Gurt',
-              color: 'purple',
-              description: 'Fortgeschrittene Techniken'
-            },
-            {
-              name: 'Braungurt',
-              color: 'yellow',
-              description: 'Expertenlevel'
-            },
-            {
-              name: 'Schwarzgurt',
-              color: 'gray',
-              description: 'Meisterlevel'
-            }
-          ],
+          title: 'BJJ Gürtel-System',
+          subtitle: 'Schreite durch die Ränge mit Hingabe und Können voran',
           philosophy: {
             title: 'Gürtel-Philosophie',
-            description: 'Jeder Gürtel repräsentiert Jahre des engagierten Trainings, technisches Wissen und persönliches Wachstum. Unsere Instruktoren stellen sicher, dass jede Beförderung durch demonstrierte Fähigkeiten, Verständnis und Charakterentwicklung verdient wird.'
+            description: 'Das BJJ-Gürtelsystem repräsentiert nicht nur technische Fähigkeiten, sondern auch Charakterentwicklung, Ausdauer und Verständnis der Kunst. Jede Gürtelstufe erfordert Jahre engagierten Trainings und stellt einen bedeutenden Meilenstein in deiner Kampfkunst-Reise dar.'
           }
         },
         history: {
-          title: 'Geschichte des BJJ',
+          title: 'Geschichte & Ursprünge',
           paragraphs: [
-            'Brazilian Jiu-Jitsu entwickelte sich aus traditionellem japanischem Jujutsu und Judo, das von Mitsuyo Maeda im frühen 20. Jahrhundert nach Brasilien gebracht wurde. Die Gracie-Familie, insbesondere Helio Gracie, passte diese Techniken an, um eine effektivere Kampfkunst für kleinere Praktizierende zu schaffen.',
-            'Die Kunst erlangte weltweite Anerkennung durch die frühen UFC-Turniere, wo Royce Gracie die Wirksamkeit des BJJ gegen größere Gegner aus verschiedenen Kampfkunst-Hintergründen demonstrierte. Diese Exposition führte dazu, dass BJJ zu einer grundlegenden Komponente der modernen Mixed Martial Arts wurde.'
+            'Brazilian Jiu-Jitsu entwickelte sich aus traditionellem japanischem Jujutsu und Judo, das Anfang des 20. Jahrhunderts von Mitsuyo Maeda nach Brasilien gebracht wurde. Die Gracie-Familie, insbesondere Helio Gracie, passte diese Techniken an, um ein effektiveres System für kleinere Praktizierende zu schaffen.',
+            'Die Kunst erlangte weltweite Anerkennung durch die frühen UFC-Wettkämpfe, wo Royce Gracie die Wirksamkeit von BJJ gegen größere Gegner aus verschiedenen Kampfkunst-Hintergründen demonstrierte.'
           ],
           keyFigures: {
             title: 'Schlüsselfiguren',
@@ -1303,43 +1290,41 @@ const translations = {
               },
               {
                 name: 'Royce Gracie',
-                description: 'UFC-Champion, der BJJ der Welt zeigte'
+                description: 'UFC-Champion, der BJJs Wirksamkeit bewies'
               }
             ]
           }
         },
         schedule: {
-          title: 'BJJ-Trainingsplan',
-          subtitle: 'Regelmäßige Kurse an beiden Standorten während der ganzen Woche verfügbar'
+          title: 'BJJ Trainingsplan',
+          subtitle: 'Regelmäßige Kurse an beiden Standorten verfügbar'
         },
         cta: {
-          title: 'Starte deine BJJ-Reise',
-          description: 'Tritt unserem Brazilian Jiu-Jitsu-Programm bei und entdecke die sanfte Kunst, die die Kampfkünste für immer verändert hat.',
-          joinButton: 'BJJ-Kurse beitreten',
-          backButton: 'Zurück zu den Kursen'
+          title: 'Beginne Deine BJJ-Reise',
+          description: 'Tritt unserem BJJ-Programm bei und entdecke die sanfte Kunst, die sowohl körperliche als auch mentale Stärke aufbaut.',
+          joinButton: 'BJJ-Kurse Beitreten'
         }
       },
       mma: {
         title: 'Mixed Martial Arts',
         hero: {
-          subtitle: 'Der ultimative Kampfsport, der Schlagen, Wrestling und Bodenkampf kombiniert'
+          subtitle: 'Der ultimative Kampfsport, der alle Kampfkunst-Disziplinen kombiniert'
         },
         overview: {
-          title: 'Der komplette Kämpfer',
+          title: 'Der Komplette Kämpfer',
           paragraphs: [
-            'Mixed Martial Arts (MMA) ist der vollständigste Kampfsport, der Techniken aus Boxen, Kickboxen, Wrestling und Brazilian Jiu-Jitsu kombiniert. Es repräsentiert die Evolution der Kampfkünste, wo Kämpfer in allen Kampfbereichen kompetent sein müssen.',
-            'Unser MMA-Programm bei der Sport Academy bietet umfassendes Training, das vielseitige Kämpfer entwickelt, die auf jedem Level konkurrieren können. Wir konzentrieren uns darauf, eine starke Grundlage in jeder Disziplin aufzubauen und gleichzeitig den Schülern beizubringen, wie sie nahtlos zwischen Schlagen und Grappling wechseln können.',
-            'Ob dein Ziel professioneller Wettkampf, Amateur-Turniere oder einfach der beste Kampfkünstler zu werden, der du sein kannst, unser MMA-Programm wird dich sowohl körperlich als auch mental herausfordern und transformieren.'
+            'Mixed Martial Arts (MMA) ist der kompletteste Kampfsport, der Techniken aus Boxen, Kickboxen, Wrestling, Brazilian Jiu-Jitsu und anderen Kampfkünsten kombiniert. MMA-Training entwickelt vielseitige Kämpfer, die in allen Kampfdistanzen komfortabel sind.',
+            'Unser MMA-Programm bei Sport Academy bietet umfassendes Training, das Schlagen, Grappling und Bodenkampf abdeckt. Ob du dich für Wettkampf interessierst oder einfach das kompletteste verfügbare Kampfkunst-Training möchtest, unsere MMA-Kurse werden dich als kompletten Kampfkünstler herausfordern und entwickeln.'
           ]
         },
         techniques: {
-          title: 'MMA-Techniken',
+          title: 'Kerntechniken',
           subtitle: 'Meistere alle Aspekte des Mixed Martial Arts Kampfes',
           striking: {
-            title: 'Schlagen',
+            title: 'Schlagtechniken',
             items: [
-              'Box-Grundlagen',
-              'Kickboxen und Muay Thai',
+              'Box-Grundlagen und Kombinationen',
+              'Kickbox- und Muay Thai-Techniken',
               'Ellbogen- und Knieschläge',
               'Fußarbeit und Kopfbewegung'
             ]
@@ -1348,74 +1333,74 @@ const translations = {
             title: 'Wrestling',
             items: [
               'Takedown-Techniken',
-              'Takedown-Verteidigung',
-              'Käfig-Wrestling',
-              'Bodenkontrolle'
+              'Takedown-Verteidigung und Sprawls',
+              'Clinch-Arbeit und Dirty Boxing',
+              'Käfig-Wrestling-Taktiken'
             ]
           },
           groundGame: {
-            title: 'Bodenspiel',
+            title: 'Bodenkampf',
             items: [
-              'Ground and Pound',
-              'Submission-Grappling',
-              'Guard-Arbeit',
-              'Befreiungen und Umkehrungen'
+              'Ground and Pound Techniken',
+              'Submission Grappling',
+              'Bodenkontrollpositionen',
+              'Übergänge und Befreiungen'
             ]
           }
         },
         history: {
-          title: 'Geschichte des MMA',
+          title: 'MMA Evolution',
           paragraphs: [
-            'Mixed Martial Arts hat antike Wurzeln in verschiedenen Kulturen, aber modernes MMA begann mit der Ultimate Fighting Championship (UFC) im Jahr 1993. Die frühen Turniere wurden entwickelt, um zu bestimmen, welche Kampfkunst in echten Kampfsituationen am effektivsten war.',
-            'Im Laufe der Jahre hat sich MMA von einem Spektakel verschiedener Kampfstile zu einem ausgeklügelten Sport mit einheitlichen Regeln, Gewichtsklassen und hochtrainierten Athleten entwickelt, die in mehreren Disziplinen geschult sind.'
+            'Mixed Martial Arts hat antike Wurzeln in verschiedenen Kulturen, aber modernes MMA begann mit der Ultimate Fighting Championship (UFC) im Jahr 1993. Frühe Wettkämpfe stellten verschiedene Kampfkunst-Stile gegeneinander, um das effektivste Kampfsystem zu bestimmen.',
+            'Mit der Zeit erkannten Kämpfer, dass sie vielseitig in allen Kampfaspekten sein mussten, um erfolgreich zu sein. Dies führte zur Evolution von MMA, wie wir es heute kennen - ein Sport, in dem Athleten in mehreren Disziplinen trainieren, um komplette Kämpfer zu werden.'
           ],
           milestones: {
             title: 'Wichtige Meilensteine',
             events: [
               {
                 year: '1993',
-                description: 'Erste UFC-Veranstaltung zeigt verschiedene Kampfkünste'
+                description: 'Erstes UFC-Event demonstriert Wirksamkeit verschiedener Kampfkünste'
               },
               {
-                year: '2001',
-                description: 'Einheitliche MMA-Regeln etabliert'
+                year: '2000er',
+                description: 'Evolution vielseitiger Kämpfer, die mehrere Disziplinen trainieren'
               },
               {
-                year: '2016',
-                description: 'MMA wird Mainstream mit globaler Anerkennung'
+                year: '2010er',
+                description: 'MMA wird Mainstream mit globaler Popularität'
               }
             ]
           }
         },
         benefits: {
-          title: 'Vorteile des MMA-Trainings',
-          subtitle: 'Transformiere deinen Körper und Geist durch Mixed Martial Arts',
+          title: 'Trainingsvorteile',
+          subtitle: 'Entwickle komplette Kampfkunst-Fähigkeiten und Fitness',
           items: [
             {
               icon: '💪',
-              title: 'Ganzkörper-Fitness',
-              description: 'Komplette körperliche Konditionierung'
+              title: 'Komplette Fitness',
+              description: 'Ganzkörper-Konditionierung und Kraftentwicklung'
             },
             {
               icon: '🧠',
               title: 'Mentale Stärke',
-              description: 'Entwickle Widerstandsfähigkeit und Selbstvertrauen'
-            },
-            {
-              icon: '🥊',
-              title: 'Selbstverteidigung',
-              description: 'Reale Schutzfähigkeiten'
+              description: 'Baue Selbstvertrauen und mentale Widerstandsfähigkeit auf'
             },
             {
               icon: '⚡',
-              title: 'Explosive Kraft',
-              description: 'Baue Stärke und Geschwindigkeit auf'
+              title: 'Selbstverteidigung',
+              description: 'Lerne praktische Selbstverteidigung für jede Situation'
+            },
+            {
+              icon: '🎯',
+              title: 'Technische Fähigkeiten',
+              description: 'Meistere Techniken aus mehreren Kampfkünsten'
             }
           ]
         },
         schedule: {
-          title: 'MMA-Trainingsplan',
-          subtitle: 'Hochintensive Trainingseinheiten für alle Fähigkeitsstufen'
+          title: 'MMA Trainingsplan',
+          subtitle: 'Umfassende MMA-Kurse für alle Stufen'
         },
         legends: {
           title: 'MMA-Legenden',
@@ -1423,90 +1408,88 @@ const translations = {
           fighters: [
             {
               name: 'Anderson Silva',
-              title: 'Die Spinne',
-              description: 'Legendärer Schläger mit unglaublicher Präzision'
+              title: 'The Spider',
+              description: 'Legendärer Schlagkämpfer mit unglaublicher Präzision und Kreativität'
             },
             {
               name: 'Fedor Emelianenko',
-              title: 'Der letzte Kaiser',
-              description: 'Dominanter Schwergewichtler mit Sambo-Hintergrund'
+              title: 'The Last Emperor',
+              description: 'Dominanter Schwergewichtler mit außergewöhnlichem Bodenkampf'
             },
             {
               name: 'Jon Jones',
               title: 'Bones',
-              description: 'Kreativer Schläger mit außergewöhnlicher Reichweite'
+              description: 'Vielseitiger Champion mit unorthodoxen Schlag- und Wrestling-Techniken'
             }
           ]
         },
         cta: {
-          title: 'Werde ein kompletter Kämpfer',
+          title: 'Werde Ein Kompletter Kämpfer',
           description: 'Tritt unserem MMA-Programm bei und entwickle Fähigkeiten in allen Aspekten der Kampfsportarten.',
-          joinButton: 'MMA-Training beitreten',
-          backButton: 'Zurück zu den Kursen'
+          joinButton: 'MMA-Training Beitreten'
         }
       },
       grappling: {
         breadcrumb: 'Grappling',
         title: 'Grappling',
         hero: {
-          subtitle: 'Meistere die Kunst des Wrestling, Takedowns und Submission-Grappling'
+          subtitle: 'Meistere Bodenkontrolle, Takedowns und Submission-Techniken'
         },
         overview: {
           title: 'Die Kunst der Kontrolle',
           paragraphs: [
-            'Grappling umfasst alle Formen des Wrestling, Submission-Grappling und Bodenkontrolltechniken. Es ist die Grundlage für effektiven Bodenkampf und eine wesentliche Komponente sowohl der Selbstverteidigung als auch der Mixed Martial Arts.',
-            'Unser Grappling-Programm konzentriert sich darauf, überlegene Takedown-Fähigkeiten, Positionskontrolle und Submission-Techniken zu entwickeln. Schüler lernen, Gegner durch Hebelwirkung, Timing und technische Präzision zu dominieren, anstatt sich ausschließlich auf Kraft zu verlassen.',
-            'Ob du dich auf MMA-Wettkämpfe vorbereitest, dein BJJ-Spiel verbesserst oder einfach ein vollständigerer Grappler werden möchtest, unser Programm bietet die Werkzeuge und Techniken, die du zum Erfolg benötigst.'
+            'Grappling ist die Kunst, deinen Gegner durch Wrestling, Takedowns und Bodenkampftechniken zu kontrollieren. Es bildet die Grundlage vieler Kampfkünste und ist essentiell sowohl für Selbstverteidigung als auch für Wettkampf-Kampfsportarten.',
+            'Unser Grappling-Programm konzentriert sich auf die Entwicklung überlegener Bodenkontrolle, Takedown-Fähigkeiten und Submission-Techniken. Ob du dich auf MMA-Wettkämpfe vorbereitest oder dein gesamtes Grappling-Spiel verbessern möchtest, unsere Kurse bieten umfassendes Training in allen Aspekten des Grapplings.'
           ]
         },
         techniques: {
-          title: 'Grappling-Techniken',
-          subtitle: 'Entwickle ein komplettes Arsenal von Wrestling- und Submission-Fähigkeiten',
+          title: 'Kerntechniken',
+          subtitle: 'Entwickle überlegene Grappling-Fähigkeiten und Bodenkontrolle',
           takedowns: {
             title: 'Takedowns',
             items: [
               'Single- und Double-Leg-Takedowns',
               'Hüftwürfe und Würfe',
               'Fußfeger und Trips',
-              'Käfig-Takedowns'
+              'Takedown-Kombinationen'
             ]
           },
           control: {
             title: 'Kontrolle',
             items: [
-              'Top-Positionskontrolle',
-              'Pinning-Kombinationen',
-              'Ride- und Kontrolltechniken',
-              'Druck und Gewichtsverteilung'
+              'Top-Position-Kontrolle',
+              'Side Control und Mount',
+              'Back Control Techniken',
+              'Übergangskontrolle'
             ]
           },
           submissions: {
             title: 'Submissions',
             items: [
-              'No-Gi-Submission-Techniken',
-              'Wrestling-basierte Submissions',
-              'Beinhebel und Heel Hooks',
-              'Übergangs-Submissions'
+              'Gelenkhebel und Armhebel',
+              'Würgegriffe und Strangulationen',
+              'Beinhebel und Knöchelangriffe',
+              'Submission-Setups'
             ]
           }
         },
         methodology: {
           title: 'Trainingsmethodik',
-          subtitle: 'Unser systematischer Ansatz zur Grappling-Exzellenz',
+          subtitle: 'Systematischer Ansatz zur Grappling-Entwicklung',
           technical: {
             title: 'Technische Entwicklung',
             methods: [
               {
                 title: 'Drilling',
-                description: 'Wiederholende Praxis grundlegender Bewegungen'
+                description: 'Wiederholende Übung grundlegender Bewegungen und Techniken'
               },
               {
-                title: 'Positions-Sparring',
-                description: 'Fokussiertes Training aus spezifischen Positionen'
+                title: 'Positionelles Sparring',
+                description: 'Live-Training aus spezifischen Positionen zur Fähigkeitsentwicklung'
               },
               {
-                title: 'Live Rolling',
-                description: 'Vollintensive Grappling-Sitzungen'
+                title: 'Flow Rolling',
+                description: 'Kontinuierliche Bewegungsübung zur Entwicklung von Timing und Übergängen'
               }
             ]
           },
@@ -1514,76 +1497,75 @@ const translations = {
             title: 'Körperliche Konditionierung',
             methods: [
               {
-                title: 'Grappling-Cardio',
-                description: 'Sportspezifisches Herz-Kreislauf-Training'
+                title: 'Krafttraining',
+                description: 'Aufbau funktionaler Kraft für Grappling-Bewegungen'
               },
               {
-                title: 'Funktionale Kraft',
-                description: 'Aufbau grappling-spezifischer Kraft'
+                title: 'Cardio-Konditionierung',
+                description: 'Entwicklung von Ausdauer für ausgedehnte Grappling-Sessions'
               },
               {
                 title: 'Flexibilität',
-                description: 'Mobilität und Verletzungsprävention'
+                description: 'Erhaltung der Beweglichkeit und Verletzungsprävention'
               }
             ]
           }
         },
         benefits: {
-          title: 'Vorteile des Grappling',
-          subtitle: 'Warum Grappling-Training Athleten transformiert',
+          title: 'Trainingsvorteile',
+          subtitle: 'Entwickle Kraft, Technik und mentale Stärke',
           items: [
             {
-              icon: '🤼',
-              title: 'Wrestling-Fähigkeiten',
-              description: 'Überlegene Takedown- und Kontrollfähigkeiten'
-            },
-            {
-              icon: '💪',
+              icon: '🏋️',
               title: 'Funktionale Kraft',
-              description: 'Real anwendbare Kraft'
+              description: 'Baue real anwendbare Kraft und Power auf'
             },
             {
               icon: '🧘',
-              title: 'Mentales Schach',
-              description: 'Strategisches Denken und Problemlösung'
+              title: 'Mentaler Fokus',
+              description: 'Entwickle Konzentration und Problemlösungsfähigkeiten'
             },
             {
-              icon: '⚡',
-              title: 'Explosive Kraft',
-              description: 'Dynamische Bewegung und Athletik'
+              icon: '🛡️',
+              title: 'Selbstverteidigung',
+              description: 'Lerne praktische Techniken für reale Situationen'
+            },
+            {
+              icon: '🏆',
+              title: 'Wettkampfbereit',
+              description: 'Bereite dich auf Grappling- und MMA-Wettkämpfe vor'
             }
           ]
         },
         schedule: {
           title: 'Grappling-Zeitplan',
-          subtitle: 'Intensive Trainingseinheiten mit Fokus auf Wrestling und Submissions'
+          subtitle: 'Regelmäßige Grappling-Kurse an beiden Standorten'
         },
         legends: {
           title: 'Grappling-Legenden',
-          subtitle: 'Studiere die Techniken von Wrestling- und Grappling-Meistern',
+          subtitle: 'Studiere die Techniken der größten Grappler',
           grapplers: [
             {
-              name: 'Dan Gable',
-              title: 'Wrestling-Legende',
-              description: 'Olympiasieger und Coaching-Ikone'
+              name: 'Kazushi Sakuraba',
+              title: 'The Gracie Hunter',
+              description: 'Legendärer Catch Wrestler, der mehrere Gracie-Familienmitglieder besiegte'
             },
             {
-              name: 'Gordon Ryan',
-              title: 'No-Gi-König',
-              description: 'Dominanter Submission-Grappler'
+              name: 'Frank Shamrock',
+              title: 'The Legend',
+              description: 'Pionier des modernen MMA mit außergewöhnlichen Grappling-Fähigkeiten'
             },
             {
-              name: 'John Danaher',
-              title: 'Der Professor',
-              description: 'Revolutionärer Grappling-Coach'
+              name: 'Marcelo Garcia',
+              title: 'The Magician',
+              description: 'BJJ-Legende bekannt für seine unglaubliche Technik und Lehre'
             }
           ]
         },
         cta: {
-          title: 'Meistere das Bodenspiel',
-          description: 'Entwickle überlegene Grappling-Fähigkeiten, die dein gesamtes Kampfkunstspiel erheben werden.',
-          joinButton: 'Grappling-Kurse beitreten',
-          backButton: 'Zurück zu den Kursen'
+          title: 'Meistere Das Bodenkampfspiel',
+          description: 'Tritt unserem Grappling-Programm bei und entwickle überlegene Bodenkampf-Fähigkeiten.',
+          joinButton: 'Grappling-Kurse Beitreten'
         }
       }
     },
@@ -1591,26 +1573,6 @@ const translations = {
       tagline: 'Elite MMA, BJJ & Grappling Training',
       subtitle: 'Kämpfer schmieden seit 2017',
       copyright: '© 2024 Sport Academy. Alle Rechte vorbehalten.'
-    },
-    common: {
-      joinNow: 'Jetzt beitreten',
-      viewClasses: 'Kurse ansehen',
-      viewSchedule: 'Stundenplan ansehen',
-      viewMembership: 'Mitgliedschaft ansehen',
-      contactUs: 'Kontaktiere uns',
-      callNow: 'Jetzt anrufen',
-      learnMore: 'Mehr erfahren',
-      allLevels: 'Alle Stufen',
-      ages: 'Alter',
-      joinSportAcademy: 'Sport Academy beitreten',
-      registerOnline: 'Online registrieren',
-      bookClasses: 'Kurse buchen',
-      visitUs: 'Besuche uns',
-      dropInWelcome: 'Drop-ins willkommen',
-      responseWithin2Hours: 'Antwort innerhalb von 2 Stunden',
-      dailyUpdatesAndDMs: 'Tägliche Updates und DMs',
-      instantConfirmation: 'Sofortige Bestätigung',
-      duringTrainingHours: 'Während der Trainingszeiten'
     }
   },
   it: {
@@ -1622,14 +1584,34 @@ const translations = {
       membership: 'Abbonamenti',
       contact: 'Contatti'
     },
+    common: {
+      joinNow: 'Iscriviti Ora',
+      viewClasses: 'Vedi Corsi',
+      viewSchedule: 'Vedi Orari',
+      viewMembership: 'Vedi Abbonamenti',
+      contactUs: 'Contattaci',
+      learnMore: 'Scopri di Più',
+      allLevels: 'Tutti i Livelli',
+      ages: 'Età',
+      joinSportAcademy: 'Unisciti a Sport Academy',
+      callNow: 'Chiama Ora',
+      registerOnline: 'Registrati Online',
+      bookClasses: 'Prenota Lezioni',
+      instantConfirmation: 'Conferma Istantanea',
+      visitUs: 'Visitaci',
+      dropInWelcome: 'Visite Spontanee Benvenute',
+      duringTrainingHours: 'Durante gli Orari di Allenamento',
+      responseWithin2Hours: 'Risposta entro 2 ore',
+      dailyUpdatesAndDMs: 'Aggiornamenti quotidiani e DM'
+    },
     home: {
       hero: {
         title: 'SPORT ACADEMY',
         subtitle: 'Forgiamo combattenti dal 2017'
       },
       welcome: {
-        title: 'Benvenuti alla Sport Academy',
-        description: 'Allenati con gli istruttori d\'élite Matteo Parolin e Christian Zecchetto nelle nostre strutture all\'avanguardia a Campo Tures e Brunico. Che tu sia un principiante o un combattente esperto, offriamo allenamento completo in MMA, Brazilian Jiu-Jitsu, Grappling e Wrestling.'
+        title: 'Benvenuti a Sport Academy',
+        description: 'Allenamento d\'élite in Arti Marziali Miste, Brazilian Jiu-Jitsu e Grappling. Con sedi a Campo Tures e Brunico, offriamo istruzione di livello mondiale per tutti i livelli di abilità.'
       },
       stats: {
         yearsOfExcellence: 'Anni di Eccellenza',
@@ -1637,28 +1619,28 @@ const translations = {
         trainingLocations: 'Sedi di Allenamento',
         locationsDescription: 'Campo Tures & Brunico',
         trainingPrograms: 'Programmi di Allenamento',
-        programsDescription: 'MMA, BJJ, Grappling & altro',
-        exploreClasses: 'Esplora i nostri Corsi'
+        programsDescription: 'MMA, BJJ, Grappling & Altro',
+        exploreClasses: 'Esplora i Corsi'
       },
       trainLikeFighter: {
-        title: 'Allenati come un Combattente',
-        subtitle: 'Padroneggia l\'arte degli sport da combattimento con i nostri programmi di allenamento completi'
+        title: 'Allenati Come Un Combattente',
+        subtitle: 'Scegli la tua disciplina e inizia il tuo viaggio'
       },
       mma: {
-        description: 'Allenamento completo di arti marziali miste che combina tecniche di striking, grappling e ground game per l\'esperienza di combattimento definitiva.'
+        description: 'Allenamento completo di arti marziali miste che combina tecniche di striking, grappling e combattimento a terra.'
       },
       bjj: {
-        description: 'Padroneggia l\'arte gentile del Brazilian Jiu-Jitsu, concentrandoti su leva, tecnica e controllo a terra per superare qualsiasi avversario.'
+        description: 'Padroneggia l\'arte gentile del Brazilian Jiu-Jitsu con focus su leva, tecnica e strategia mentale.'
       },
       grappling: {
-        description: 'Sviluppa abilità superiori di wrestling e submission attraverso allenamento intensivo di grappling e controllo posizionale.'
+        description: 'Sviluppa controllo superiore a terra e abilità di submission attraverso allenamento intensivo di grappling.'
       },
       getStarted: {
         title: 'Inizia Oggi',
-        subtitle: 'Scegli il tuo percorso verso l\'eccellenza nelle arti marziali'
+        subtitle: 'Tutto ciò di cui hai bisogno per iniziare il tuo viaggio nelle arti marziali'
       },
       quickLinks: {
-        viewClasses: 'Visualizza Corsi',
+        viewClasses: 'Vedi Corsi',
         viewClassesDesc: 'Esplora i nostri programmi di allenamento',
         checkSchedule: 'Controlla Orari',
         checkScheduleDesc: 'Trova il tuo orario di allenamento perfetto',
@@ -1670,147 +1652,91 @@ const translations = {
     },
     classes: {
       hero: {
-        title: 'Corsi di Allenamento',
-        description: 'Scopri la nostra gamma completa di corsi di arti marziali progettati per tutti i livelli di abilità, dai principianti ai combattenti avanzati.'
+        title: 'I Nostri Corsi',
+        description: 'Programmi di allenamento professionale progettati per tutti i livelli di abilità, dai principianti ai competitori avanzati.'
       },
+      whatYouLearn: 'Cosa Imparerai',
       mma: {
         title: 'Arti Marziali Miste',
-        description: 'Allenamento MMA completo che combina striking, wrestling e Brazilian Jiu-Jitsu. Impara a combattere in piedi, nel clinch e a terra.',
+        description: 'Allenamento di combattimento completo che combina striking, wrestling e combattimento a terra. Perfetto per chi vuole sperimentare l\'intero spettro delle arti marziali.',
         features: [
           'Tecniche di striking (boxe, kickboxing, Muay Thai)',
           'Wrestling e difesa da takedown',
-          'Ground fighting e submission',
-          'Lavoro in gabbia e strategia di combattimento',
-          'Condizionamento e preparazione al combattimento'
+          'Combattimento a terra e submission',
+          'Lavoro in gabbia e clinch fighting',
+          'Condizionamento cardio e forza',
+          'Preparazione alle competizioni'
         ]
       },
       bjj: {
         title: 'Brazilian Jiu-Jitsu',
-        description: 'Padroneggia l\'arte gentile del BJJ, concentrandoti su leva, tecnica e controllo a terra. Perfetto per autodifesa e competizione.',
+        description: 'L\'arte gentile che ti insegna a superare avversari più grandi attraverso tecnica, leva e strategia. Costruisci fiducia mentre impari l\'autodifesa.',
         features: [
+          'Posizioni fondamentali e fughe',
           'Lavoro di guardia e sweep',
           'Tecniche di submission',
-          'Controllo posizionale',
-          'Tecniche di fuga',
-          'Preparazione alla competizione'
+          'Applicazioni di autodifesa',
+          'Strategia mentale e risoluzione problemi',
+          'Sistema di progressione delle cinture'
         ]
       },
       grappling: {
         title: 'Grappling',
-        description: 'Allenamento intensivo di wrestling e submission grappling. Sviluppa abilità superiori di takedown e controllo a terra.',
+        description: 'Focus su controllo a terra, takedown e submission wrestling. Sviluppa abilità superiori di grappling per MMA o competizioni di grappling puro.',
         features: [
-          'Fondamentali di wrestling',
           'Tecniche di takedown',
           'Posizioni di controllo a terra',
-          'Submission grappling',
-          'Allenamento no-gi'
+          'Prese di submission e fughe',
+          'Fondamentali di wrestling',
+          'Regole di grappling competitivo',
+          'Forza e condizionamento'
         ]
       },
       kidsBjj: {
         title: 'BJJ Bambini',
-        description: 'Corsi di Brazilian Jiu-Jitsu divertenti e sicuri per bambini, che costruiscono fiducia, disciplina e forma fisica.',
+        description: 'Lezioni di Brazilian Jiu-Jitsu divertenti e sicure progettate specificamente per bambini. Costruisci fiducia, disciplina e forma fisica.',
         features: [
           'Tecniche appropriate per l\'età',
           'Sviluppo del carattere',
           'Abilità anti-bullismo',
-          'Forma fisica',
-          'Attività divertenti e coinvolgenti'
+          'Forma fisica e coordinazione',
+          'Rispetto e disciplina',
+          'Giochi e attività divertenti'
         ]
       },
       kidsGrappling: {
         title: 'Grappling Bambini',
-        description: 'Fondamentali di wrestling e grappling per giovani atleti, enfatizzando tecnica, rispetto e sportività.',
+        description: 'Introduzione al wrestling e grappling per giovani atleti. Sviluppa forza, agilità e spirito competitivo.',
         features: [
-          'Mosse di wrestling di base',
+          'Tecniche base di wrestling',
           'Coordinazione ed equilibrio',
-          'Lavoro di squadra e rispetto',
-          'Ambiente di allenamento sicuro',
-          'Opportunità di competizione'
+          'Spirito competitivo',
+          'Lavoro di squadra e sportività',
+          'Condizionamento fisico',
+          'Definizione e raggiungimento obiettivi'
         ]
       },
       wrestling: {
         title: 'Wrestling',
-        description: 'Allenamento di wrestling tradizionale concentrato su takedown, controllo e condizionamento. Essenziale per MMA e grappling.',
+        description: 'Allenamento di wrestling tradizionale con focus su takedown, controllo e condizionamento. Essenziale per MMA e grappling competitivo.',
         features: [
           'Takedown single e double leg',
           'Tecniche di sprawl e difesa',
-          'Controllo dall\'alto e pin',
-          'Condizionamento e forza',
-          'Preparazione alla competizione'
+          'Controllo superiore e pin',
+          'Allenamento di condizionamento e forza',
+          'Preparazione alle competizioni',
+          'Sviluppo della resistenza mentale'
         ]
-      },
-      whatYouLearn: 'Cosa Imparerai',
-      cta: {
-        title: 'Pronto per Iniziare l\'Allenamento?',
-        description: 'Unisciti alla nostra comunità di combattenti e inizia oggi il tuo viaggio nelle arti marziali.'
-      }
-    },
-    coaches: {
-      hero: {
-        title: 'I Nostri Istruttori',
-        description: 'Allenati con istruttori di classe mondiale che portano anni di esperienza competitiva e metodi di insegnamento comprovati in ogni lezione.'
-      },
-      matteo: {
-        name: 'Matteo Parolin',
-        title: 'Capo Istruttore & Fondatore',
-        background: 'Con oltre 15 anni di esperienza nelle arti marziali, Matteo è una cintura nera certificata di Brazilian Jiu-Jitsu e un combattente MMA di successo. Ha fondato la Sport Academy nel 2017 con la visione di portare allenamento di livello élite in Alto Adige.',
-        specializations: [
-          'Brazilian Jiu-Jitsu (Cintura Nera)',
-          'Arti Marziali Miste',
-          'Coaching Competitivo',
-          'Sistemi di Autodifesa'
-        ],
-        achievements: [
-          'Cintura Nera BJJ sotto lignaggio rinomato',
-          'Multiple vittorie MMA regionali',
-          'Istruttore certificato in multiple discipline',
-          '8+ anni di esperienza di coaching'
-        ]
-      },
-      christian: {
-        name: 'Christian Zecchetto',
-        title: 'Istruttore Senior',
-        background: 'Christian porta una ricchezza di esperienza in grappling e wrestling alla Sport Academy. Il suo approccio tecnico e l\'attenzione ai dettagli lo rendono un istruttore eccezionale per studenti di tutti i livelli.',
-        specializations: [
-          'Wrestling & Grappling',
-          'Brazilian Jiu-Jitsu No-Gi',
-          'Tecniche di Takedown',
-          'Programmi Giovanili'
-        ],
-        achievements: [
-          'Background di wrestling competitivo',
-          'Certificazioni avanzate di grappling',
-          'Specialista nello sviluppo giovanile',
-          'Esperto di preparazione ai tornei'
-        ]
-      },
-      background: 'Background',
-      specializations: 'Specializzazioni',
-      achievements: 'Risultati',
-      philosophy: {
-        title: 'La Nostra Filosofia di Coaching',
-        technical: {
-          title: 'Eccellenza Tecnica',
-          description: 'Ci concentriamo sulla tecnica corretta e sui fondamentali, assicurando che ogni studente costruisca una base solida per il successo a lungo termine.'
-        },
-        individual: {
-          title: 'Crescita Individuale',
-          description: 'Ogni studente riceve attenzione personalizzata e piani di allenamento su misura per i loro obiettivi e livello di abilità.'
-        },
-        respect: {
-          title: 'Rispetto & Disciplina',
-          description: 'Instilliamo valori di rispetto, disciplina e sportività che si estendono ben oltre i tappetini di allenamento.'
-        }
       },
       cta: {
-        title: 'Allenati con i Migliori',
-        description: 'Sperimenta istruzione di classe mondiale e porta le tue abilità nelle arti marziali al livello successivo.'
+        title: 'Pronto a Iniziare l\'Allenamento?',
+        description: 'Unisciti alla nostra comunità di artisti marziali dedicati e inizia il tuo viaggio oggi.'
       }
     },
     schedule: {
       hero: {
-        title: 'Orario di Allenamento',
-        description: 'Trova gli orari di allenamento perfetti che si adattano al tuo programma. Offriamo corsi durante tutta la settimana in entrambe le nostre sedi di Campo Tures e Brunico.'
+        title: 'Orario Allenamenti',
+        description: 'Trova gli orari di allenamento perfetti che si adattano al tuo programma. Lezioni disponibili durante tutta la settimana in entrambe le sedi.'
       },
       campoTures: 'Campo Tures',
       brunico: 'Brunico',
@@ -1826,92 +1752,158 @@ const translations = {
       striking: 'Striking',
       openMat: 'Tappeto Libero',
       importantInfo: 'Informazioni Importanti',
-      classGuidelines: 'Linee Guida dei Corsi',
+      classGuidelines: 'Linee Guida delle Lezioni',
       guidelines: {
-        arrive: 'Arriva 10-15 minuti prima per il riscaldamento',
+        arrive: 'Arriva 10 minuti prima per il riscaldamento',
         water: 'Porta bottiglia d\'acqua e asciugamano',
-        gi: 'I corsi BJJ richiedono un gi (uniforme)',
-        noGi: 'I corsi di grappling e MMA sono no-gi'
+        gi: 'Le lezioni di BJJ richiedono un gi (uniforme)',
+        noGi: 'Le lezioni di grappling sono no-gi (pantaloncini e rash guard)'
       },
-      membershipBenefits: 'Benefici dell\'Abbonamento',
+      membershipBenefits: 'Vantaggi dell\'Abbonamento',
       benefits: {
-        allClasses: 'Accesso a tutti i corsi incluso',
+        allClasses: 'Accesso a tutte le lezioni incluso',
         openMat: 'Sessioni di tappeto libero gratuite',
-        bothLocations: 'Allenamento in entrambe le sedi',
+        bothLocations: 'Allenati in entrambe le sedi',
         personalTraining: 'Allenamento personale scontato'
       },
       cta: {
-        title: 'Pronto per Unirti a un Corso?',
-        description: 'Prenota il tuo posto nella nostra prossima sessione di allenamento e inizia il tuo viaggio nelle arti marziali.'
+        title: 'Pronto a Unirti?',
+        description: 'Prenota la tua prima lezione oggi e inizia il tuo viaggio nelle arti marziali.'
+      }
+    },
+    coaches: {
+      hero: {
+        title: 'I Nostri Istruttori',
+        description: 'Impara da istruttori esperti dedicati ad aiutarti a raggiungere i tuoi obiettivi nelle arti marziali.'
+      },
+      background: 'Background',
+      specializations: 'Specializzazioni',
+      achievements: 'Risultati',
+      matteo: {
+        name: 'Matteo Parolin',
+        title: 'Capo Istruttore & Fondatore',
+        background: 'Con oltre 8 anni di esperienza nelle arti marziali, Matteo ha fondato Sport Academy per portare allenamento MMA e BJJ di alta qualità in Alto Adige. La sua passione per l\'insegnamento e l\'expertise tecnica lo rendono un istruttore eccezionale.',
+        specializations: [
+          'Brazilian Jiu-Jitsu',
+          'Arti Marziali Miste',
+          'Grappling',
+          'Coaching Competitivo'
+        ],
+        achievements: [
+          'Fondatore di Sport Academy (2017)',
+          'Multiple medaglie in competizioni BJJ',
+          'Istruttore BJJ certificato',
+          'Certificazione coaching MMA'
+        ]
+      },
+      christian: {
+        name: 'Christian Zecchetto',
+        title: 'Istruttore BJJ & Grappling',
+        background: 'Christian porta anni di esperienza competitiva e conoscenza tecnica a Sport Academy. Il suo approccio metodico all\'insegnamento aiuta gli studenti a sviluppare fondamentali solidi e tecniche avanzate.',
+        specializations: [
+          'Brazilian Jiu-Jitsu',
+          'Grappling No-Gi',
+          'Wrestling',
+          'Autodifesa'
+        ],
+        achievements: [
+          'Campione di competizioni BJJ',
+          'Istruttore di grappling certificato',
+          'Background nel wrestling',
+          'Specialista in autodifesa'
+        ]
+      },
+      philosophy: {
+        title: 'La Nostra Filosofia di Coaching',
+        technical: {
+          title: 'Eccellenza Tecnica',
+          description: 'Ci concentriamo sulla tecnica corretta e sui fondamentali per costruire una base solida per tutti gli studenti.'
+        },
+        individual: {
+          title: 'Attenzione Individuale',
+          description: 'Ogni studente riceve istruzione personalizzata adattata ai suoi obiettivi e livello di abilità.'
+        },
+        respect: {
+          title: 'Rispetto & Disciplina',
+          description: 'Coltiviamo un ambiente di allenamento rispettoso che promuove crescita e supporto reciproco.'
+        }
+      },
+      cta: {
+        title: 'Allenati con i Migliori',
+        description: 'Sperimenta istruzione di livello mondiale dal nostro team di coaching dedicato.'
       }
     },
     membership: {
       hero: {
         title: 'Piani di Abbonamento',
-        description: 'Scegli il pacchetto di allenamento perfetto per i tuoi obiettivi. Tutti gli abbonamenti includono accesso a entrambe le sedi e tutti i tipi di corso.'
+        description: 'Scegli il pacchetto di allenamento perfetto per i tuoi obiettivi e il tuo programma. Tutti gli abbonamenti includono accesso a entrambe le sedi.'
       },
       mainSeason: {
         title: 'Stagione Principale',
         period: 'Settembre - Giugno',
-        duration: '10 mesi di allenamento intensivo',
+        duration: '10 mesi di allenamento',
         mostPopular: 'Più Popolare'
       },
       summerSeason: {
         title: 'Stagione Estiva',
         period: 'Luglio - Agosto',
-        duration: '2,5 mesi di allenamento estivo'
+        duration: '2,5 mesi di allenamento'
       },
       bjjOnly: {
-        title: 'Allenamento Focalizzato BJJ',
-        subtitle: 'Programma dedicato di Brazilian Jiu-Jitsu per praticanti seri',
-        program: 'Programma Solo BJJ',
-        description: 'Allenamento BJJ intensivo con sessioni tecniche aggiuntive'
+        title: 'Abbonamento Solo BJJ',
+        subtitle: 'Perfetto per chi si concentra esclusivamente sul Brazilian Jiu-Jitsu',
+        program: 'Allenamento Focalizzato BJJ',
+        description: 'Accesso a tutte le lezioni BJJ in entrambe le sedi'
       },
       adults: 'Adulti',
       students: 'Studenti',
       month: 'mese',
-      whatsIncluded: 'Cosa è Incluso',
+      whatsIncluded: 'Cosa È Incluso',
       mainIncludes: [
-        'Accesso illimitato a tutti i corsi',
-        'Allenamento in entrambe le sedi',
+        'Tutte le lezioni di gruppo (MMA, BJJ, Grappling)',
+        'Accesso a entrambe le sedi Campo Tures e Brunico',
         'Sessioni di tappeto libero',
         'Istruzione adatta ai principianti',
-        'Accesso al team competitivo'
+        'Allenamento del team competitivo',
+        'Deposito attrezzature'
       ],
       summerIncludes: [
-        'Tutti i corsi estivi inclusi',
-        'Orario di allenamento flessibile',
+        'Tutte le lezioni estive',
         'Accesso a entrambe le sedi',
-        'Perfetto per allenamento in vacanza'
+        'Orario flessibile',
+        'Sessioni di tappeto libero',
+        'Sessioni di allenamento all\'aperto'
       ],
       bjjIncludes: [
-        'Tutti i corsi BJJ inclusi',
-        'Sessioni tecniche specializzate',
-        'Preparazione alla competizione',
-        'Tracciamento progressione cinture'
+        'Tutte le lezioni BJJ',
+        'Accesso a entrambe le sedi',
+        'Sistema di progressione cinture',
+        'Preparazione alle competizioni',
+        'Sessioni di tappeto libero',
+        'Allenamento Gi e No-Gi'
       ],
       selectMainSeason: 'Seleziona Stagione Principale',
       selectSummerSeason: 'Seleziona Stagione Estiva',
-      selectBjjOnly: 'Seleziona Programma BJJ',
+      selectBjjOnly: 'Seleziona Solo BJJ',
       additionalServices: {
         title: 'Servizi Aggiuntivi',
-        description: 'Migliora il tuo allenamento con i nostri programmi specializzati e opzioni di coaching personale.'
+        description: 'Migliora il tuo allenamento con i nostri programmi specializzati e coaching personale.'
       },
       personalTraining: {
         title: 'Allenamento Personale',
-        description: 'Coaching uno-a-uno su misura per i tuoi obiettivi e bisogni specifici.',
+        description: 'Coaching uno-a-uno adattato ai tuoi obiettivi specifici',
         price: '€50',
-        duration: 'per sessione (60 min)'
+        duration: 'per sessione'
       },
       competitionPrep: {
-        title: 'Preparazione Competizione',
-        description: 'Allenamento specializzato per tornei e competizioni imminenti.',
+        title: 'Preparazione Competizioni',
+        description: 'Allenamento specializzato per competizioni imminenti',
         price: '€80',
-        duration: 'per sessione (90 min)'
+        duration: 'per sessione'
       },
       seminars: {
         title: 'Seminari',
-        description: 'Workshop speciali con istruttori ospiti e tecniche avanzate.',
+        description: 'Workshop speciali con istruttori ospiti',
         price: '€30',
         duration: 'per seminario'
       },
@@ -1919,30 +1911,30 @@ const translations = {
         title: 'Domande Frequenti',
         seasons: {
           question: 'Qual è la differenza tra le stagioni?',
-          answer: 'La stagione principale (Settembre-Giugno) offre il nostro programma completo con allenamento costante. La stagione estiva è perfetta per mantenere le abilità durante i mesi di vacanza con un orario più flessibile.'
+          answer: 'La stagione principale (Settembre-Giugno) offre il nostro programma completo con tutte le lezioni e competizioni. La stagione estiva (Luglio-Agosto) ha un programma più rilassato perfetto per mantenere la forma durante il periodo delle vacanze.'
         },
         locations: {
           question: 'Posso allenarmi in entrambe le sedi?',
-          answer: 'Sì! Tutti gli abbonamenti includono accesso a entrambe le sedi Campo Tures e Brunico. Puoi mescolare e abbinare i corsi in base al tuo programma.'
+          answer: 'Sì! Tutti gli abbonamenti includono accesso a entrambe le sedi Campo Tures e Brunico. Puoi partecipare a qualsiasi lezione in entrambe le palestre.'
         },
         trial: {
           question: 'Offrite lezioni di prova?',
-          answer: 'Assolutamente! Offriamo una lezione di prova gratuita per nuovi studenti. Contattaci per programmare la tua prima sessione e sperimentare il nostro allenamento in prima persona.'
+          answer: 'Assolutamente! Offriamo una lezione di prova gratuita per nuovi studenti. Contattaci per programmare la tua prima sessione.'
         },
         equipment: {
           question: 'Di che attrezzatura ho bisogno?',
-          answer: 'Per la tua prima lezione, porta semplicemente abbigliamento da allenamento comodo e acqua. Ti forniremo indicazioni su qualsiasi attrezzatura specifica necessaria per le discipline scelte.'
+          answer: 'Per i principianti, basta abbigliamento sportivo comodo. Forniamo attrezzatura base per le lezioni di prova. Man mano che progredisci, avrai bisogno di un gi per BJJ e attrezzatura appropriata per altre lezioni.'
         }
       },
       cta: {
-        title: 'Inizia il Tuo Viaggio Oggi',
-        description: 'Unisciti alla famiglia Sport Academy e trasforma le tue abilità nelle arti marziali con istruzione esperta.'
+        title: 'Inizia il Tuo Viaggio',
+        description: 'Scegli il tuo abbonamento e inizia ad allenarti con la principale accademia di arti marziali dell\'Alto Adige.'
       }
     },
     contact: {
       hero: {
         title: 'Contattaci',
-        description: 'Mettiti in contatto con il nostro team per iniziare il tuo viaggio nelle arti marziali o per saperne di più sui nostri programmi. Siamo qui per aiutarti a raggiungere i tuoi obiettivi.'
+        description: 'Mettiti in contatto con il nostro team e inizia oggi il tuo viaggio nelle arti marziali. Siamo qui per aiutarti in ogni passo.'
       },
       getInTouch: {
         title: 'Mettiti in Contatto',
@@ -1952,55 +1944,55 @@ const translations = {
       instagram: 'Instagram',
       locations: {
         title: 'Le Nostre Sedi',
-        subtitle: 'Due sedi convenienti che servono l\'Alto Adige'
+        subtitle: 'Due sedi convenienti in Alto Adige'
       },
       address: 'Indirizzo',
-      trainingSchedule: 'Orario di Allenamento',
+      trainingSchedule: 'Orario Allenamenti',
       parkingAccessibility: {
-        title: 'Parcheggio e Accessibilità',
+        title: 'Parcheggio & Accessibilità',
         subtitle: 'Accesso facile e parcheggio conveniente in entrambe le sedi'
       },
       parking: 'Parcheggio',
-      publicTransport: 'Trasporto Pubblico',
+      publicTransport: 'Trasporti Pubblici',
       accessibility: 'Accessibilità',
-      brunico: {
-        parking: 'Parcheggio gratuito in strada disponibile lungo Via Riedl e strade vicine. Durante le ore di punta, garage pubblici e parcheggi a pagamento zona blu sono a soli 5 minuti a piedi.',
-        transport: 'La stazione ferroviaria Brunico Nord è a soli 2 minuti a piedi dalla palestra — perfetta se vieni da San Candido, Fortezza o da qualsiasi parte della valle. C\'è anche una fermata dell\'autobus nelle vicinanze con collegamenti urbani e regionali.',
-        accessibility: 'La palestra si trova in una zona tranquilla e pianeggiante con una breve camminata diretta da tutte le fermate di trasporto vicine. Facile da raggiungere anche con attrezzature o borse da allenamento.'
-      },
       campoTures: {
-        parking: 'Parcheggio gratuito disponibile proprio di fronte all\'ingresso, con posti aggiuntivi nelle vicinanze. Stazione di ricarica EV ~200 m di distanza.',
-        transport: 'La fermata "Campo Tures Centro" è a soli 2 minuti a piedi. Diverse linee di autobus si fermano qui, incluse 450, 451 e 452, offrendo collegamenti regolari a Brunico, villaggi locali e le valli circostanti.',
+        parking: 'Parcheggio gratuito disponibile proprio davanti all\'ingresso, con posti aggiuntivi nelle vicinanze. Stazione di ricarica EV a circa 200 metri di distanza.',
+        transport: 'La fermata "Campo Tures Centro" è a soli 2 minuti a piedi. Diverse linee di autobus si fermano qui, incluse 450, 451 e 452, offrendo collegamenti regolari a Brunico, paesi locali e le valli circostanti.',
         accessibility: 'La palestra è facile da raggiungere a piedi, in auto o con i trasporti pubblici. Situata in un\'area ampia, pianeggiante e ben illuminata — perfetta per l\'allenamento serale.'
       },
+      brunico: {
+        parking: 'Parcheggio gratuito in strada disponibile lungo Via Riedl e strade vicine. Durante le ore di punta, garage pubblici e parcheggi a pagamento zona blu sono a soli 5 minuti a piedi.',
+        transport: 'La stazione ferroviaria Brunico Nord è a soli 2 minuti a piedi dalla palestra — perfetta se arrivi da San Candido, Fortezza o da qualsiasi parte della valle. C\'è anche una fermata dell\'autobus nelle vicinanze con collegamenti urbani e regionali.',
+        accessibility: 'La palestra si trova in una zona tranquilla e pianeggiante con una breve camminata diretta da tutte le fermate di trasporto vicine. Facile da raggiungere anche con attrezzature o borse da allenamento.'
+      },
       visitRequirements: {
-        title: 'Requisiti per la Visita',
-        subtitle: 'Cosa sapere prima della tua prima visita'
+        title: 'Requisiti di Visita & Politiche',
+        subtitle: 'Tutto quello che devi sapere per la tua prima visita'
       },
       firstTimeVisitors: 'Visitatori per la Prima Volta',
       whatToBring: 'Cosa Portare',
       bring: [
-        'Abbigliamento da allenamento comodo',
-        'Bottiglia d\'acqua e asciugamano',
-        'Scarpe sportive (per corsi di striking)',
+        'Abbigliamento sportivo comodo',
+        'Bottiglia d\'acqua',
+        'Asciugamano',
         'Atteggiamento positivo e voglia di imparare'
       ],
       whatWeProvide: 'Cosa Forniamo',
       provide: [
-        'Tutti i tappetini e attrezzature da allenamento',
+        'Guanti da allenamento e parastinchi',
+        'Tappetini da allenamento puliti',
         'Spogliatoi e docce',
-        'Attrezzatura protettiva di base per principianti',
-        'Istruzione esperta e guida'
+        'Istruzione professionale'
       ],
       specialInstructions: 'Istruzioni Speciali',
       instructions: {
-        age: 'Requisiti di Età: 16+ per corsi adulti, corsi bambini disponibili per età 6-14',
+        age: 'Requisiti di Età: Età minima 16 anni per le lezioni adulti, lezioni bambini disponibili per età 6-14',
         health: 'Salute: Si prega di informare gli istruttori di eventuali infortuni o condizioni di salute',
-        equipment: 'Attrezzatura: Noleggio gi (uniforme) disponibile per corsi BJJ',
-        payment: 'Pagamento: Contanti, carta e bonifico bancario accettati'
+        equipment: 'Attrezzatura: Forniamo guanti e parastinchi, ma gli studenti dovrebbero acquistare la propria attrezzatura',
+        payment: 'Pagamento: Accettiamo solo pagamenti con carta e contanti'
       },
       cta: {
-        title: 'Pronto per Iniziare l\'Allenamento?',
+        title: 'Pronto a Iniziare?',
         description: 'Contattaci oggi per programmare la tua prima lezione e iniziare il tuo viaggio nelle arti marziali.'
       }
     },
@@ -2009,19 +2001,18 @@ const translations = {
         breadcrumb: 'Brazilian Jiu-Jitsu',
         title: 'Brazilian Jiu-Jitsu',
         hero: {
-          subtitle: 'Padroneggia l\'arte gentile della leva, tecnica e controllo a terra'
+          subtitle: 'Padroneggia l\'arte gentile attraverso tecnica, leva e strategia'
         },
         overview: {
           title: 'L\'Arte Gentile',
           paragraphs: [
-            'Il Brazilian Jiu-Jitsu (BJJ) è un\'arte marziale e sport da combattimento che si concentra sul ground fighting e le prese di submission. Enfatizza il principio che una persona più piccola e debole può difendersi con successo contro un avversario più grande e forte attraverso tecnica appropriata, leva e tempismo.',
-            'Alla Sport Academy, il nostro programma BJJ è progettato per insegnare agli studenti i principi fondamentali di questa bellissima arte mentre si costruisce forma fisica, resistenza mentale e fiducia in se stessi. Che tu sia interessato all\'autodifesa, alla competizione o semplicemente a mantenerti in forma, il BJJ offre qualcosa per tutti.',
-            'I nostri istruttori esperti guidano gli studenti attraverso un curriculum progressivo che copre tutti gli aspetti del Brazilian Jiu-Jitsu, dalle posizioni di base e fughe alle submission avanzate e strategie competitive.'
+            'Il Brazilian Jiu-Jitsu (BJJ) è un\'arte marziale e sport da combattimento che si concentra sul combattimento a terra e le prese di submission. Spesso chiamato "l\'arte gentile", il BJJ enfatizza tecnica e leva rispetto a forza e dimensioni, rendendolo accessibile a praticanti di tutte le età e abilità fisiche.',
+            'A Sport Academy, il nostro programma BJJ è progettato per insegnarti i principi fondamentali di questa incredibile arte marziale mentre costruisce la tua fiducia, forma fisica e resilienza mentale. Che tu sia interessato all\'autodifesa, alle competizioni o semplicemente a mantenerti in forma, il BJJ offre qualcosa per tutti.'
           ]
         },
         techniques: {
-          title: 'Tecniche BJJ Fondamentali',
-          subtitle: 'Padroneggia le abilità fondamentali che formano la base del Brazilian Jiu-Jitsu',
+          title: 'Tecniche Fondamentali',
+          subtitle: 'Padroneggia le abilità fondamentali del Brazilian Jiu-Jitsu',
           guardWork: {
             title: 'Lavoro di Guardia',
             items: [
@@ -2035,8 +2026,8 @@ const translations = {
             title: 'Submission',
             items: [
               'Strangolamenti e soffocamenti',
-              'Leve articolari e armbar',
-              'Leve alle gambe e heel hook',
+              'Leve articolari e leve al braccio',
+              'Leve alle gambe e attacchi ai piedi',
               'Catene di submission'
             ]
           },
@@ -2045,51 +2036,24 @@ const translations = {
             items: [
               'Mount e controllo laterale',
               'Tecniche di controllo della schiena',
-              'Posizione knee on belly',
+              'Posizione ginocchio sulla pancia',
               'Movimenti di transizione'
             ]
           }
         },
         beltSystem: {
-          title: 'Sistema di Cinture BJJ',
-          subtitle: 'Progredisci attraverso il sistema di classificazione tradizionale del Brazilian Jiu-Jitsu',
-          belts: [
-            {
-              name: 'Cintura Bianca',
-              color: 'gray',
-              description: 'Fondamentali per principianti'
-            },
-            {
-              name: 'Cintura Blu',
-              color: 'blue',
-              description: 'Base solida'
-            },
-            {
-              name: 'Cintura Viola',
-              color: 'purple',
-              description: 'Tecniche avanzate'
-            },
-            {
-              name: 'Cintura Marrone',
-              color: 'yellow',
-              description: 'Livello esperto'
-            },
-            {
-              name: 'Cintura Nera',
-              color: 'gray',
-              description: 'Livello maestro'
-            }
-          ],
+          title: 'Sistema delle Cinture BJJ',
+          subtitle: 'Progredisci attraverso i gradi con dedizione e abilità',
           philosophy: {
             title: 'Filosofia delle Cinture',
-            description: 'Ogni cintura rappresenta anni di allenamento dedicato, conoscenza tecnica e crescita personale. I nostri istruttori assicurano che ogni promozione sia guadagnata attraverso abilità dimostrate, comprensione e sviluppo del carattere.'
+            description: 'Il sistema delle cinture BJJ rappresenta non solo abilità tecnica, ma anche sviluppo del carattere, perseveranza e comprensione dell\'arte. Ogni livello di cintura richiede anni di allenamento dedicato e rappresenta una pietra miliare significativa nel tuo viaggio nelle arti marziali.'
           }
         },
         history: {
-          title: 'Storia del BJJ',
+          title: 'Storia & Origini',
           paragraphs: [
-            'Il Brazilian Jiu-Jitsu si è evoluto dal jujutsu giapponese tradizionale e dal judo, portato in Brasile da Mitsuyo Maeda all\'inizio del XX secolo. La famiglia Gracie, in particolare Helio Gracie, ha adattato queste tecniche per creare un\'arte marziale più efficace per i praticanti più piccoli.',
-            'L\'arte ha guadagnato riconoscimento mondiale attraverso i primi tornei UFC, dove Royce Gracie ha dimostrato l\'efficacia del BJJ contro avversari più grandi provenienti da diversi background di arti marziali. Questa esposizione ha portato il BJJ a diventare una componente fondamentale delle moderne arti marziali miste.'
+            'Il Brazilian Jiu-Jitsu si è evoluto dal jujutsu tradizionale giapponese e dal judo, portato in Brasile all\'inizio del XX secolo da Mitsuyo Maeda. La famiglia Gracie, in particolare Helio Gracie, ha adattato queste tecniche per creare un sistema più efficace per praticanti più piccoli.',
+            'L\'arte ha guadagnato riconoscimento mondiale attraverso le prime competizioni UFC, dove Royce Gracie ha dimostrato l\'efficacia del BJJ contro avversari più grandi provenienti da diversi background di arti marziali.'
           ],
           keyFigures: {
             title: 'Figure Chiave',
@@ -2104,43 +2068,41 @@ const translations = {
               },
               {
                 name: 'Royce Gracie',
-                description: 'Campione UFC che mostrò il BJJ al mondo'
+                description: 'Campione UFC che dimostrò l\'efficacia del BJJ'
               }
             ]
           }
         },
         schedule: {
           title: 'Orario Allenamento BJJ',
-          subtitle: 'Corsi regolari disponibili in entrambe le sedi durante tutta la settimana'
+          subtitle: 'Lezioni regolari disponibili in entrambe le sedi'
         },
         cta: {
           title: 'Inizia il Tuo Viaggio BJJ',
-          description: 'Unisciti al nostro programma di Brazilian Jiu-Jitsu e scopri l\'arte gentile che ha trasformato le arti marziali per sempre.',
-          joinButton: 'Unisciti ai Corsi BJJ',
-          backButton: 'Torna ai Corsi'
+          description: 'Unisciti al nostro programma BJJ e scopri l\'arte gentile che costruisce sia forza fisica che mentale.',
+          joinButton: 'Unisciti alle Lezioni BJJ'
         }
       },
       mma: {
         title: 'Arti Marziali Miste',
         hero: {
-          subtitle: 'Lo sport da combattimento definitivo che combina striking, wrestling e ground fighting'
+          subtitle: 'Lo sport da combattimento definitivo che combina tutte le discipline delle arti marziali'
         },
         overview: {
           title: 'Il Combattente Completo',
           paragraphs: [
-            'Le Arti Marziali Miste (MMA) sono lo sport da combattimento più completo, combinando tecniche di boxe, kickboxing, wrestling e Brazilian Jiu-Jitsu. Rappresenta l\'evoluzione delle arti marziali, dove i combattenti devono essere competenti in tutti i range di combattimento.',
-            'Il nostro programma MMA alla Sport Academy fornisce allenamento completo che sviluppa combattenti ben equilibrati capaci di competere a qualsiasi livello. Ci concentriamo sulla costruzione di una base solida in ogni disciplina mentre insegniamo agli studenti come passare senza soluzione di continuità tra striking e grappling.',
-            'Che il tuo obiettivo sia la competizione professionale, tornei amatoriali o semplicemente diventare il miglior artista marziale che puoi essere, il nostro programma MMA ti sfiderà e trasformerà sia fisicamente che mentalmente.'
+            'Le Arti Marziali Miste (MMA) sono lo sport da combattimento più completo, combinando tecniche da boxe, kickboxing, wrestling, Brazilian Jiu-Jitsu e altre arti marziali. L\'allenamento MMA sviluppa combattenti completi che sono a loro agio in tutte le distanze di combattimento.',
+            'Il nostro programma MMA a Sport Academy fornisce allenamento completo che copre striking, grappling e combattimento a terra. Che tu sia interessato alle competizioni o semplicemente voglia l\'allenamento di arti marziali più completo disponibile, le nostre lezioni MMA ti sfideranno e ti svilupperanno come artista marziale completo.'
           ]
         },
         techniques: {
-          title: 'Tecniche MMA',
+          title: 'Tecniche Fondamentali',
           subtitle: 'Padroneggia tutti gli aspetti del combattimento nelle arti marziali miste',
           striking: {
             title: 'Striking',
             items: [
-              'Fondamentali di boxe',
-              'Kickboxing e Muay Thai',
+              'Fondamentali di boxe e combinazioni',
+              'Tecniche di kickboxing e Muay Thai',
               'Colpi di gomito e ginocchio',
               'Gioco di gambe e movimento della testa'
             ]
@@ -2149,74 +2111,74 @@ const translations = {
             title: 'Wrestling',
             items: [
               'Tecniche di takedown',
-              'Difesa da takedown',
-              'Wrestling in gabbia',
-              'Controllo a terra'
+              'Difesa da takedown e sprawl',
+              'Lavoro in clinch e dirty boxing',
+              'Tattiche di wrestling in gabbia'
             ]
           },
           groundGame: {
-            title: 'Ground Game',
+            title: 'Gioco a Terra',
             items: [
-              'Ground and pound',
-              'Submission grappling',
-              'Lavoro di guardia',
-              'Fughe e ribaltamenti'
+              'Tecniche di ground and pound',
+              'Grappling di submission',
+              'Posizioni di controllo a terra',
+              'Transizioni e fughe'
             ]
           }
         },
         history: {
-          title: 'Storia delle MMA',
+          title: 'Evoluzione MMA',
           paragraphs: [
-            'Le Arti Marziali Miste hanno radici antiche in varie culture, ma le MMA moderne iniziarono con l\'Ultimate Fighting Championship (UFC) nel 1993. I primi tornei furono progettati per determinare quale arte marziale fosse più efficace in situazioni di combattimento reale.',
-            'Nel corso degli anni, le MMA si sono evolute da uno spettacolo di diversi stili di combattimento a uno sport sofisticato con regole unificate, categorie di peso e atleti altamente allenati che sono abili in multiple discipline.'
+            'Le Arti Marziali Miste hanno radici antiche in varie culture, ma le MMA moderne iniziarono con l\'Ultimate Fighting Championship (UFC) nel 1993. Le prime competizioni misero diversi stili di arti marziali l\'uno contro l\'altro per determinare il sistema di combattimento più efficace.',
+            'Nel tempo, i combattenti si resero conto che per avere successo dovevano essere completi in tutti gli aspetti del combattimento. Questo portò all\'evoluzione delle MMA come le conosciamo oggi - uno sport dove gli atleti si allenano in multiple discipline per diventare combattenti completi.'
           ],
           milestones: {
             title: 'Pietre Miliari Chiave',
             events: [
               {
                 year: '1993',
-                description: 'Il primo evento UFC mostra diverse arti marziali'
+                description: 'Il primo evento UFC dimostra l\'efficacia di diverse arti marziali'
               },
               {
-                year: '2001',
-                description: 'Stabilite le Regole Unificate delle MMA'
+                year: '2000s',
+                description: 'Evoluzione di combattenti completi che si allenano in multiple discipline'
               },
               {
-                year: '2016',
-                description: 'Le MMA diventano mainstream con riconoscimento globale'
+                year: '2010s',
+                description: 'Le MMA diventano mainstream con popolarità globale'
               }
             ]
           }
         },
         benefits: {
-          title: 'Benefici dell\'Allenamento MMA',
-          subtitle: 'Trasforma il tuo corpo e la tua mente attraverso le arti marziali miste',
+          title: 'Benefici dell\'Allenamento',
+          subtitle: 'Sviluppa abilità complete nelle arti marziali e forma fisica',
           items: [
             {
               icon: '💪',
-              title: 'Fitness Totale del Corpo',
-              description: 'Condizionamento fisico completo'
+              title: 'Forma Fisica Completa',
+              description: 'Condizionamento e sviluppo della forza per tutto il corpo'
             },
             {
               icon: '🧠',
               title: 'Resistenza Mentale',
-              description: 'Sviluppa resilienza e fiducia'
-            },
-            {
-              icon: '🥊',
-              title: 'Autodifesa',
-              description: 'Abilità di protezione nel mondo reale'
+              description: 'Costruisci fiducia e resilienza mentale'
             },
             {
               icon: '⚡',
-              title: 'Potenza Esplosiva',
-              description: 'Costruisci forza e velocità'
+              title: 'Autodifesa',
+              description: 'Impara autodifesa pratica per qualsiasi situazione'
+            },
+            {
+              icon: '🎯',
+              title: 'Abilità Tecniche',
+              description: 'Padroneggia tecniche da multiple arti marziali'
             }
           ]
         },
         schedule: {
           title: 'Orario Allenamento MMA',
-          subtitle: 'Sessioni di allenamento ad alta intensità per tutti i livelli di abilità'
+          subtitle: 'Lezioni MMA complete per tutti i livelli'
         },
         legends: {
           title: 'Leggende MMA',
@@ -2224,90 +2186,88 @@ const translations = {
           fighters: [
             {
               name: 'Anderson Silva',
-              title: 'Il Ragno',
-              description: 'Striker leggendario con precisione incredibile'
+              title: 'The Spider',
+              description: 'Striker leggendario con precisione e creatività incredibili'
             },
             {
               name: 'Fedor Emelianenko',
-              title: 'L\'Ultimo Imperatore',
-              description: 'Peso massimo dominante con background sambo'
+              title: 'The Last Emperor',
+              description: 'Peso massimo dominante con gioco a terra eccezionale'
             },
             {
               name: 'Jon Jones',
               title: 'Bones',
-              description: 'Striker creativo con portata eccezionale'
+              description: 'Campione versatile con striking e wrestling non ortodossi'
             }
           ]
         },
         cta: {
           title: 'Diventa un Combattente Completo',
           description: 'Unisciti al nostro programma MMA e sviluppa abilità in tutti gli aspetti degli sport da combattimento.',
-          joinButton: 'Unisciti all\'Allenamento MMA',
-          backButton: 'Torna ai Corsi'
+          joinButton: 'Unisciti all\'Allenamento MMA'
         }
       },
       grappling: {
         breadcrumb: 'Grappling',
         title: 'Grappling',
         hero: {
-          subtitle: 'Padroneggia l\'arte del wrestling, takedown e submission grappling'
+          subtitle: 'Padroneggia il controllo a terra, i takedown e le tecniche di submission'
         },
         overview: {
           title: 'L\'Arte del Controllo',
           paragraphs: [
-            'Il Grappling comprende tutte le forme di wrestling, submission grappling e tecniche di controllo a terra. È la base del ground fighting efficace e una componente essenziale sia dell\'autodifesa che delle arti marziali miste.',
-            'Il nostro programma di grappling si concentra sullo sviluppo di abilità superiori di takedown, controllo posizionale e tecniche di submission. Gli studenti imparano a dominare gli avversari attraverso leva, tempismo e precisione tecnica piuttosto che affidarsi esclusivamente alla forza.',
-            'Che tu ti stia preparando per la competizione MMA, migliorando il tuo gioco BJJ o semplicemente volendo diventare un grappler più completo, il nostro programma fornisce gli strumenti e le tecniche di cui hai bisogno per avere successo.'
+            'Il Grappling è l\'arte di controllare il tuo avversario attraverso wrestling, takedown e tecniche di combattimento a terra. Forma la base di molte arti marziali ed è essenziale sia per l\'autodifesa che per gli sport da combattimento competitivi.',
+            'Il nostro programma di grappling si concentra sullo sviluppo di controllo superiore a terra, abilità di takedown e tecniche di submission. Che tu ti stia preparando per competizioni MMA o voglia migliorare il tuo gioco di grappling generale, le nostre lezioni forniscono allenamento completo in tutti gli aspetti del grappling.'
           ]
         },
         techniques: {
-          title: 'Tecniche di Grappling',
-          subtitle: 'Sviluppa un arsenale completo di abilità di wrestling e submission',
+          title: 'Tecniche Fondamentali',
+          subtitle: 'Sviluppa abilità superiori di grappling e controllo a terra',
           takedowns: {
             title: 'Takedown',
             items: [
               'Takedown single e double leg',
               'Lanci d\'anca e proiezioni',
               'Spazzate di piede e sgambetti',
-              'Takedown in gabbia'
+              'Combinazioni di takedown'
             ]
           },
           control: {
             title: 'Controllo',
             items: [
               'Controllo posizione superiore',
-              'Combinazioni di immobilizzazione',
-              'Tecniche di ride e controllo',
-              'Pressione e distribuzione del peso'
+              'Controllo laterale e mount',
+              'Tecniche di controllo della schiena',
+              'Controllo di transizione'
             ]
           },
           submissions: {
             title: 'Submission',
             items: [
-              'Tecniche di submission no-gi',
-              'Submission basate sul wrestling',
-              'Leve alle gambe e heel hook',
-              'Submission di transizione'
+              'Leve articolari e leve al braccio',
+              'Strangolamenti e soffocamenti',
+              'Leve alle gambe e attacchi alla caviglia',
+              'Setup di submission'
             ]
           }
         },
         methodology: {
           title: 'Metodologia di Allenamento',
-          subtitle: 'Il nostro approccio sistematico all\'eccellenza nel grappling',
+          subtitle: 'Approccio sistematico allo sviluppo del grappling',
           technical: {
             title: 'Sviluppo Tecnico',
             methods: [
               {
                 title: 'Drilling',
-                description: 'Pratica ripetitiva di movimenti fondamentali'
+                description: 'Pratica ripetitiva di movimenti e tecniche fondamentali'
               },
               {
                 title: 'Sparring Posizionale',
-                description: 'Allenamento focalizzato da posizioni specifiche'
+                description: 'Allenamento dal vivo da posizioni specifiche per sviluppare abilità'
               },
               {
-                title: 'Rolling Live',
-                description: 'Sessioni di grappling a piena intensità'
+                title: 'Flow Rolling',
+                description: 'Pratica di movimento continuo per sviluppare timing e transizioni'
               }
             ]
           },
@@ -2315,76 +2275,75 @@ const translations = {
             title: 'Condizionamento Fisico',
             methods: [
               {
-                title: 'Cardio Grappling',
-                description: 'Allenamento cardiovascolare sport-specifico'
+                title: 'Allenamento della Forza',
+                description: 'Costruzione di forza funzionale per movimenti di grappling'
               },
               {
-                title: 'Forza Funzionale',
-                description: 'Costruzione di potenza specifica per il grappling'
+                title: 'Condizionamento Cardio',
+                description: 'Sviluppo di resistenza per sessioni di grappling prolungate'
               },
               {
                 title: 'Flessibilità',
-                description: 'Mobilità e prevenzione infortuni'
+                description: 'Mantenimento della mobilità e prevenzione degli infortuni'
               }
             ]
           }
         },
         benefits: {
-          title: 'Benefici del Grappling',
-          subtitle: 'Perché l\'allenamento di grappling trasforma gli atleti',
+          title: 'Benefici dell\'Allenamento',
+          subtitle: 'Sviluppa forza, tecnica e resistenza mentale',
           items: [
             {
-              icon: '🤼',
-              title: 'Abilità di Wrestling',
-              description: 'Capacità superiori di takedown e controllo'
-            },
-            {
-              icon: '💪',
+              icon: '🏋️',
               title: 'Forza Funzionale',
-              description: 'Potenza applicabile nel mondo reale'
+              description: 'Costruisci forza e potenza applicabili nel mondo reale'
             },
             {
               icon: '🧘',
-              title: 'Scacchi Mentali',
-              description: 'Pensiero strategico e risoluzione problemi'
+              title: 'Focus Mentale',
+              description: 'Sviluppa concentrazione e abilità di risoluzione problemi'
             },
             {
-              icon: '⚡',
-              title: 'Potenza Esplosiva',
-              description: 'Movimento dinamico e atletismo'
+              icon: '🛡️',
+              title: 'Autodifesa',
+              description: 'Impara tecniche pratiche per situazioni reali'
+            },
+            {
+              icon: '🏆',
+              title: 'Pronto per le Competizioni',
+              description: 'Preparati per competizioni di grappling e MMA'
             }
           ]
         },
         schedule: {
           title: 'Orario Grappling',
-          subtitle: 'Sessioni di allenamento intensive focalizzate su wrestling e submission'
+          subtitle: 'Lezioni regolari di grappling in entrambe le sedi'
         },
         legends: {
           title: 'Leggende del Grappling',
-          subtitle: 'Studia le tecniche dei maestri di wrestling e grappling',
+          subtitle: 'Studia le tecniche dei più grandi grappler',
           grapplers: [
             {
-              name: 'Dan Gable',
-              title: 'Leggenda del Wrestling',
-              description: 'Campione olimpico e icona del coaching'
+              name: 'Kazushi Sakuraba',
+              title: 'The Gracie Hunter',
+              description: 'Wrestler catch leggendario che sconfisse più membri della famiglia Gracie'
             },
             {
-              name: 'Gordon Ryan',
-              title: 'Re del No-Gi',
-              description: 'Grappler di submission dominante'
+              name: 'Frank Shamrock',
+              title: 'The Legend',
+              description: 'Pioniere delle MMA moderne con abilità di grappling eccezionali'
             },
             {
-              name: 'John Danaher',
-              title: 'Il Professore',
-              description: 'Coach rivoluzionario di grappling'
+              name: 'Marcelo Garcia',
+              title: 'The Magician',
+              description: 'Leggenda BJJ conosciuto per la sua tecnica incredibile e insegnamento'
             }
           ]
         },
         cta: {
-          title: 'Padroneggia il Ground Game',
-          description: 'Sviluppa abilità superiori di grappling che eleveranno tutto il tuo gioco di arti marziali.',
-          joinButton: 'Unisciti ai Corsi di Grappling',
-          backButton: 'Torna ai Corsi'
+          title: 'Padroneggia il Gioco a Terra',
+          description: 'Unisciti al nostro programma di grappling e sviluppa abilità superiori di combattimento a terra.',
+          joinButton: 'Unisciti alle Lezioni di Grappling'
         }
       }
     },
@@ -2392,43 +2351,15 @@ const translations = {
       tagline: 'Allenamento Elite MMA, BJJ & Grappling',
       subtitle: 'Forgiamo combattenti dal 2017',
       copyright: '© 2024 Sport Academy. Tutti i diritti riservati.'
-    },
-    common: {
-      joinNow: 'Iscriviti Ora',
-      viewClasses: 'Visualizza Corsi',
-      viewSchedule: 'Visualizza Orari',
-      viewMembership: 'Visualizza Abbonamenti',
-      contactUs: 'Contattaci',
-      callNow: 'Chiama Ora',
-      learnMore: 'Scopri di Più',
-      allLevels: 'Tutti i Livelli',
-      ages: 'Età',
-      joinSportAcademy: 'Unisciti a Sport Academy',
-      registerOnline: 'Registrati Online',
-      bookClasses: 'Prenota Corsi',
-      visitUs: 'Visitaci',
-      dropInWelcome: 'Drop-in Benvenuti',
-      responseWithin2Hours: 'Risposta entro 2 ore',
-      dailyUpdatesAndDMs: 'Aggiornamenti quotidiani e DM',
-      instantConfirmation: 'Conferma istantanea',
-      duringTrainingHours: 'Durante gli orari di allenamento'
     }
   }
 };
-
-export function useLanguage() {
-  const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
-}
 
 interface LanguageProviderProps {
   children: ReactNode;
 }
 
-export function LanguageProvider({ children }: LanguageProviderProps) {
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const [language, setLanguage] = useState<Language>('en');
 
   const t = (key: string): any => {
@@ -2439,12 +2370,20 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
       if (value && typeof value === 'object' && k in value) {
         value = value[k];
       } else {
-        console.warn(`Translation key "${key}" not found for language "${language}"`);
-        return key;
+        // Fallback to English if key not found
+        value = translations.en;
+        for (const fallbackKey of keys) {
+          if (value && typeof value === 'object' && fallbackKey in value) {
+            value = value[fallbackKey];
+          } else {
+            return key; // Return the key if not found in fallback
+          }
+        }
+        break;
       }
     }
     
-    return value;
+    return value || key;
   };
 
   return (
@@ -2452,4 +2391,4 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
       {children}
     </LanguageContext.Provider>
   );
-}
+};
