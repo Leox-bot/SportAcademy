@@ -103,63 +103,149 @@ function App() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "MMA Classes",
-                description: "Complete mixed martial arts training combining striking, grappling, and ground fighting techniques.",
-                icon: <Trophy className="w-8 h-8" />,
-                image: "/mma-cropped.jpg"
-              },
-              {
-                title: "Brazilian Jiu-Jitsu",
-                description: "Master the gentle art of BJJ with our comprehensive ground fighting program.",
-                icon: <Users className="w-8 h-8" />,
-                image: null
-              },
-              {
-                title: "Grappling",
-                description: "Develop your wrestling and submission skills in our intensive grappling sessions.",
-                icon: <Star className="w-8 h-8" />,
-                image: "/grappling-cropped.jpg"
-              },
-              {
-                title: "BJJ for Kids",
-                description: "Safe and fun Brazilian Jiu-Jitsu classes designed specifically for young athletes.",
-                icon: <Users className="w-8 h-8" />,
-                image: "/bjj-kids-cropped.jpg"
-              },
-              {
-                title: "Grappling for Kids",
-                description: "Build confidence, discipline, and physical fitness through youth grappling programs.",
-                icon: <Trophy className="w-8 h-8" />,
-                image: null
-              },
-              {
-                title: "Wrestling",
-                description: "Traditional wrestling techniques and conditioning for competitive athletes.",
-                icon: <Star className="w-8 h-8" />,
-                image: null
-              }
-            ].map((classItem, index) => (
-              <div key={index} className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group">
-                {classItem.image && (
-                  <div className="h-56 overflow-hidden">
-                    <img 
-                      src={classItem.image} 
-                      alt={classItem.title}
-                      className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                )}
-                <div className="p-6">
-                  <div className="text-white group-hover:text-black mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {classItem.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide">{classItem.title}</h3>
-                  <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">{classItem.description}</p>
-                </div>
+            {/* MMA Classes */}
+            <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
+              <div className="h-64 overflow-hidden relative">
+                <img 
+                  src="https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  alt="MMA Classes"
+                  className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.pexels.com/photos/4761552/pexels-photo-4761552.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
               </div>
-            ))}
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <Trophy className="w-8 h-8 text-white group-hover:text-black mr-3 group-hover:scale-110 transition-all duration-300" />
+                  <h3 className="text-xl font-bold text-white group-hover:text-black tracking-wide">MMA Classes</h3>
+                </div>
+                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">
+                  Complete mixed martial arts training combining striking, grappling, and ground fighting techniques.
+                </p>
+              </div>
+            </div>
+
+            {/* Brazilian Jiu-Jitsu */}
+            <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
+              <div className="h-64 overflow-hidden relative">
+                <img 
+                  src="https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  alt="Brazilian Jiu-Jitsu"
+                  className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <Users className="w-8 h-8 text-white group-hover:text-black mr-3 group-hover:scale-110 transition-all duration-300" />
+                  <h3 className="text-xl font-bold text-white group-hover:text-black tracking-wide">Brazilian Jiu-Jitsu</h3>
+                </div>
+                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">
+                  Master the gentle art of BJJ with our comprehensive ground fighting program.
+                </p>
+              </div>
+            </div>
+
+            {/* Grappling */}
+            <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
+              <div className="h-64 overflow-hidden relative">
+                <img 
+                  src="https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  alt="Grappling"
+                  className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <Star className="w-8 h-8 text-white group-hover:text-black mr-3 group-hover:scale-110 transition-all duration-300" />
+                  <h3 className="text-xl font-bold text-white group-hover:text-black tracking-wide">Grappling</h3>
+                </div>
+                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">
+                  Develop your wrestling and submission skills in our intensive grappling sessions.
+                </p>
+              </div>
+            </div>
+
+            {/* BJJ for Kids */}
+            <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
+              <div className="h-64 overflow-hidden relative">
+                <img 
+                  src="https://images.pexels.com/photos/8611063/pexels-photo-8611063.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  alt="BJJ for Kids"
+                  className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <Users className="w-8 h-8 text-white group-hover:text-black mr-3 group-hover:scale-110 transition-all duration-300" />
+                  <h3 className="text-xl font-bold text-white group-hover:text-black tracking-wide">BJJ for Kids</h3>
+                </div>
+                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">
+                  Safe and fun Brazilian Jiu-Jitsu classes designed specifically for young athletes.
+                </p>
+              </div>
+            </div>
+
+            {/* Grappling for Kids */}
+            <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
+              <div className="h-64 overflow-hidden relative">
+                <img 
+                  src="https://images.pexels.com/photos/8611063/pexels-photo-8611063.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  alt="Grappling for Kids"
+                  className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <Trophy className="w-8 h-8 text-white group-hover:text-black mr-3 group-hover:scale-110 transition-all duration-300" />
+                  <h3 className="text-xl font-bold text-white group-hover:text-black tracking-wide">Grappling for Kids</h3>
+                </div>
+                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">
+                  Build confidence, discipline, and physical fitness through youth grappling programs.
+                </p>
+              </div>
+            </div>
+
+            {/* Wrestling */}
+            <div className="bg-gray-700 border-2 border-gray-600 rounded-lg overflow-hidden hover:bg-white hover:text-black hover:border-gray-400 transition-all duration-300 group shadow-lg">
+              <div className="h-64 overflow-hidden relative">
+                <img 
+                  src="https://images.pexels.com/photos/4761564/pexels-photo-4761564.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center" 
+                  alt="Wrestling"
+                  className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.pexels.com/photos/8611192/pexels-photo-8611192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop&crop=center';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent group-hover:from-black/40"></div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <Star className="w-8 h-8 text-white group-hover:text-black mr-3 group-hover:scale-110 transition-all duration-300" />
+                  <h3 className="text-xl font-bold text-white group-hover:text-black tracking-wide">Wrestling</h3>
+                </div>
+                <p className="text-gray-300 group-hover:text-gray-600 leading-relaxed tracking-wide">
+                  Traditional wrestling techniques and conditioning for competitive athletes.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
