@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Shield, Target, Flame, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <div>
       {/* Hero Section */}
@@ -20,12 +23,12 @@ export default function Home() {
         
         <div className="relative z-20 text-center max-w-4xl mx-auto px-4">
           <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-wider text-white text-shadow-lg">
-            <span className="text-white">SPORT</span>
+            <span className="text-white">{t('home.hero.title').split(' ')[0]}</span>
             <br />
-            <span className="bg-gradient-gold bg-clip-text text-transparent">ACADEMY</span>
+            <span className="bg-gradient-gold bg-clip-text text-transparent">{t('home.hero.title').split(' ')[1]}</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed text-shadow font-light italic tracking-wide">
-            Forging fighters since 2017
+            {t('home.hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
@@ -34,14 +37,14 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-gradient-gold hover:bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2 tracking-wide uppercase"
             >
-              JOIN NOW
+              {t('common.joinNow')}
               <ExternalLink size={20} />
             </a>
             <Link 
               to="/classes" 
               className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg tracking-wide uppercase"
             >
-              VIEW CLASSES
+              {t('common.viewClasses')}
             </Link>
           </div>
         </div>
@@ -52,11 +55,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              WELCOME TO SPORT ACADEMY
+              {t('home.welcome.title')}
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed tracking-wide">
-              Since 2017, Sport Academy has been the premier destination for martial arts training in South Tyrol. 
-              We offer world-class instruction in MMA, Brazilian Jiu-Jitsu, and Grappling across our two state-of-the-art facilities.
+              {t('home.welcome.description')}
             </p>
           </div>
           
@@ -65,24 +67,24 @@ export default function Home() {
               <div className="bg-gradient-gold text-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 8+
               </div>
-              <h3 className="text-xl font-bold mb-2 tracking-wide text-yellow-400 uppercase">Years of Excellence</h3>
-              <p className="text-gray-300 tracking-wide">Established in 2017, we've been developing fighters for over 8 years</p>
+              <h3 className="text-xl font-bold mb-2 tracking-wide text-yellow-400 uppercase">{t('home.stats.yearsOfExcellence')}</h3>
+              <p className="text-gray-300 tracking-wide">{t('home.stats.yearsDescription')}</p>
             </div>
             
             <div className="text-center bg-black/50 p-8 rounded-lg border border-yellow-500/30">
               <div className="bg-gradient-gold text-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 2
               </div>
-              <h3 className="text-xl font-bold mb-2 tracking-wide text-yellow-400 uppercase">Training Locations</h3>
-              <p className="text-gray-300 tracking-wide">Convenient facilities in Campo Tures and Brunico</p>
+              <h3 className="text-xl font-bold mb-2 tracking-wide text-yellow-400 uppercase">{t('home.stats.trainingLocations')}</h3>
+              <p className="text-gray-300 tracking-wide">{t('home.stats.locationsDescription')}</p>
             </div>
             
             <div className="text-center bg-black/50 p-8 rounded-lg border border-yellow-500/30">
               <div className="bg-gradient-gold text-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 6
               </div>
-              <h3 className="text-xl font-bold mb-2 tracking-wide text-yellow-400 uppercase">Training Programs</h3>
-              <p className="text-gray-300 tracking-wide">Comprehensive classes for adults and kids of all skill levels</p>
+              <h3 className="text-xl font-bold mb-2 tracking-wide text-yellow-400 uppercase">{t('home.stats.trainingPrograms')}</h3>
+              <p className="text-gray-300 tracking-wide">{t('home.stats.programsDescription')}</p>
             </div>
           </div>
 
@@ -91,7 +93,7 @@ export default function Home() {
               to="/classes" 
               className="bg-gradient-gold hover:bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg tracking-wide uppercase"
             >
-              EXPLORE OUR CLASSES
+              {t('home.stats.exploreClasses')}
             </Link>
           </div>
         </div>
@@ -102,10 +104,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white tracking-wide uppercase">
-              TRAIN LIKE A FIGHTER
+              {t('home.trainLikeFighter.title')}
             </h2>
             <p className="text-xl text-gray-300 tracking-wide">
-              Master the arts of combat with professional instruction
+              {t('home.trainLikeFighter.subtitle')}
             </p>
           </div>
           
@@ -125,13 +127,13 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <p className="text-gray-300 mb-4 tracking-wide">
-                  Complete mixed martial arts training combining striking, grappling, and ground fighting techniques.
+                  {t('home.mma.description')}
                 </p>
                 <Link 
                   to="/disciplines/mma"
                   className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-bold tracking-wide uppercase transition-colors"
                 >
-                  Learn More
+                  {t('common.learnMore')}
                   <ArrowRight size={16} />
                 </Link>
               </div>
@@ -152,13 +154,13 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <p className="text-gray-300 mb-4 tracking-wide">
-                  Master the gentle art of Brazilian Jiu-Jitsu with comprehensive ground fighting techniques.
+                  {t('home.bjj.description')}
                 </p>
                 <Link 
                   to="/disciplines/bjj"
                   className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-bold tracking-wide uppercase transition-colors"
                 >
-                  Learn More
+                  {t('common.learnMore')}
                   <ArrowRight size={16} />
                 </Link>
               </div>
@@ -179,13 +181,13 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <p className="text-gray-300 mb-4 tracking-wide">
-                  Develop wrestling and submission skills through intensive no-gi grappling training.
+                  {t('home.grappling.description')}
                 </p>
                 <Link 
                   to="/disciplines/grappling"
                   className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-bold tracking-wide uppercase transition-colors"
                 >
-                  Learn More
+                  {t('common.learnMore')}
                   <ArrowRight size={16} />
                 </Link>
               </div>
@@ -199,10 +201,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white tracking-wide uppercase">
-              GET STARTED TODAY
+              {t('home.getStarted.title')}
             </h2>
             <p className="text-xl text-gray-300 tracking-wide">
-              Everything you need to begin your martial arts journey
+              {t('home.getStarted.subtitle')}
             </p>
           </div>
           
@@ -211,32 +213,32 @@ export default function Home() {
               to="/classes" 
               className="bg-black/70 border-2 border-yellow-500/50 rounded-lg p-6 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition-all duration-300 group text-center"
             >
-              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide uppercase">View Classes</h3>
-              <p className="text-gray-300 group-hover:text-black tracking-wide">Explore our training programs</p>
+              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide uppercase">{t('home.quickLinks.viewClasses')}</h3>
+              <p className="text-gray-300 group-hover:text-black tracking-wide">{t('home.quickLinks.viewClassesDesc')}</p>
             </Link>
             
             <Link 
               to="/schedule" 
               className="bg-black/70 border-2 border-yellow-500/50 rounded-lg p-6 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition-all duration-300 group text-center"
             >
-              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide uppercase">Check Schedule</h3>
-              <p className="text-gray-300 group-hover:text-black tracking-wide">Find the perfect class time</p>
+              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide uppercase">{t('home.quickLinks.checkSchedule')}</h3>
+              <p className="text-gray-300 group-hover:text-black tracking-wide">{t('home.quickLinks.checkScheduleDesc')}</p>
             </Link>
             
             <Link 
               to="/membership" 
               className="bg-black/70 border-2 border-yellow-500/50 rounded-lg p-6 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition-all duration-300 group text-center"
             >
-              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide uppercase">Membership Plans</h3>
-              <p className="text-gray-300 group-hover:text-black tracking-wide">Choose your training package</p>
+              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide uppercase">{t('home.quickLinks.membershipPlans')}</h3>
+              <p className="text-gray-300 group-hover:text-black tracking-wide">{t('home.quickLinks.membershipPlansDesc')}</p>
             </Link>
             
             <Link 
               to="/contact" 
               className="bg-black/70 border-2 border-yellow-500/50 rounded-lg p-6 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition-all duration-300 group text-center"
             >
-              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide uppercase">Contact Us</h3>
-              <p className="text-gray-300 group-hover:text-black tracking-wide">Get in touch with our team</p>
+              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-black tracking-wide uppercase">{t('home.quickLinks.contactUs')}</h3>
+              <p className="text-gray-300 group-hover:text-black tracking-wide">{t('home.quickLinks.contactUsDesc')}</p>
             </Link>
           </div>
         </div>

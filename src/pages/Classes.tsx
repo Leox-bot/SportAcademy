@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Shield, Target, Zap, Heart, Star, Flame, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Classes() {
   const location = useLocation();
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Handle anchor links
@@ -20,57 +22,57 @@ export default function Classes() {
   const classes = [
     {
       id: "mma",
-      title: "MMA Classes",
-      description: "Complete mixed martial arts training combining striking, grappling, and ground fighting techniques. Perfect for those looking to develop well-rounded combat skills.",
+      title: t('classes.mma.title'),
+      description: t('classes.mma.description'),
       icon: <Flame className="w-12 h-12 text-yellow-400" />,
       image: "/ea4196af-93c9-4c00-942d-6f3ca5e06e8f.jpg",
-      features: ["Striking techniques", "Grappling fundamentals", "Ground fighting", "Conditioning", "Sparring sessions"],
-      level: "All Levels"
+      features: t('classes.mma.features'),
+      level: t('common.allLevels')
     },
     {
       id: "bjj",
-      title: "Brazilian Jiu-Jitsu",
-      description: "Master the gentle art of BJJ with our comprehensive ground fighting program. Learn leverage, technique, and strategy over brute strength.",
+      title: t('classes.bjj.title'),
+      description: t('classes.bjj.description'),
       icon: <Shield className="w-12 h-12 text-yellow-400" />,
       image: "/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg",
-      features: ["Guard techniques", "Submissions", "Escapes", "Positional control", "Competition preparation"],
-      level: "All Levels"
+      features: t('classes.bjj.features'),
+      level: t('common.allLevels')
     },
     {
       id: "grappling",
-      title: "Grappling",
-      description: "Develop your wrestling and submission skills in our intensive grappling sessions. Focus on takedowns, control, and submissions.",
+      title: t('classes.grappling.title'),
+      description: t('classes.grappling.description'),
       icon: <Target className="w-12 h-12 text-yellow-400" />,
       image: "/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg",
-      features: ["Takedown techniques", "Wrestling fundamentals", "Submission grappling", "No-gi training", "Competition prep"],
-      level: "All Levels"
+      features: t('classes.grappling.features'),
+      level: t('common.allLevels')
     },
     {
       id: "kids-bjj",
-      title: "BJJ for Kids",
-      description: "Safe and fun Brazilian Jiu-Jitsu classes designed specifically for young athletes. Building confidence, discipline, and respect.",
+      title: t('classes.kidsBjj.title'),
+      description: t('classes.kidsBjj.description'),
       icon: <Heart className="w-12 h-12 text-yellow-400" />,
       image: "/c864b6fe-d0e2-4443-af35-a04b21d97739.jpg",
-      features: ["Age-appropriate techniques", "Character development", "Anti-bullying skills", "Physical fitness", "Fun games and drills"],
-      level: "Ages 6-14"
+      features: t('classes.kidsBjj.features'),
+      level: `${t('common.ages')} 6-14`
     },
     {
       id: "kids-grappling",
-      title: "Grappling for Kids",
-      description: "Build confidence, discipline, and physical fitness through youth grappling programs. Emphasis on safety and skill development.",
+      title: t('classes.kidsGrappling.title'),
+      description: t('classes.kidsGrappling.description'),
       icon: <Star className="w-12 h-12 text-yellow-400" />,
       image: "/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg",
-      features: ["Basic wrestling moves", "Coordination drills", "Strength building", "Teamwork skills", "Safe training environment"],
-      level: "Ages 8-16"
+      features: t('classes.kidsGrappling.features'),
+      level: `${t('common.ages')} 8-16`
     },
     {
       id: "wrestling",
-      title: "Wrestling",
-      description: "Traditional wrestling techniques and conditioning for competitive athletes. Build strength, endurance, and technical proficiency.",
+      title: t('classes.wrestling.title'),
+      description: t('classes.wrestling.description'),
       icon: <Zap className="w-12 h-12 text-yellow-400" />,
       image: "/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg",
-      features: ["Olympic wrestling", "Freestyle techniques", "Greco-Roman style", "Conditioning programs", "Competition training"],
-      level: "All Levels"
+      features: t('classes.wrestling.features'),
+      level: t('common.allLevels')
     }
   ];
 
@@ -81,11 +83,10 @@ export default function Classes() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-black mb-6 text-white tracking-wide uppercase">
-              OUR CLASSES
+              {t('classes.hero.title')}
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed tracking-wide">
-              Professional training programs designed for all skill levels. From beginners taking their first steps 
-              to advanced athletes preparing for competition, we have the perfect class for your martial arts journey.
+              {t('classes.hero.description')}
             </p>
           </div>
         </div>
@@ -129,7 +130,7 @@ export default function Classes() {
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-bold text-yellow-400 mb-4 text-xl tracking-wide uppercase">What You'll Learn:</h4>
+                      <h4 className="font-bold text-yellow-400 mb-4 text-xl tracking-wide uppercase">{t('classes.whatYouLearn')}</h4>
                       <ul className="space-y-3">
                         {classItem.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center text-gray-300 text-lg tracking-wide">
@@ -151,10 +152,10 @@ export default function Classes() {
       <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-            READY TO START TRAINING?
+            {t('classes.cta.title')}
           </h2>
           <p className="text-xl text-gray-300 mb-8 tracking-wide">
-            Join Sport Academy today and begin your martial arts journey with expert instruction and a supportive community.
+            {t('classes.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
@@ -163,14 +164,14 @@ export default function Classes() {
               rel="noopener noreferrer"
               className="bg-gradient-gold hover:bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2 tracking-wide uppercase"
             >
-              JOIN NOW
+              {t('common.joinNow')}
               <ExternalLink size={20} />
             </a>
             <Link 
               to="/schedule" 
               className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg tracking-wide uppercase"
             >
-              VIEW SCHEDULE
+              {t('common.viewSchedule')}
             </Link>
           </div>
         </div>

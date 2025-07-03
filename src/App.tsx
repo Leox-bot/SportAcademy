@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './contexts/LanguageContext';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
@@ -16,24 +17,26 @@ import Grappling from './pages/disciplines/Grappling';
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/classes" element={<Classes />} />
-          <Route path="/schedule" element={<Schedule />} />
-          <Route path="/coaches" element={<Coaches />} />
-          <Route path="/membership" element={<Membership />} />
-          <Route path="/contact" element={<Contact />} />
-          
-          {/* Discipline pages */}
-          <Route path="/disciplines/mma" element={<MMA />} />
-          <Route path="/disciplines/bjj" element={<BJJ />} />
-          <Route path="/disciplines/grappling" element={<Grappling />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <ScrollToTop />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/classes" element={<Classes />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/coaches" element={<Coaches />} />
+            <Route path="/membership" element={<Membership />} />
+            <Route path="/contact" element={<Contact />} />
+            
+            {/* Discipline pages */}
+            <Route path="/disciplines/mma" element={<MMA />} />
+            <Route path="/disciplines/bjj" element={<BJJ />} />
+            <Route path="/disciplines/grappling" element={<Grappling />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </LanguageProvider>
   );
 }
 

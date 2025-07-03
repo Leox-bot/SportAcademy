@@ -1,7 +1,10 @@
 import React from 'react';
 import { MapPin, Clock, ExternalLink, Instagram, Phone, Mail, Facebook, MessageCircle, Car, Accessibility, Calendar, Users } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <div>
       {/* Hero Section */}
@@ -11,13 +14,12 @@ export default function Contact() {
             <div className="flex items-center justify-center gap-4 mb-6">
               <MapPin className="w-12 h-12 text-yellow-400" />
               <h1 className="text-5xl md:text-6xl font-black text-white tracking-wide uppercase">
-                CONTACT & VISIT
+                {t('contact.hero.title')}
               </h1>
               <MapPin className="w-12 h-12 text-yellow-400" />
             </div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed tracking-wide">
-              Get in touch with Sport Academy and visit our world-class training facilities. 
-              We're here to help you start your martial arts journey with expert guidance and support.
+              {t('contact.hero.description')}
             </p>
           </div>
         </div>
@@ -28,10 +30,10 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              GET IN TOUCH
+              {t('contact.getInTouch.title')}
             </h2>
             <p className="text-xl text-gray-300 tracking-wide">
-              Multiple ways to connect with our team
+              {t('contact.getInTouch.subtitle')}
             </p>
           </div>
           
@@ -39,20 +41,20 @@ export default function Contact() {
             {/* Phone Contact */}
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
               <Phone className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <h3 className="text-lg font-bold mb-3 text-white tracking-wide uppercase">Call Us</h3>
+              <h3 className="text-lg font-bold mb-3 text-white tracking-wide uppercase">{t('contact.callUs')}</h3>
               <a 
                 href="tel:+393485741798" 
                 className="text-yellow-400 hover:text-yellow-300 font-bold text-lg tracking-wide transition-colors"
               >
                 +39 348 574 1798
               </a>
-              <p className="text-gray-400 text-sm mt-2 tracking-wide">Response within 2 hours</p>
+              <p className="text-gray-400 text-sm mt-2 tracking-wide">{t('common.responseWithin2Hours')}</p>
             </div>
 
             {/* Instagram */}
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
               <Instagram className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <h3 className="text-lg font-bold mb-3 text-white tracking-wide uppercase">Instagram</h3>
+              <h3 className="text-lg font-bold mb-3 text-white tracking-wide uppercase">{t('contact.instagram')}</h3>
               <a 
                 href="https://www.instagram.com/__sport_academy__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
                 target="_blank" 
@@ -61,30 +63,30 @@ export default function Contact() {
               >
                 @__sport_academy__
               </a>
-              <p className="text-gray-400 text-sm mt-2 tracking-wide">Daily updates & DMs</p>
+              <p className="text-gray-400 text-sm mt-2 tracking-wide">{t('common.dailyUpdatesAndDMs')}</p>
             </div>
 
             {/* Online Registration */}
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
               <Calendar className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <h3 className="text-lg font-bold mb-3 text-white tracking-wide uppercase">Register Online</h3>
+              <h3 className="text-lg font-bold mb-3 text-white tracking-wide uppercase">{t('common.registerOnline')}</h3>
               <a 
                 href="https://maat-app.link/7BGCKjdtuUb" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-yellow-400 hover:text-yellow-300 font-bold tracking-wide transition-colors"
               >
-                Book Classes
+                {t('common.bookClasses')}
               </a>
-              <p className="text-gray-400 text-sm mt-2 tracking-wide">Instant confirmation</p>
+              <p className="text-gray-400 text-sm mt-2 tracking-wide">{t('common.instantConfirmation')}</p>
             </div>
 
             {/* Visit In Person */}
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
               <Users className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <h3 className="text-lg font-bold mb-3 text-white tracking-wide uppercase">Visit Us</h3>
-              <p className="text-yellow-400 font-bold tracking-wide">Drop-in Welcome</p>
-              <p className="text-gray-400 text-sm mt-2 tracking-wide">During training hours</p>
+              <h3 className="text-lg font-bold mb-3 text-white tracking-wide uppercase">{t('common.visitUs')}</h3>
+              <p className="text-yellow-400 font-bold tracking-wide">{t('common.dropInWelcome')}</p>
+              <p className="text-gray-400 text-sm mt-2 tracking-wide">{t('common.duringTrainingHours')}</p>
             </div>
           </div>
         </div>
@@ -95,10 +97,10 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              OUR LOCATIONS
+              {t('contact.locations.title')}
             </h2>
             <p className="text-xl text-gray-300 tracking-wide">
-              Two convenient facilities in South Tyrol
+              {t('contact.locations.subtitle')}
             </p>
           </div>
           
@@ -107,60 +109,47 @@ export default function Contact() {
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <MapPin className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">Campo Tures</h3>
+                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">{t('contact.campoTures')}</h3>
               </div>
               
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Address</h4>
-                  <p className="text-gray-300 tracking-wide">
-                    Via Hugo von Taufers 8<br />
-                    Campo Tures, South Tyrol<br />
-                    Italy
+                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.address')}</h4>
+                  <p className="text-gray-300 tracking-wide whitespace-pre-line">
+                    {t('contact.campoTures.address')}
                   </p>
                 </div>
                 
                 <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Training Schedule</h4>
+                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.trainingSchedule')}</h4>
                   <div className="space-y-2">
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">Tuesday: 15:00 - 20:30</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.tuesday')}: 15:00 - 20:30</span>
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">Thursday: 06:30 - 20:30</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.thursday')}: 06:30 - 20:30</span>
                     </div>
                   </div>
                 </div>
                 
                 <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Landmark Directions</h4>
+                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.landmarkDirections')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Located in the town center, 50m from the main church. 
-                    Look for the Sport Academy sign next to the pharmacy.
+                    {t('contact.campoTures.directions')}
                   </p>
                 </div>
                 
                 <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Available Classes</h4>
+                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.availableClasses')}</h4>
                   <ul className="space-y-1">
-                    <li className="flex items-center text-gray-300 tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
-                      MMA Classes
-                    </li>
-                    <li className="flex items-center text-gray-300 tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
-                      Brazilian Jiu-Jitsu
-                    </li>
-                    <li className="flex items-center text-gray-300 tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
-                      Grappling
-                    </li>
-                    <li className="flex items-center text-gray-300 tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
-                      Kids BJJ
-                    </li>
+                    {t('contact.campoTures.classes').map((classItem, index) => (
+                      <li key={index} className="flex items-center text-gray-300 tracking-wide">
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                        {classItem}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -170,64 +159,51 @@ export default function Contact() {
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:shadow-2xl hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <MapPin className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">Brunico</h3>
+                <h3 className="text-2xl font-bold text-white tracking-wide uppercase">{t('contact.brunico')}</h3>
               </div>
               
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Address</h4>
-                  <p className="text-gray-300 tracking-wide">
-                    Via Teresa Riedl 3<br />
-                    39031 Brunico BZ<br />
-                    South Tyrol, Italy
+                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.address')}</h4>
+                  <p className="text-gray-300 tracking-wide whitespace-pre-line">
+                    {t('contact.brunico.address')}
                   </p>
                 </div>
                 
                 <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Training Schedule</h4>
+                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.trainingSchedule')}</h4>
                   <div className="space-y-2">
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">Monday: 17:30 - 20:30</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.monday')}: 17:30 - 20:30</span>
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">Wednesday: 17:30 - 20:30</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.wednesday')}: 17:30 - 20:30</span>
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">Friday: 18:30 - 20:30</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.friday')}: 18:30 - 20:30</span>
                     </div>
                   </div>
                 </div>
                 
                 <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Landmark Directions</h4>
+                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.landmarkDirections')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    5-minute walk from Brunico train station. 
-                    Near the sports complex, opposite the public swimming pool.
+                    {t('contact.brunico.directions')}
                   </p>
                 </div>
                 
                 <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">Available Classes</h4>
+                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.availableClasses')}</h4>
                   <ul className="space-y-1">
-                    <li className="flex items-center text-gray-300 tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
-                      Brazilian Jiu-Jitsu
-                    </li>
-                    <li className="flex items-center text-gray-300 tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
-                      Wrestling
-                    </li>
-                    <li className="flex items-center text-gray-300 tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
-                      Kids Grappling
-                    </li>
-                    <li className="flex items-center text-gray-300 tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
-                      Open Training
-                    </li>
+                    {t('contact.brunico.classes').map((classItem, index) => (
+                      <li key={index} className="flex items-center text-gray-300 tracking-wide">
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                        {classItem}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -241,10 +217,10 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              PARKING & ACCESSIBILITY
+              {t('contact.parking.title')}
             </h2>
             <p className="text-xl text-gray-300 tracking-wide">
-              Easy access and convenient parking at both locations
+              {t('contact.parking.subtitle')}
             </p>
           </div>
           
@@ -252,27 +228,25 @@ export default function Contact() {
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <Car className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">Campo Tures</h3>
+                <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">{t('contact.campoTures')}</h3>
               </div>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Parking</h4>
+                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.parking')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Free street parking available on Via Hugo von Taufers and surrounding streets. 
-                    Public parking lot 100m away (€1/hour during business hours, free evenings).
+                    {t('contact.campoTures.parking')}
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Public Transport</h4>
+                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.publicTransport')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Regular bus service from Brunico (Line 441). Bus stop "Campo Tures Centro" 
-                    is 2 minutes walk from the gym.
+                    {t('contact.campoTures.transport')}
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Accessibility</h4>
+                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.accessibility')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Ground floor access with wide entrance. Accessible restroom facilities available.
+                    {t('contact.campoTures.accessibility')}
                   </p>
                 </div>
               </div>
@@ -281,27 +255,25 @@ export default function Contact() {
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
               <div className="flex items-center mb-6">
                 <Car className="w-8 h-8 text-yellow-400 mr-4" />
-                <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">Brunico</h3>
+                <h3 className="text-2xl font-bold text-yellow-400 tracking-wide uppercase">{t('contact.brunico')}</h3>
               </div>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Parking</h4>
+                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.parking')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Free parking available on Via Teresa Riedl. Large public parking area 
-                    near the sports complex (free after 18:00 and weekends).
+                    {t('contact.brunico.parking')}
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Public Transport</h4>
+                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.publicTransport')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    5 minutes walk from Brunico train station. Excellent connections to 
-                    Bolzano, Innsbruck, and major cities. Bus lines 441, 442, and 445.
+                    {t('contact.brunico.transport')}
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">Accessibility</h4>
+                  <h4 className="font-bold text-white mb-2 tracking-wide uppercase">{t('contact.accessibility')}</h4>
                   <p className="text-gray-300 tracking-wide">
-                    Wheelchair accessible entrance and facilities. Elevator access to all floors.
+                    {t('contact.brunico.accessibility')}
                   </p>
                 </div>
               </div>
@@ -315,83 +287,63 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              VISIT REQUIREMENTS
+              {t('contact.visitRequirements.title')}
             </h2>
             <p className="text-xl text-gray-300 tracking-wide">
-              What to know before your first visit
+              {t('contact.visitRequirements.subtitle')}
             </p>
           </div>
           
           <div className="space-y-8">
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">First-Time Visitors</h3>
+              <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">{t('contact.firstTimeVisitors')}</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-bold text-white mb-3 tracking-wide uppercase">What to Bring</h4>
+                  <h4 className="font-bold text-white mb-3 tracking-wide uppercase">{t('contact.whatToBring')}</h4>
                   <ul className="space-y-2 text-gray-300">
-                    <li className="flex items-start tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                      Valid ID for registration
-                    </li>
-                    <li className="flex items-start tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                      Comfortable athletic wear
-                    </li>
-                    <li className="flex items-start tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                      Water bottle and towel
-                    </li>
-                    <li className="flex items-start tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                      Positive attitude and open mind
-                    </li>
+                    {t('contact.bring').map((item, index) => (
+                      <li key={index} className="flex items-start tracking-wide">
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-3 tracking-wide uppercase">What We Provide</h4>
+                  <h4 className="font-bold text-white mb-3 tracking-wide uppercase">{t('contact.whatWeProvide')}</h4>
                   <ul className="space-y-2 text-gray-300">
-                    <li className="flex items-start tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                      Free trial class (first visit)
-                    </li>
-                    <li className="flex items-start tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                      Basic gloves & shin guards for MMA classes (temporary)
-                    </li>
-                    <li className="flex items-start tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                      Facility tour and orientation
-                    </li>
-                    <li className="flex items-start tracking-wide">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                      Personal consultation with coaches
-                    </li>
+                    {t('contact.provide').map((item, index) => (
+                      <li key={index} className="flex items-start tracking-wide">
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
             </div>
 
             <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">Special Instructions</h3>
+              <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('contact.specialInstructions')}</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Age Requirements:</strong> 16+ for adult classes, 6-15 for kids programs
+                    <strong className="text-white">{t('contact.instructions.age').split(':')[0]}:</strong> {t('contact.instructions.age').split(':')[1]}
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Health:</strong> Please inform us of any injuries or medical conditions
+                    <strong className="text-white">{t('contact.instructions.health').split(':')[0]}:</strong> {t('contact.instructions.health').split(':')[1]}
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Equipment:</strong> Basic gloves & shin guards provided temporarily - students should purchase their own
+                    <strong className="text-white">{t('contact.instructions.equipment').split(':')[0]}:</strong> {t('contact.instructions.equipment').split(':')[1]}
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Payment:</strong> Cash and card accepted
+                    <strong className="text-white">{t('contact.instructions.payment').split(':')[0]}:</strong> {t('contact.instructions.payment').split(':')[1]}
                   </p>
                 </div>
               </div>
@@ -404,10 +356,10 @@ export default function Contact() {
       <section className="py-20 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-            READY TO BEGIN?
+            {t('contact.cta.title')}
           </h2>
           <p className="text-xl text-gray-300 mb-8 tracking-wide">
-            Take the first step towards your martial arts journey. Contact us today and discover your potential.
+            {t('contact.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
@@ -416,7 +368,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="bg-gradient-gold hover:bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2 tracking-wide uppercase"
             >
-              JOIN SPORT ACADEMY
+              {t('common.joinSportAcademy')}
               <ExternalLink size={20} />
             </a>
             <a 
@@ -424,7 +376,7 @@ export default function Contact() {
               className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg flex items-center justify-center gap-2 tracking-wide uppercase"
             >
               <Phone size={20} />
-              CALL NOW
+              {t('common.callNow')}
             </a>
           </div>
         </div>

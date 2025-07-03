@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ExternalLink } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import LanguageSelector from './LanguageSelector';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,6 +11,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -32,7 +35,7 @@ export default function Layout({ children }: LayoutProps) {
                     isActive('/') ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'
                   }`}
                 >
-                  Home
+                  {t('nav.home')}
                 </Link>
                 <Link 
                   to="/classes" 
@@ -40,7 +43,7 @@ export default function Layout({ children }: LayoutProps) {
                     isActive('/classes') ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'
                   }`}
                 >
-                  Classes
+                  {t('nav.classes')}
                 </Link>
                 <Link 
                   to="/schedule" 
@@ -48,7 +51,7 @@ export default function Layout({ children }: LayoutProps) {
                     isActive('/schedule') ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'
                   }`}
                 >
-                  Schedule
+                  {t('nav.schedule')}
                 </Link>
                 <Link 
                   to="/coaches" 
@@ -56,7 +59,7 @@ export default function Layout({ children }: LayoutProps) {
                     isActive('/coaches') ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'
                   }`}
                 >
-                  Coaches
+                  {t('nav.coaches')}
                 </Link>
                 <Link 
                   to="/membership" 
@@ -64,7 +67,7 @@ export default function Layout({ children }: LayoutProps) {
                     isActive('/membership') ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'
                   }`}
                 >
-                  Membership
+                  {t('nav.membership')}
                 </Link>
                 <Link 
                   to="/contact" 
@@ -72,12 +75,14 @@ export default function Layout({ children }: LayoutProps) {
                     isActive('/contact') ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'
                   }`}
                 >
-                  Contact
+                  {t('nav.contact')}
                 </Link>
+                <LanguageSelector />
               </div>
             </div>
             
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center gap-4">
+              <LanguageSelector />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white hover:text-yellow-400 transition-colors"
@@ -99,7 +104,7 @@ export default function Layout({ children }: LayoutProps) {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                {t('nav.home')}
               </Link>
               <Link 
                 to="/classes" 
@@ -108,7 +113,7 @@ export default function Layout({ children }: LayoutProps) {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Classes
+                {t('nav.classes')}
               </Link>
               <Link 
                 to="/schedule" 
@@ -117,7 +122,7 @@ export default function Layout({ children }: LayoutProps) {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Schedule
+                {t('nav.schedule')}
               </Link>
               <Link 
                 to="/coaches" 
@@ -126,7 +131,7 @@ export default function Layout({ children }: LayoutProps) {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Coaches
+                {t('nav.coaches')}
               </Link>
               <Link 
                 to="/membership" 
@@ -135,7 +140,7 @@ export default function Layout({ children }: LayoutProps) {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Membership
+                {t('nav.membership')}
               </Link>
               <Link 
                 to="/contact" 
@@ -144,7 +149,7 @@ export default function Layout({ children }: LayoutProps) {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                {t('nav.contact')}
               </Link>
             </div>
           </div>
@@ -164,20 +169,20 @@ export default function Layout({ children }: LayoutProps) {
               <img src="/sport academy.jpg" alt="Sport Academy" className="h-12 w-auto mx-auto mb-6 brightness-110" />
             </Link>
             <p className="text-gray-300 mb-2 font-medium tracking-wide">
-              Elite MMA, BJJ & Grappling Training in South Tyrol
+              {t('footer.tagline')}
             </p>
             <p className="text-yellow-400 mb-6 italic tracking-wide font-light">
-              Forging fighters since 2017
+              {t('footer.subtitle')}
             </p>
             <div className="flex justify-center space-x-8 mb-6">
-              <Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors tracking-wide uppercase text-sm">Home</Link>
-              <Link to="/classes" className="text-gray-400 hover:text-yellow-400 transition-colors tracking-wide uppercase text-sm">Classes</Link>
-              <Link to="/schedule" className="text-gray-400 hover:text-yellow-400 transition-colors tracking-wide uppercase text-sm">Schedule</Link>
-              <Link to="/coaches" className="text-gray-400 hover:text-yellow-400 transition-colors tracking-wide uppercase text-sm">Coaches</Link>
-              <Link to="/membership" className="text-gray-400 hover:text-yellow-400 transition-colors tracking-wide uppercase text-sm">Membership</Link>
+              <Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors tracking-wide uppercase text-sm">{t('nav.home')}</Link>
+              <Link to="/classes" className="text-gray-400 hover:text-yellow-400 transition-colors tracking-wide uppercase text-sm">{t('nav.classes')}</Link>
+              <Link to="/schedule" className="text-gray-400 hover:text-yellow-400 transition-colors tracking-wide uppercase text-sm">{t('nav.schedule')}</Link>
+              <Link to="/coaches" className="text-gray-400 hover:text-yellow-400 transition-colors tracking-wide uppercase text-sm">{t('nav.coaches')}</Link>
+              <Link to="/membership" className="text-gray-400 hover:text-yellow-400 transition-colors tracking-wide uppercase text-sm">{t('nav.membership')}</Link>
             </div>
             <p className="text-gray-500 text-sm tracking-wide">
-              © 2025 Sport Academy. All rights reserved.
+              {t('footer.copyright')}
             </p>
           </div>
         </div>
