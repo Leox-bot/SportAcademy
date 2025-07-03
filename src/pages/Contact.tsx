@@ -16,16 +16,6 @@ export default function Contact() {
     return Array.isArray(items) ? items : [];
   };
 
-  const getCampoTuresClasses = () => {
-    const classes = t('contact.campoTures.classes');
-    return Array.isArray(classes) ? classes : [];
-  };
-
-  const getBrunicoClasses = () => {
-    const classes = t('contact.brunico.classes');
-    return Array.isArray(classes) ? classes : [];
-  };
-
   return (
     <div>
       {/* Hero Section */}
@@ -156,25 +146,6 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-                
-                <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.landmarkDirections')}</h4>
-                  <p className="text-gray-300 tracking-wide">
-                    {t('contact.campoTures.directions')}
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.availableClasses')}</h4>
-                  <ul className="space-y-1">
-                    {getCampoTuresClasses().map((classItem, index) => (
-                      <li key={index} className="flex items-center text-gray-300 tracking-wide">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
-                        {classItem}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             </div>
             
@@ -211,25 +182,6 @@ export default function Contact() {
                       <span className="text-gray-300 tracking-wide">{t('schedule.friday')}: 18:30 - 20:30</span>
                     </div>
                   </div>
-                </div>
-                
-                <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.landmarkDirections')}</h4>
-                  <p className="text-gray-300 tracking-wide">
-                    {t('contact.brunico.directions')}
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 className="font-bold text-yellow-400 mb-2 tracking-wide uppercase">{t('contact.availableClasses')}</h4>
-                  <ul className="space-y-1">
-                    {getBrunicoClasses().map((classItem, index) => (
-                      <li key={index} className="flex items-center text-gray-300 tracking-wide">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
-                        {classItem}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </div>
