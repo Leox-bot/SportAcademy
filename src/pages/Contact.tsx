@@ -138,11 +138,11 @@ export default function Contact() {
                   <div className="space-y-2">
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">{t('schedule.tuesday')}</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.tuesday')}: 15:00 - 20:30</span>
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">{t('schedule.thursday')}</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.thursday')}: 06:30 - 20:30</span>
                     </div>
                   </div>
                 </div>
@@ -171,15 +171,15 @@ export default function Contact() {
                   <div className="space-y-2">
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">{t('schedule.monday')}</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.monday')}: 17:30 - 20:30</span>
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">{t('schedule.wednesday')}</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.wednesday')}: 17:30 - 20:30</span>
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">{t('schedule.friday')}</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.friday')}: 18:30 - 20:30</span>
                     </div>
                   </div>
                 </div>
@@ -235,22 +235,22 @@ export default function Contact() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">{t('contact.instructions.age')}</strong>
+                    <strong className="text-white">Age Requirements:</strong> Minimum age is 8 years old for kids classes, 16+ for adult classes
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">{t('contact.instructions.health')}</strong>
+                    <strong className="text-white">Health & Safety:</strong> Please inform us of any injuries or medical conditions before training
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">{t('contact.instructions.equipment')}</strong>
+                    <strong className="text-white">Equipment Policy:</strong> No shoes on the mats, fingernails must be trimmed, no jewelry during training
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">{t('contact.instructions.payment')}</strong>
+                    <strong className="text-white">Payment Options:</strong> We accept cash, bank transfer, and online payments through our booking system
                   </p>
                 </div>
               </div>
