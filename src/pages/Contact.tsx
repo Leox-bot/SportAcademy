@@ -5,17 +5,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 export default function Contact() {
   const { t } = useLanguage();
 
-  // Safely get array values with fallback
-  const getBringItems = () => {
-    const items = t('contact.bring');
-    return Array.isArray(items) ? items : [];
-  };
-
-  const getProvideItems = () => {
-    const items = t('contact.provide');
-    return Array.isArray(items) ? items : [];
-  };
-
   return (
     <div>
       {/* Hero Section */}
@@ -189,70 +178,31 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Visit Requirements & Policies */}
+      {/* Special Instructions */}
       <section className="py-20 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              {t('contact.visitRequirements.title')}
-            </h2>
-            <p className="text-xl text-gray-300 tracking-wide">
-              {t('contact.visitRequirements.subtitle')}
-            </p>
-          </div>
-          
-          <div className="space-y-8">
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-8 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">{t('contact.firstTimeVisitors')}</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-bold text-white mb-3 tracking-wide uppercase">{t('contact.whatToBring')}</h4>
-                  <ul className="space-y-2 text-gray-300">
-                    {getBringItems().map((item, index) => (
-                      <li key={index} className="flex items-start tracking-wide">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-white mb-3 tracking-wide uppercase">{t('contact.whatWeProvide')}</h4>
-                  <ul className="space-y-2 text-gray-300">
-                    {getProvideItems().map((item, index) => (
-                      <li key={index} className="flex items-start tracking-wide">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-6">
+            <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">Special Instructions</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <p className="text-gray-300 text-sm tracking-wide">
+                  <strong className="text-white">Equipment:</strong> Trial students can borrow temporally basic equipment
+                </p>
               </div>
-            </div>
-
-            <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('contact.specialInstructions')}</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Equipment:</strong> Trial students can borrow temporally basic equipment
-                  </p>
-                </div>
-                <div>
-                  <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Health & Safety:</strong> Please inform us of any injuries or health conditions
-                  </p>
-                </div>
-                <div>
-                  <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Payment:</strong> Cash and card are the only payment methods accepted
-                  </p>
-                </div>
-                <div>
-                  <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Age Requirements:</strong> The age for kids classes is 8-14 years old
-                  </p>
-                </div>
+              <div>
+                <p className="text-gray-300 text-sm tracking-wide">
+                  <strong className="text-white">Health & Safety:</strong> Please inform us of any injuries or health conditions
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-300 text-sm tracking-wide">
+                  <strong className="text-white">Payment:</strong> Cash and card are the only payment methods accepted
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-300 text-sm tracking-wide">
+                  <strong className="text-white">Age Requirements:</strong> The age for kids classes is 8-14 years old
+                </p>
               </div>
             </div>
           </div>
