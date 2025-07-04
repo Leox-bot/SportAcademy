@@ -138,11 +138,11 @@ export default function Contact() {
                   <div className="space-y-2">
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">{t('schedule.tuesday')}: 15:00 - 20:30</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.tuesday')}</span>
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">{t('schedule.thursday')}: 06:30 - 20:30</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.thursday')}</span>
                     </div>
                   </div>
                 </div>
@@ -171,15 +171,15 @@ export default function Contact() {
                   <div className="space-y-2">
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">{t('schedule.monday')}: 17:30 - 20:30</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.monday')}</span>
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">{t('schedule.wednesday')}: 17:30 - 20:30</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.wednesday')}</span>
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-yellow-400 mr-2" />
-                      <span className="text-gray-300 tracking-wide">{t('schedule.friday')}: 18:30 - 20:30</span>
+                      <span className="text-gray-300 tracking-wide">{t('schedule.friday')}</span>
                     </div>
                   </div>
                 </div>
