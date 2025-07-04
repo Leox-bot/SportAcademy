@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, Target, Zap, Heart, Star, Flame, ExternalLink } from 'lucide-react';
+import { Shield, Target, Zap, Heart, Flame, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Classes() {
