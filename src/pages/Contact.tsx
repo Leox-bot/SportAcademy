@@ -87,7 +87,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="text-yellow-400 hover:text-yellow-300 font-bold tracking-wide transition-colors"
               >
-                {t('common.bookClasses')}
+                {t('common.registerOnline')}
               </a>
               <p className="text-gray-400 text-sm mt-2 tracking-wide">{t('common.instantConfirmation')}</p>
             </div>
