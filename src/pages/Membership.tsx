@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Trophy, ExternalLink } from 'lucide-react';
+import { Trophy, ExternalLink, Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Membership() {
@@ -60,6 +60,18 @@ export default function Membership() {
                   </div>
                 </div>
               </div>
+
+              <div className="mb-8">
+                <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
+                <ul className="space-y-3">
+                  {t('membership.mainIncludes').map((item, index) => (
+                    <li key={index} className="flex items-center text-gray-300 tracking-wide">
+                      <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               
               <a 
                 href="https://maat-app.link/7BGCKjdtuUb" 
@@ -95,6 +107,18 @@ export default function Membership() {
                     <p className="text-sm text-gray-400 tracking-wide">€60/{t('membership.month')}</p>
                   </div>
                 </div>
+              </div>
+
+              <div className="mb-8">
+                <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
+                <ul className="space-y-3">
+                  {t('membership.summerIncludes').map((item, index) => (
+                    <li key={index} className="flex items-center text-gray-300 tracking-wide">
+                      <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
               
               <a 
@@ -143,6 +167,18 @@ export default function Membership() {
                   </div>
                 </div>
               </div>
+
+              <div className="mb-8">
+                <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
+                <ul className="space-y-3">
+                  {t('membership.bjjIncludes').map((item, index) => (
+                    <li key={index} className="flex items-center text-gray-300 tracking-wide">
+                      <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               
               <a 
                 href="https://maat-app.link/7BGCKjdtuUb" 
@@ -158,41 +194,78 @@ export default function Membership() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Additional Services */}
       <section className="py-20 bg-gradient-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
+              {t('membership.additionalServices.title')}
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto tracking-wide">
+              {t('membership.additionalServices.description')}
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
+              <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('membership.personalTraining.title')}</h3>
+              <p className="text-gray-300 mb-4 tracking-wide">{t('membership.personalTraining.description')}</p>
+              <p className="text-2xl font-bold text-white tracking-wide">{t('membership.personalTraining.price')}</p>
+              <p className="text-sm text-gray-400 tracking-wide">{t('membership.personalTraining.duration')}</p>
+            </div>
+            
+            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
+              <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('membership.competitionPrep.title')}</h3>
+              <p className="text-gray-300 mb-4 tracking-wide">{t('membership.competitionPrep.description')}</p>
+              <p className="text-2xl font-bold text-white tracking-wide">{t('membership.competitionPrep.price')}</p>
+              <p className="text-sm text-gray-400 tracking-wide">{t('membership.competitionPrep.duration')}</p>
+            </div>
+            
+            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
+              <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('membership.seminars.title')}</h3>
+              <p className="text-gray-300 mb-4 tracking-wide">{t('membership.seminars.description')}</p>
+              <p className="text-2xl font-bold text-white tracking-wide">{t('membership.seminars.price')}</p>
+              <p className="text-sm text-gray-400 tracking-wide">{t('membership.seminars.duration')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              {t('membership.faq.title')}
+              Frequently Asked Questions
             </h2>
           </div>
           
           <div className="space-y-8">
-            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.seasons.question')}</h3>
+            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
+              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">What are the training seasons?</h3>
               <p className="text-gray-300 tracking-wide">
-                {t('membership.faq.seasons.answer')}
+                We offer two main training seasons: the Main Season (September to June) and the Summer Season (June to August). Each season has its own membership pricing and schedule.
               </p>
             </div>
             
-            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.locations.question')}</h3>
+            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
+              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">Can I train at both locations?</h3>
               <p className="text-gray-300 tracking-wide">
-                {t('membership.faq.locations.answer')}
+                Yes! Your membership gives you access to classes at both our Campo Tures and Brunico locations. You can attend any class that fits your schedule.
               </p>
             </div>
             
-            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.trial.question')}</h3>
+            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
+              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">Do you offer trial classes?</h3>
               <p className="text-gray-300 tracking-wide">
-                {t('membership.faq.trial.answer')}
+                Absolutely! We encourage new students to try a class before committing to a membership. Contact us to schedule your trial class.
               </p>
             </div>
             
-            <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.equipment.question')}</h3>
+            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
+              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">What equipment do I need?</h3>
               <p className="text-gray-300 tracking-wide">
-                {t('membership.faq.equipment.answer')}
+                For your first class, just bring comfortable workout clothes and water. We provide basic equipment. As you progress, we'll guide you on purchasing your own gear.
               </p>
             </div>
           </div>
@@ -200,7 +273,7 @@ export default function Membership() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
             {t('membership.cta.title')}
