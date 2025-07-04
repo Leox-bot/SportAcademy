@@ -25,7 +25,7 @@ export default function Home() {
           <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-wider text-white text-shadow-lg">
             <span className="text-white">{t('home.hero.title').split(' ')[0]}</span>
             <br />
-            <span className="bg-gradient-gold bg-clip-text text-transparent">{t('home.hero.title').split(' ')[1]}</span>
+            <span className="text-white">{t('home.hero.title').split(' ')[1]}</span>
           </h1>
           <p className="text-xl md:text-2xl text-yellow-400 mb-8 italic tracking-wide font-light">
             Forging Fighters Since 2017
