@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Trophy, ExternalLink, Phone } from 'lucide-react';
+import { Trophy, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Membership() {
@@ -170,33 +170,30 @@ export default function Membership() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('membership.personalTraining.title')}</h3>
-              <p className="text-gray-300 mb-6 tracking-wide">{t('membership.personalTraining.description')}</p>
-              <div className="flex items-center justify-center gap-2 text-yellow-400 font-bold">
-                <Phone size={20} />
-                <span className="tracking-wide">+39 348 574 1798</span>
-              </div>
+              <p className="text-gray-300 tracking-wide">{t('membership.personalTraining.description')}</p>
             </div>
             
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('membership.competitionPrep.title')}</h3>
-              <p className="text-gray-300 mb-6 tracking-wide">{t('membership.competitionPrep.description')}</p>
-              <div className="flex items-center justify-center gap-2 text-yellow-400 font-bold">
-                <Phone size={20} />
-                <span className="tracking-wide">+39 348 574 1798</span>
-              </div>
+              <p className="text-gray-300 tracking-wide">{t('membership.competitionPrep.description')}</p>
             </div>
             
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('membership.seminars.title')}</h3>
-              <p className="text-gray-300 mb-6 tracking-wide">{t('membership.seminars.description')}</p>
-              <div className="flex items-center justify-center gap-2 text-yellow-400 font-bold">
-                <Phone size={20} />
-                <span className="tracking-wide">+39 348 574 1798</span>
-              </div>
+              <p className="text-gray-300 tracking-wide">{t('membership.seminars.description')}</p>
             </div>
+          </div>
+
+          <div className="text-center">
+            <Link 
+              to="/contact" 
+              className="bg-gradient-gold hover:bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg tracking-wide uppercase"
+            >
+              {t('common.contactUs')}
+            </Link>
           </div>
         </div>
       </section>
