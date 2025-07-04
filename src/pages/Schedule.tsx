@@ -76,61 +76,8 @@ export default function Schedule() {
         </div>
       </section>
 
-      {/* Important Notes */}
-      <section className="py-20 bg-gradient-dark">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-8">
-            <h3 className="text-2xl font-bold mb-6 text-yellow-400 tracking-wide uppercase">{t('schedule.importantInfo')}</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-bold text-white mb-3 tracking-wide uppercase">{t('schedule.classGuidelines')}</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li className="flex items-start tracking-wide">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                    {t('schedule.guidelines.arrive')}
-                  </li>
-                  <li className="flex items-start tracking-wide">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                    {t('schedule.guidelines.water')}
-                  </li>
-                  <li className="flex items-start tracking-wide">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                    {t('schedule.guidelines.gi')}
-                  </li>
-                  <li className="flex items-start tracking-wide">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                    {t('schedule.guidelines.noGi')}
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-white mb-3 tracking-wide uppercase">{t('schedule.membershipBenefits')}</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li className="flex items-start tracking-wide">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                    {t('schedule.benefits.allClasses')}
-                  </li>
-                  <li className="flex items-start tracking-wide">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                    {t('schedule.benefits.openMat')}
-                  </li>
-                  <li className="flex items-start tracking-wide">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                    {t('schedule.benefits.bothLocations')}
-                  </li>
-                  <li className="flex items-start tracking-wide">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                    {t('schedule.benefits.personalTraining')}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
             {t('schedule.cta.title')}
