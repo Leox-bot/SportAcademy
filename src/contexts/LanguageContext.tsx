@@ -144,6 +144,27 @@ const translations = {
       cta: {
         title: 'Ready to Start Training?',
         description: 'Join our community of dedicated martial artists and begin your journey today.'
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        questions: {
+          seasons: {
+            question: 'What are the training seasons?',
+            answer: 'We offer two main training seasons: the Main Season (September to June) and the Summer Season (June to August). Each season has its own membership pricing and schedule.'
+          },
+          locations: {
+            question: 'Can I train at both locations?',
+            answer: 'Yes! Your membership gives you access to classes at both our Campo Tures and Brunico locations. You can attend any class that fits your schedule.'
+          },
+          trial: {
+            question: 'Do you offer trial classes?',
+            answer: 'Absolutely! We encourage new students to try a class before committing to a membership. Contact us to schedule your trial class.'
+          },
+          equipment: {
+            question: 'What equipment do I need?',
+            answer: 'For your first class, just bring comfortable workout clothes and water. We provide basic equipment. As you progress, we\'ll guide you on purchasing your own gear.'
+          }
+        }
       }
     },
     schedule: {
@@ -386,6 +407,13 @@ const translations = {
       cta: {
         title: 'Ready to Begin?',
         description: 'Take the first step towards your martial arts goals. Contact us today to get started.'
+      },
+      specialInstructions: {
+        title: 'Special Instructions',
+        equipment: 'Trial students can borrow basic equipment temporarily',
+        health: 'Please inform us of any injuries or health conditions',
+        payment: 'Cash and card are the only payment methods accepted',
+        age: 'The age for kids classes is 8-14 years old'
       }
     },
     disciplines: {
@@ -910,6 +938,27 @@ const translations = {
       cta: {
         title: 'Bereit Zu Trainieren?',
         description: 'Treten Sie unserer Gemeinschaft engagierter Kampfsportler bei und beginnen Sie heute Ihre Reise.'
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        questions: {
+          seasons: {
+            question: 'Was sind die Trainingssaisons?',
+            answer: 'Wir bieten zwei Haupttrainingssaisons an: die Hauptsaison (September bis Juni) und die Sommersaison (Juni bis August). Jede Saison hat ihre eigenen Mitgliedschaftspreise und Zeitpläne.'
+          },
+          locations: {
+            question: 'Kann ich an beiden Standorten trainieren?',
+            answer: 'Ja! Deine Mitgliedschaft gibt Dir Zugang zu Kursen an beiden Standorten in Campo Tures und Bruneck. Du kannst an jedem Kurs teilnehmen, der in Deinen Zeitplan passt.'
+          },
+          trial: {
+            question: 'Bietet ihr Probestunden an?',
+            answer: 'Absolut! Wir ermutigen neue Schüler, eine Stunde auszuprobieren, bevor sie sich für eine Mitgliedschaft entscheiden. Kontaktiere uns, um Deine Probestunde zu vereinbaren.'
+          },
+          equipment: {
+            question: 'Welche Ausrüstung brauche ich?',
+            answer: 'Für Deine erste Stunde bring einfach bequeme Trainingskleidung und Wasser mit. Wir stellen die Grundausrüstung zur Verfügung. Mit Deinem Fortschritt werden wir Dich beim Kauf Deiner eigenen Ausrüstung beraten.'
+          }
+        }
       }
     },
     schedule: {
@@ -1152,6 +1201,13 @@ const translations = {
       cta: {
         title: 'Bereit Zu Beginnen?',
         description: 'Machen Sie den ersten Schritt zu Ihren Kampfsportzielen. Kontaktieren Sie uns heute, um loszulegen.'
+      },
+      specialInstructions: {
+        title: 'Besondere Hinweise',
+        equipment: 'Probestudenten können vorübergehend Grundausrüstung ausleihen',
+        health: 'Bitte informiere uns über Verletzungen oder Gesundheitszustände',
+        payment: 'Bargeld und Karte sind die einzigen akzeptierten Zahlungsmethoden',
+        age: 'Das Alter für Kinderkurse ist 8-14 Jahre'
       }
     },
     disciplines: {
@@ -1676,6 +1732,27 @@ const translations = {
       cta: {
         title: 'Pronto a Iniziare l\'Allenamento?',
         description: 'Unisciti alla nostra comunità di artisti marziali dedicati e inizia il tuo viaggio oggi.'
+      },
+      faq: {
+        title: 'Domande frequenti',
+        questions: {
+          seasons: {
+            question: 'Quali sono le stagioni di allenamento?',
+            answer: 'Offriamo due stagioni principali di allenamento: la Stagione Principale (settembre-giugno) e la Stagione Estiva (giugno-agosto). Ogni stagione ha i propri prezzi di iscrizione e orari.'
+          },
+          locations: {
+            question: 'Posso allenarmi in entrambe le sedi?',
+            answer: 'Sì! La tua iscrizione ti dà accesso alle lezioni in entrambe le nostre sedi di Campo Tures e Brunico. Puoi partecipare a qualsiasi lezione che si adatta ai tuoi orari.'
+          },
+          trial: {
+            question: 'Offrite lezioni di prova?',
+            answer: 'Assolutamente! Incoraggiamo i nuovi studenti a provare una lezione prima di impegnarsi con un abbonamento. Contattaci per programmare la tua lezione di prova.'
+          },
+          equipment: {
+            question: 'Che attrezzatura mi serve?',
+            answer: 'Per la tua prima lezione, porta solo abbigliamento comodo da allenamento e acqua. Forniamo l\'attrezzatura di base. Man mano che progredisci, ti guideremo nell\'acquisto della tua attrezzatura.'
+          }
+        }
       }
     },
     schedule: {
@@ -1918,6 +1995,13 @@ const translations = {
       cta: {
         title: 'Pronto a Iniziare?',
         description: 'Fai il primo passo verso i tuoi obiettivi nelle arti marziali. Contattaci oggi per iniziare.'
+      },
+      specialInstructions: {
+        title: 'Istruzioni speciali',
+        equipment: 'Gli studenti di prova possono prendere in prestito temporaneamente l\'attrezzatura di base',
+        health: 'Ti preghiamo di informarci di eventuali infortuni o condizioni di salute',
+        payment: 'Contanti e carta sono gli unici metodi di pagamento accettati',
+        age: 'L\'età per le lezioni per bambini è 8-14 anni'
       }
     },
     disciplines: {

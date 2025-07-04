@@ -198,47 +198,6 @@ export default function Membership() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              {t('membership.faq.title')}
-            </h2>
-          </div>
-          
-          <div className="space-y-8">
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.questions.seasons.question')}</h3>
-              <p className="text-gray-300 tracking-wide">
-                {t('membership.faq.questions.seasons.answer')}
-              </p>
-            </div>
-            
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.questions.locations.question')}</h3>
-              <p className="text-gray-300 tracking-wide">
-                {t('membership.faq.questions.locations.answer')}
-              </p>
-            </div>
-            
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.questions.trial.question')}</h3>
-              <p className="text-gray-300 tracking-wide">
-                {t('membership.faq.questions.trial.answer')}
-              </p>
-            </div>
-            
-            <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.questions.equipment.question')}</h3>
-              <p className="text-gray-300 tracking-wide">
-                {t('membership.faq.questions.equipment.answer')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -178,37 +178,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Special Instructions */}
-      <section className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-6">
-            <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('contact.specialInstructions.title')}</h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <p className="text-gray-300 text-sm tracking-wide">
-                  <strong className="text-white">Equipment:</strong> {t('contact.specialInstructions.equipment')}
-                </p>
-              </div>
-              <div>
-                <p className="text-gray-300 text-sm tracking-wide">
-                  <strong className="text-white">Health & Safety:</strong> {t('contact.specialInstructions.health')}
-                </p>
-              </div>
-              <div>
-                <p className="text-gray-300 text-sm tracking-wide">
-                  <strong className="text-white">Payment:</strong> {t('contact.specialInstructions.payment')}
-                </p>
-              </div>
-              <div>
-                <p className="text-gray-300 text-sm tracking-wide">
-                  <strong className="text-white">Age Requirements:</strong> {t('contact.specialInstructions.age')}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
