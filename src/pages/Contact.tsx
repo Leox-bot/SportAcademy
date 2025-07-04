@@ -235,22 +235,22 @@ export default function Contact() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Minimum Age:</strong> Participants must be at least 16 years old to join adult classes
+                    <strong className="text-white">{t('contact.instructions.age')}</strong>
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Health Requirements:</strong> Please inform us of any medical conditions or injuries
+                    <strong className="text-white">{t('contact.instructions.health')}</strong>
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Equipment:</strong> Basic training gear is provided for first-time visitors
+                    <strong className="text-white">{t('contact.instructions.equipment')}</strong>
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Payment:</strong> We accept cash and card payments only
+                    <strong className="text-white">{t('contact.instructions.payment')}</strong>
                   </p>
                 </div>
               </div>
