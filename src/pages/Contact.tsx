@@ -235,22 +235,22 @@ export default function Contact() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Age Requirements:</strong> Minimum age is 8 years old for kids classes, 16+ for adult classes
+                    <strong className="text-white">Equipment:</strong> Trial students can borrow temporally basic equipment
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Health & Safety:</strong> Please inform us of any injuries or medical conditions before training
+                    <strong className="text-white">Health & Safety:</strong> Please inform us of any injuries or health conditions
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Equipment Policy:</strong> No shoes on the mats, fingernails must be trimmed, no jewelry during training
+                    <strong className="text-white">Payment:</strong> Cash and card are the only payment methods accepted
                   </p>
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm tracking-wide">
-                    <strong className="text-white">Payment Options:</strong> We accept cash, bank transfer, and online payments through our booking system
+                    <strong className="text-white">Age Requirements:</strong> The age for kids classes is 8-14 years old
                   </p>
                 </div>
               </div>
