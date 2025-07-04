@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Trophy, ExternalLink, Check } from 'lucide-react';
+import { Trophy, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Membership() {
@@ -60,18 +60,6 @@ export default function Membership() {
                   </div>
                 </div>
               </div>
-
-              <div className="mb-8">
-                <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
-                <ul className="space-y-3">
-                  {t('membership.mainIncludes').map((item, index) => (
-                    <li key={index} className="flex items-center text-gray-300 tracking-wide">
-                      <Check className="w-5 h-5 text-yellow-400 mr-3" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
               
               <a 
                 href="https://maat-app.link/7BGCKjdtuUb" 
@@ -107,18 +95,6 @@ export default function Membership() {
                     <p className="text-sm text-gray-400 tracking-wide">€60/{t('membership.month')}</p>
                   </div>
                 </div>
-              </div>
-
-              <div className="mb-8">
-                <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
-                <ul className="space-y-3">
-                  {t('membership.summerIncludes').map((item, index) => (
-                    <li key={index} className="flex items-center text-gray-300 tracking-wide">
-                      <Check className="w-5 h-5 text-yellow-400 mr-3" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
               
               <a 
@@ -166,18 +142,6 @@ export default function Membership() {
                     <p className="text-sm text-gray-400 tracking-wide">€50/{t('membership.month')}</p>
                   </div>
                 </div>
-              </div>
-
-              <div className="mb-8">
-                <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
-                <ul className="space-y-3">
-                  {t('membership.bjjIncludes').map((item, index) => (
-                    <li key={index} className="flex items-center text-gray-300 tracking-wide">
-                      <Check className="w-5 h-5 text-yellow-400 mr-3" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
               
               <a 
