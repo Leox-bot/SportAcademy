@@ -203,36 +203,36 @@ export default function Membership() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-wide uppercase">
-              Frequently Asked Questions
+              {t('membership.faq.title')}
             </h2>
           </div>
           
           <div className="space-y-8">
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">What are the training seasons?</h3>
+              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.questions.seasons.question')}</h3>
               <p className="text-gray-300 tracking-wide">
-                We offer two main training seasons: the Main Season (September to June) and the Summer Season (June to August). Each season has its own membership pricing and schedule.
+                {t('membership.faq.questions.seasons.answer')}
               </p>
             </div>
             
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">Can I train at both locations?</h3>
+              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.questions.locations.question')}</h3>
               <p className="text-gray-300 tracking-wide">
-                Yes! Your membership gives you access to classes at both our Campo Tures and Brunico locations. You can attend any class that fits your schedule.
+                {t('membership.faq.questions.locations.answer')}
               </p>
             </div>
             
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">Do you offer trial classes?</h3>
+              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.questions.trial.question')}</h3>
               <p className="text-gray-300 tracking-wide">
-                Absolutely! We encourage new students to try a class before committing to a membership. Contact us to schedule your trial class.
+                {t('membership.faq.questions.trial.answer')}
               </p>
             </div>
             
             <div className="bg-gradient-dark border border-yellow-500/30 rounded-lg p-6 hover:border-yellow-400/50 transition-all duration-300">
-              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">What equipment do I need?</h3>
+              <h3 className="text-xl font-bold mb-3 text-yellow-400 tracking-wide uppercase">{t('membership.faq.questions.equipment.question')}</h3>
               <p className="text-gray-300 tracking-wide">
-                For your first class, just bring comfortable workout clothes and water. We provide basic equipment. As you progress, we'll guide you on purchasing your own gear.
+                {t('membership.faq.questions.equipment.answer')}
               </p>
             </div>
           </div>
