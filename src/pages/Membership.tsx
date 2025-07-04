@@ -64,12 +64,26 @@ export default function Membership() {
               <div className="mb-8">
                 <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
                 <ul className="space-y-3">
-                  {t('membership.mainIncludes').map((item, index) => (
-                    <li key={index} className="flex items-center text-gray-300 tracking-wide">
-                      <Check className="w-5 h-5 text-yellow-400 mr-3" />
-                      {item}
-                    </li>
-                  ))}
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Access to all classes at both locations
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    MMA, BJJ, Grappling, and Wrestling training
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Expert coaching from certified instructors
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Open mat sessions for practice
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Competition preparation support
+                  </li>
                 </ul>
               </div>
               
@@ -112,12 +126,26 @@ export default function Membership() {
               <div className="mb-8">
                 <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
                 <ul className="space-y-3">
-                  {t('membership.summerIncludes').map((item, index) => (
-                    <li key={index} className="flex items-center text-gray-300 tracking-wide">
-                      <Check className="w-5 h-5 text-yellow-400 mr-3" />
-                      {item}
-                    </li>
-                  ))}
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Access to all classes at both locations
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    MMA, BJJ, Grappling, and Wrestling training
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Expert coaching from certified instructors
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Open mat sessions for practice
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Flexible summer schedule
+                  </li>
                 </ul>
               </div>
               
@@ -171,12 +199,26 @@ export default function Membership() {
               <div className="mb-8">
                 <h4 className="font-bold text-yellow-400 mb-4 tracking-wide uppercase">{t('membership.whatsIncluded')}</h4>
                 <ul className="space-y-3">
-                  {t('membership.bjjIncludes').map((item, index) => (
-                    <li key={index} className="flex items-center text-gray-300 tracking-wide">
-                      <Check className="w-5 h-5 text-yellow-400 mr-3" />
-                      {item}
-                    </li>
-                  ))}
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Access to all BJJ classes at both locations
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Expert BJJ coaching from certified instructors
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Open mat sessions for practice
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Belt progression system
+                  </li>
+                  <li className="flex items-center text-gray-300 tracking-wide">
+                    <Check className="w-5 h-5 text-yellow-400 mr-3" />
+                    Competition preparation support
+                  </li>
                 </ul>
               </div>
               
