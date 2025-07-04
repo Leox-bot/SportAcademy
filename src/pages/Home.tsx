@@ -78,7 +78,7 @@ export default function Home() {
             
             <div className="text-center bg-black/50 p-8 rounded-lg border border-yellow-500/30">
               <div className="bg-gradient-gold text-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                6
+                3+
               </div>
               <h3 className="text-xl font-bold mb-2 tracking-wide text-yellow-400 uppercase">{t('home.stats.trainingPrograms')}</h3>
               <p className="text-gray-300 tracking-wide">{t('home.stats.programsDescription')}</p>
