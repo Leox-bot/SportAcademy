@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Trophy, ExternalLink } from 'lucide-react';
+import { Trophy, ExternalLink, Phone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Membership() {
@@ -173,23 +173,29 @@ export default function Membership() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('membership.personalTraining.title')}</h3>
-              <p className="text-gray-300 mb-4 tracking-wide">{t('membership.personalTraining.description')}</p>
-              <p className="text-2xl font-bold text-white tracking-wide">{t('membership.personalTraining.price')}</p>
-              <p className="text-sm text-gray-400 tracking-wide">{t('membership.personalTraining.duration')}</p>
+              <p className="text-gray-300 mb-6 tracking-wide">{t('membership.personalTraining.description')}</p>
+              <div className="flex items-center justify-center gap-2 text-yellow-400 font-bold">
+                <Phone size={20} />
+                <span className="tracking-wide">+39 348 574 1798</span>
+              </div>
             </div>
             
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('membership.competitionPrep.title')}</h3>
-              <p className="text-gray-300 mb-4 tracking-wide">{t('membership.competitionPrep.description')}</p>
-              <p className="text-2xl font-bold text-white tracking-wide">{t('membership.competitionPrep.price')}</p>
-              <p className="text-sm text-gray-400 tracking-wide">{t('membership.competitionPrep.duration')}</p>
+              <p className="text-gray-300 mb-6 tracking-wide">{t('membership.competitionPrep.description')}</p>
+              <div className="flex items-center justify-center gap-2 text-yellow-400 font-bold">
+                <Phone size={20} />
+                <span className="tracking-wide">+39 348 574 1798</span>
+              </div>
             </div>
             
             <div className="bg-black/70 border border-yellow-500/30 rounded-lg p-6 text-center hover:border-yellow-400/50 transition-all duration-300">
               <h3 className="text-xl font-bold mb-4 text-yellow-400 tracking-wide uppercase">{t('membership.seminars.title')}</h3>
-              <p className="text-gray-300 mb-4 tracking-wide">{t('membership.seminars.description')}</p>
-              <p className="text-2xl font-bold text-white tracking-wide">{t('membership.seminars.price')}</p>
-              <p className="text-sm text-gray-400 tracking-wide">{t('membership.seminars.duration')}</p>
+              <p className="text-gray-300 mb-6 tracking-wide">{t('membership.seminars.description')}</p>
+              <div className="flex items-center justify-center gap-2 text-yellow-400 font-bold">
+                <Phone size={20} />
+                <span className="tracking-wide">+39 348 574 1798</span>
+              </div>
             </div>
           </div>
         </div>
