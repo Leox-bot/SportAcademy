@@ -54,16 +54,7 @@ export default function Classes() {
       icon: <Heart className="w-12 h-12 text-yellow-400" />,
       image: "/c864b6fe-d0e2-4443-af35-a04b21d97739.jpg",
       features: t('classes.kidsBjj.features'),
-      level: `${t('common.ages')} 6-14`
-    },
-    {
-      id: "kids-grappling",
-      title: t('classes.kidsGrappling.title'),
-      description: t('classes.kidsGrappling.description'),
-      icon: <Star className="w-12 h-12 text-yellow-400" />,
-      image: "/8a6f6ad8-a194-433f-b64a-37452844d3fd.jpg",
-      features: t('classes.kidsGrappling.features'),
-      level: `${t('common.ages')} 8-16`
+      level: `${t('common.ages')} 8-14`
     },
     {
       id: "wrestling",
